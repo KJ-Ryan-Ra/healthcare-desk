@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>헬스케어 리서치 데스크</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -241,7 +246,8 @@ td strong{font-weight:600}
   .pane > h2{font-size:24px}
 }
 </style>
-
+</head>
+<body>
 <div class="shell">
 <aside class="rail">
   <div class="brand">
@@ -255,21 +261,22 @@ td strong{font-weight:600}
     <button data-p="modality"><span class="k">02</span>모달리티 백과</button>
     <button data-p="rnd"><span class="k">03</span>신약개발 프로세스</button>
     <button data-p="clin"><span class="k">04</span>임상 데이터 읽기</button>
-    <button data-p="reg"><span class="k">05</span>규제·제도</button>
+    <button data-p="lines"><span class="k">05</span>치료 라인</button>
+    <button data-p="reg"><span class="k">06</span>규제·제도</button>
     <div class="nav-group">시장 · 자본</div>
-    <button data-p="market"><span class="k">06</span>시장 규모</button>
-    <button data-p="theme"><span class="k">07</span>테마 딥다이브</button>
-    <button data-p="policy"><span class="k">08</span>2026 정책 워치</button>
-    <button data-p="val"><span class="k">09</span>밸류에이션</button>
+    <button data-p="market"><span class="k">07</span>시장 규모</button>
+    <button data-p="theme"><span class="k">08</span>테마 딥다이브</button>
+    <button data-p="policy"><span class="k">09</span>2026 정책 워치</button>
+    <button data-p="val"><span class="k">10</span>밸류에이션</button>
     <div class="nav-group">데스크 도구</div>
-    <button data-p="check"><span class="k">10</span>체크포인트</button>
-    <button data-p="universe"><span class="k">11</span>커버리지 유니버스</button>
-    <button data-p="cal"><span class="k">12</span>이벤트 캘린더</button>
-    <button data-p="gloss"><span class="k">13</span>용어 사전</button>
-    <button data-p="src"><span class="k">14</span>출처·데이터 품질</button>
+    <button data-p="check"><span class="k">11</span>체크포인트</button>
+    <button data-p="universe"><span class="k">12</span>커버리지 유니버스</button>
+    <button data-p="cal"><span class="k">13</span>이벤트 캘린더</button>
+    <button data-p="gloss"><span class="k">14</span>용어 사전</button>
+    <button data-p="src"><span class="k">15</span>출처·데이터 품질</button>
   </nav>
   <div class="railfoot">
-    <span class="mono" style="font-size:10px;color:var(--ink-4)">v2.0 · 2026.08.28</span>
+    <span class="mono" style="font-size:10px;color:var(--ink-4)">v3.0 · 2026.08.28</span>
     <button class="tbtn" id="theme">테마</button>
   </div>
 </aside>
@@ -327,9 +334,9 @@ td strong{font-weight:600}
   <div class="sec">
     <h3>이 도구의 사용법</h3>
     <div class="grid g2" style="margin-top:16px">
-      <div class="card"><h4 style="font-size:14.5px;margin-bottom:8px">처음 배울 때 순서</h4><p style="font-size:13.5px;color:var(--ink-2);line-height:1.65">01 산업지도 → <b>02 모달리티</b>(약이 어떻게 작동하는가) → <b>03 신약개발</b>(어떤 단계를 거치는가) → <b>04 임상 데이터 읽기</b>(결과를 어떻게 해석하는가) → <b>05 규제</b>(누가 통과시켜 주는가) → 06~09 시장·자본. 여기까지가 "산업을 안다"의 최소 단위다.</p></div>
-      <div class="card"><h4 style="font-size:14.5px;margin-bottom:8px">딜 검토할 때</h4><p style="font-size:13.5px;color:var(--ink-2);line-height:1.65"><b>10 체크포인트</b>로 무엇을 물어볼지 정하고 → <b>11 유니버스</b>에서 피어 그룹을 좁히고 → <b>09 밸류에이션</b>으로 방법론 확정 → <b>08 정책워치</b>로 관세·약가 리스크 체크 → <b>12 캘린더</b>로 데이터 발표 타이밍을 잡는다.</p></div>
-      <div class="card"><h4 style="font-size:14.5px;margin-bottom:8px">숫자를 인용하기 전에</h4><p style="font-size:13.5px;color:var(--ink-2);line-height:1.65">모든 수치에 <span class="tag t-ok">확인</span> <span class="tag t-warn">추정</span> <span class="tag t-dim">구자료</span> <span class="tag t-alert">미확인</span> 태그가 붙어 있다. <b>구자료·추정 태그가 붙은 숫자는 대외 자료에 그대로 옮기지 말 것.</b> 14번 탭에 원출처 목록이 있다.</p></div>
+      <div class="card"><h4 style="font-size:14.5px;margin-bottom:8px">처음 배울 때 순서</h4><p style="font-size:13.5px;color:var(--ink-2);line-height:1.65">01 산업지도 → <b>02 모달리티</b>(약이 어떻게 작동하는가) → <b>03 신약개발</b>(어떤 단계를 거치는가) → <b>04 임상 데이터 읽기</b>(결과를 어떻게 해석하는가) → <b>05 치료 라인</b>(그 약이 어디에 놓이는가) → <b>06 규제</b>(누가 통과시켜 주는가) → 07~10 시장·자본. 여기까지가 "산업을 안다"의 최소 단위다.</p></div>
+      <div class="card"><h4 style="font-size:14.5px;margin-bottom:8px">딜 검토할 때</h4><p style="font-size:13.5px;color:var(--ink-2);line-height:1.65"><b>11 체크포인트</b>로 무엇을 물어볼지 정하고 → <b>12 유니버스</b>에서 피어 그룹을 좁히고 → <b>05 치료 라인</b>으로 그 약의 자리와 경쟁 약을 확인하고 → <b>10 밸류에이션</b>으로 방법론 확정 → <b>09 정책워치</b>로 관세·약가 리스크 체크 → <b>13 캘린더</b>로 데이터 발표 타이밍을 잡는다.</p></div>
+      <div class="card"><h4 style="font-size:14.5px;margin-bottom:8px">숫자를 인용하기 전에</h4><p style="font-size:13.5px;color:var(--ink-2);line-height:1.65">모든 수치에 <span class="tag t-ok">확인</span> <span class="tag t-warn">추정</span> <span class="tag t-dim">구자료</span> <span class="tag t-alert">미확인</span> 태그가 붙어 있다. <b>구자료·추정 태그가 붙은 숫자는 대외 자료에 그대로 옮기지 말 것.</b> 15번 탭에 원출처 목록이 있다.</p></div>
       <div class="card"><h4 style="font-size:14.5px;margin-bottom:8px">이 자료의 한계</h4><p style="font-size:13.5px;color:var(--ink-2);line-height:1.65">기초 레이어 자료 상당수가 2016~2023년 것이고, 일부는 스캔본이라 원문 확보에 실패했다(ADC·바이오시밀러 항목). 최신 레이어는 웹 검색 기반이라 <b>종목코드·시가총액은 미검증</b>이다.</p></div>
     </div>
   </div>
@@ -339,7 +346,7 @@ td strong{font-weight:600}
 <section class="pane" id="p-modality">
   <div class="eyebrow">02 — Modality</div>
   <h2>모달리티 백과</h2>
-  <p class="lede">모달리티는 <b>"약이 어떤 물리적 형태로, 어떤 원리로 작동하는가"</b>다. 제약바이오 종목은 사실상 모달리티별로 테마가 형성되고 함께 움직인다. 각 항목을 펼치면 <b>구조 도식</b>과 <b>투자 체크포인트</b>가 나온다 — 임상 결과를 읽는 기준은 04번 탭, 실사 질문 목록은 10번 탭에 있다.</p>
+  <p class="lede">모달리티는 <b>"약이 어떤 물리적 형태로, 어떤 원리로 작동하는가"</b>다. 제약바이오 종목은 사실상 모달리티별로 테마가 형성되고 함께 움직인다. 각 항목을 펼치면 <b>구조 도식</b>과 <b>투자 체크포인트</b>가 나온다 — 임상 결과를 읽는 기준은 04번 탭, 그 약이 몇 차 치료제로 쓰이는지는 05번 탭, 실사 질문 목록은 11번 탭에 있다.</p>
 
   <div class="chips" id="mchips">
     <button class="chip" aria-pressed="true" data-f="all">전체</button>
@@ -493,7 +500,7 @@ td strong{font-weight:600}
 <section class="pane" id="p-clin">
   <div class="eyebrow">04 — Reading Clinical Data</div>
   <h2>임상 데이터 읽는 법</h2>
-  <p class="lede">보도자료의 헤드라인 숫자만 보면 거의 항상 틀린 결론에 도달한다. 이 탭은 <b>어떤 순서로, 무엇을, 어느 모달리티·질환 기준으로 봐야 하는지</b>를 정리한 것이다. 03번 탭이 "언제 무슨 일이 일어나는가"라면 여기는 "그 결과를 어떻게 읽는가"다.</p>
+  <p class="lede">보도자료의 헤드라인 숫자만 보면 거의 항상 틀린 결론에 도달한다. 이 탭은 <b>어떤 순서로, 무엇을, 어느 모달리티·질환 기준으로 봐야 하는지</b>를 정리한 것이다. 03번 탭이 "언제 무슨 일이 일어나는가"라면 여기는 "그 결과를 어떻게 읽는가"다. 아래 <b>임상 지표 사전</b>에서 ORR·PFS·OS부터 질환별 고유 지표까지 무엇을 재는 숫자인지 확인할 수 있다.</p>
 
   <div class="sec">
     <h3>읽는 순서 — 6단계</h3>
@@ -675,6 +682,102 @@ td strong{font-weight:600}
     </table></div>
   </div>
 
+<div class="sec">
+    <h3>임상 지표 사전 — 무엇을 재고, 어떻게 계산하나</h3>
+    <p class="note">리포트에 나오는 지표는 사실 몇십 개로 정해져 있다. <b>정의 · 계산 방식 · 주로 쓰이는 곳 · 해석 주의점</b>을 한 표에 모았다. 어떤 지표가 1차 평가지표로 쓰였는지가 곧 그 임상의 성격을 말해준다.</p>
+
+    <h4 style="font-size:14.5px;margin:22px 0 11px">① 항암 효능 지표</h4>
+    <div class="tw"><table>
+      <thead><tr><th style="min-width:120px">지표</th><th style="min-width:200px">정의 · 계산</th><th style="min-width:150px">주로 쓰이는 곳</th><th style="min-width:200px">해석 주의점</th></tr></thead>
+      <tbody>
+        <tr><td><strong>ORR</strong><br><span style="color:var(--ink-3);font-size:12px">객관적반응률</span></td><td>(CR + PR) ÷ 전체 평가 대상자<br>RECIST 1.1 기준 — CR: 병변 완전 소실 / PR: 표적병변 지름 합 <b>30% 이상 감소</b></td><td>단일군 초기 임상, 가속승인 근거, 불응성·희귀 암종</td><td>대조군이 없으면 다른 임상과 비교 불가. N이 작으면 환자 한두 명에 수치가 크게 흔들린다. <b>독립위원회(BICR) 판정인지 연구자 판정인지 확인</b></td></tr>
+        <tr><td><strong>DCR</strong><br><span style="color:var(--ink-3);font-size:12px">질병조절률</span></td><td>(CR + PR + SD) ÷ 전체<br>SD: PR도 PD도 아닌 상태</td><td>세포독성이 약한 약, 완만한 종양</td><td>SD를 포함하므로 <b>ORR보다 항상 높게 나온다.</b> DCR만 강조하는 발표는 ORR이 낮다는 신호일 수 있다</td></tr>
+        <tr><td><strong>DoR</strong><br><span style="color:var(--ink-3);font-size:12px">반응 지속기간</span></td><td>반응(CR/PR) 도달 시점부터 진행·사망까지</td><td>ADC·이중항체·면역항암제 — 반응의 <b>내구성</b>이 차별점일 때</td><td>반응자만 대상으로 계산하므로 <b>모집단이 다르다.</b> ORR이 낮고 DoR만 길면 실제 이득 환자는 소수</td></tr>
+        <tr><td><strong>PFS</strong><br><span style="color:var(--ink-3);font-size:12px">무진행생존기간</span></td><td>무작위배정부터 진행 또는 사망까지</td><td>1·2차 치료 3상의 1차 지표로 가장 흔함</td><td>영상 평가 간격에 좌우된다(<b>assessment bias</b>). 군 간 평가 스케줄이 같은지 확인</td></tr>
+        <tr><td><strong>OS</strong><br><span style="color:var(--ink-3);font-size:12px">전체생존기간</span></td><td>무작위배정부터 모든 원인 사망까지</td><td><b>규제기관이 가장 신뢰하는 최종 지표</b></td><td>후속 치료(crossover)가 희석시킨다. 도달까지 오래 걸려 중간분석이 미성숙한 경우가 많다</td></tr>
+        <tr><td><strong>EFS · DFS · RFS</strong></td><td>EFS: 진행·재발·사망·치료중단 등 사건까지 / DFS·RFS: 수술 등으로 무병 상태가 된 후 재발까지</td><td>수술 전후 보조요법(adjuvant / neoadjuvant) 임상</td><td>"사건"의 정의가 임상마다 다르다 — <b>정의부터 확인</b></td></tr>
+        <tr><td><strong>pCR</strong><br><span style="color:var(--ink-3);font-size:12px">병리학적 완전관해</span></td><td>수술 전 치료 후 절제 표본에 잔존 침윤암이 없음</td><td>유방암 수술 전 보조요법의 가속승인 대리지표</td><td>pCR 개선이 항상 EFS·OS 개선으로 이어지지는 않는다</td></tr>
+        <tr><td><strong>MRD</strong><br><span style="color:var(--ink-3);font-size:12px">미세잔존질환</span></td><td>치료 후 남은 극소량 종양세포 검출 — NGS 또는 유세포분석, 통상 10⁻⁵ 민감도</td><td>혈액암(다발골수종·ALL). <b>2026년 CEPHEUS가 MRD 음성률을 1차 지표로 승인받은 최초 사례</b></td><td>측정 방법·민감도·시점이 임상마다 달라 <b>교차 비교가 특히 위험</b></td></tr>
+        <tr><td><strong>TTP · TTF · TTNT</strong></td><td>진행까지 / 치료 실패까지 / 다음 치료 시작까지의 시간</td><td>실사용데이터(RWD), 시퀀싱 연구</td><td>TTNT는 의사의 처방 습관에 좌우되어 약효만 반영하지 않는다</td></tr>
+      </tbody>
+    </table></div>
+
+    <h4 style="font-size:14.5px;margin:26px 0 11px">② 비항암 질환별 효능 지표</h4>
+    <div class="tw"><table>
+      <thead><tr><th style="min-width:110px">영역</th><th style="min-width:150px">지표</th><th style="min-width:190px">정의 · 계산</th><th style="min-width:190px">임상적 의미 기준</th></tr></thead>
+      <tbody>
+        <tr><td><strong>당뇨</strong></td><td>HbA1c 변화(%p)</td><td>3개월 평균 혈당의 지표. 기저 대비 변화폭</td><td>0.5%p 이상이면 임상적으로 유의미. 목표는 대부분 &lt;7.0%</td></tr>
+        <tr><td><strong>비만</strong></td><td>체중 변화율(%) · ≥5%/10%/15% 달성률 · <b>제지방 보존 비율</b></td><td>기저체중 대비 % 변화. 달성률은 역치를 넘은 환자 비율</td><td>5% 이상이면 대사 지표가 개선. <b>2026년 경쟁 축은 감량폭이 아니라 근육 보존과 중단율</b></td></tr>
+        <tr><td><strong>이상지질혈증</strong></td><td>LDL-C 변화(%) · 목표 도달률 · MACE</td><td>LDL-C 강하율. MACE = 심혈관 사망·심근경색·뇌졸중 복합</td><td>2026 목표: 초고위험 ASCVD <b>&lt;55 mg/dL</b>, 고위험 &lt;70</td></tr>
+        <tr><td><strong>류마티스</strong></td><td><b>ACR20 / 50 / 70</b> · DAS28</td><td>압통·종창 관절 수와 5개 항목 중 3개가 20%(50%·70%) 이상 개선한 환자 비율</td><td>ACR20은 최소 기준, <b>ACR50 이상이 실질적 차별점.</b> DAS28 &lt;2.6이 관해</td></tr>
+        <tr><td><strong>건선</strong></td><td><b>PASI 75 / 90 / 100</b> · DLQI</td><td>병변 면적·홍반·비늘·두께를 합산한 PASI가 75%(90%·100%) 개선한 비율</td><td>기준이 PASI 75 → <b>90/100으로 상향</b>. 목표는 PASI ≤2, DLQI &lt;2</td></tr>
+        <tr><td><strong>아토피</strong></td><td><b>EASI-75</b> · IGA 0/1 · 소양증 NRS</td><td>습진 중증도 지수 75% 개선 / 의사 전반평가 0~1 / 가려움 11점 척도</td><td>국내 급여 진입 기준이 <b>EASI ≥23</b> — 지표가 곧 시장 접근성</td></tr>
+        <tr><td><strong>IBD</strong></td><td>임상적 관해 · <b>내시경적 개선</b>(Mayo 0~1) · 조직학적 관해</td><td>증상 점수 + 내시경 소견</td><td>목표가 증상 → <b>내시경 개선으로 상향</b>됨. 8주 시점 재평가</td></tr>
+        <tr><td><strong>천식</strong></td><td>연간 악화율(AER) · FEV1 변화 · ACQ/ACT</td><td>경구스테로이드가 필요했던 악화 횟수 / 1초 강제호기량 / 증상 설문</td><td><b>악화 감소율이 생물학제제의 승부처</b> — 통상 30~50% 감소</td></tr>
+        <tr><td><strong>COPD</strong></td><td>연간 악화율 · FEV1 · CAT · mMRC</td><td>동일</td><td>2026 GOLD는 <b>악화 0회</b>를 목표로 하는 treat-to-target 개념 도입</td></tr>
+        <tr><td><strong>MASH</strong></td><td>MASH 해소(섬유화 악화 없이) · 섬유화 <b>1단계 이상</b> 개선</td><td>생검 조직학 판독. 최근엔 MRI-PDFF·VCTE·ELF 등 비침습검사(NIT)</td><td>판독자 간 변동이 커서 <b>위약군 반응률도 20~30%</b>에 달한다</td></tr>
+        <tr><td><strong>알츠하이머</strong></td><td><b>CDR-SB</b> · ADAS-Cog · ADCS-ADL</td><td>인지·기능 복합 척도의 기저 대비 변화</td><td>통계적 유의와 <b>임상적 체감</b>이 다르다 — 이 영역 최대 논쟁점. ARIA 발생률을 반드시 함께</td></tr>
+        <tr><td><strong>황반변성</strong></td><td><b>BCVA 문자 수 변화</b>(ETDRS) · 중심망막두께 · <b>연간 주사 횟수</b></td><td>최대교정시력의 문자 수 증감</td><td>비열등성 마진이 통상 <b>4문자</b>. 효능이 같으면 <b>투여 간격이 승부처</b></td></tr>
+        <tr><td><strong>골다공증</strong></td><td>골절 발생률 · BMD 변화(%) · T-score</td><td>척추·비척추·고관절 골절 발생 / 골밀도</td><td>BMD는 대리지표 — <b>골절 감소가 진짜 지표</b></td></tr>
+        <tr><td><strong>만성신장질환</strong></td><td>eGFR slope · UACR 변화 · 신장 복합 사건</td><td>연간 eGFR 감소 속도 / 알부민-크레아티닌 비</td><td>eGFR slope는 장기 결과의 인정된 대리지표. UACR 30%↓가 흔한 기준</td></tr>
+        <tr><td><strong>백신</strong></td><td><b>VE</b>(예방효능) · 항체가 GMT · seroconversion률</td><td>VE = 1 − (백신군 발생률 ÷ 대조군 발생률)</td><td>면역원성이 좋아도 예방효과와 직결되지 않는다 — <b>상관면역지표(CoP)</b>가 확립된 질환인지 확인</td></tr>
+      </tbody>
+    </table></div>
+
+    <h4 style="font-size:14.5px;margin:26px 0 11px">③ 안전성 · 내약성 지표</h4>
+    <div class="tw"><table>
+      <thead><tr><th style="min-width:150px">지표</th><th style="min-width:220px">정의</th><th>왜 중요한가</th></tr></thead>
+      <tbody>
+        <tr><td><strong>TEAE</strong> (치료 발현 이상사례)</td><td>투여 시작 후 발생한 모든 이상사례. 인과관계 무관</td><td>발생률만으로는 판단 불가 — 아래 세 지표와 함께 봐야 한다</td></tr>
+        <tr><td><strong>Grade 3+ 비율</strong></td><td>CTCAE 기준 중증 이상. Grade 5 = 사망</td><td><b>대조군 대비 초과분</b>이 진짜 신호. 단일군이면 계열 평균과 비교</td></tr>
+        <tr><td><strong>치료 중단율</strong><br><span style="color:var(--ink-3);font-size:12px">discontinuation due to AE</span></td><td>이상반응으로 투약을 완전히 중단한 환자 비율</td><td><span class="tag t-ok">가장 중요</span> 효과가 좋아도 환자가 못 견디면 처방이 유지되지 않는다. <b>상업성에 직결되는 단일 최고 지표</b></td></tr>
+        <tr><td><strong>용량 감량률 · 투여 지연율</strong></td><td>독성으로 용량을 줄이거나 스케줄을 미룬 비율</td><td>실제 임상에서 <b>목표 용량 강도(dose intensity)</b>를 유지할 수 있는지를 말해준다</td></tr>
+        <tr><td><strong>CRS · ICANS</strong></td><td>사이토카인 방출 증후군 / 면역효과세포 관련 신경독성. ASTCT 등급 체계</td><td>CAR-T·이중항체의 핵심 안전성. <b>Grade 3+ 비율과 발현 시점, 외래 투여 가능 여부</b>가 상업성을 가른다</td></tr>
+        <tr><td><strong>irAE</strong> (면역관련 이상반응)</td><td>갑상선·폐렴·대장염·간염 등 면역 과활성</td><td>면역항암제 고유. <b>고용량 스테로이드 사용률</b>이 중증도의 대리지표</td></tr>
+        <tr><td><strong>ILD / 폐렴</strong></td><td>간질성 폐질환</td><td><b>ADC(특히 DXd 계열)의 대표 독성</b> — 엔허투는 라벨 경고. 치명률이 있어 모니터링 부담이 처방을 제약</td></tr>
+        <tr><td><strong>ARIA-E / ARIA-H</strong></td><td>아밀로이드 관련 영상이상 — 부종 / 미세출혈</td><td>항아밀로이드 항체의 게이트키핑 요인. <b>APOE ε4 동형접합에서 고위험</b>, 감시 MRI 인프라가 필요</td></tr>
+        <tr><td><strong>MACE</strong></td><td>주요 심혈관 사건 복합(심혈관 사망·심근경색·뇌졸중)</td><td>JAK 억제제·비만약·당뇨약의 안전성 관문. <b>CVOT가 사실상 필수</b>인 이유</td></tr>
+        <tr><td><strong>ADA</strong> (항약물항체)</td><td>약물에 대한 면역반응으로 생긴 항체. 중화항체(NAb) 여부가 핵심</td><td>장기 투여 생물학제제에서 <b>시간이 갈수록 효과가 떨어지는 원인.</b> 잘 보도되지 않으므로 별도 확인</td></tr>
+        <tr><td><strong>TLS</strong> (종양용해증후군)</td><td>급격한 종양 붕괴로 인한 대사 이상</td><td>베네토클락스 ramp-up 등 <b>투여 물류에 제약</b>을 만든다</td></tr>
+      </tbody>
+    </table></div>
+
+    <h4 style="font-size:14.5px;margin:26px 0 11px">④ 약동학 · 약력학 · 삶의 질 · 통계</h4>
+    <div class="grid g2" style="margin-top:14px">
+      <div class="card">
+        <h4 style="font-size:13.5px;margin-bottom:10px">PK / PD</h4>
+        <table style="font-size:12.5px"><tbody>
+          <tr><td style="padding-left:0"><strong>AUC</strong></td><td>혈중농도-시간 곡선 아래 면적 = 총 노출량. <b>바이오시밀러 동등성의 핵심</b>(90% CI가 80~125% 이내)</td></tr>
+          <tr><td style="padding-left:0"><strong>Cmax · Tmax</strong></td><td>최고 혈중농도와 도달 시간</td></tr>
+          <tr><td style="padding-left:0"><strong>t½</strong></td><td>반감기 — 투여 간격을 결정. 항체 2~3주, BiTE형 이중항체는 수시간</td></tr>
+          <tr><td style="padding-left:0"><strong>Ctrough</strong></td><td>다음 투여 직전 최저농도. <b>생물학제제 TDM의 기준</b>(IBD에서 증량 vs 교체 판단)</td></tr>
+          <tr><td style="padding-left:0"><strong>MTD · RP2D</strong></td><td>최대내약용량 / 2상 권장용량 — 1상의 산출물</td></tr>
+          <tr><td style="padding-left:0"><strong>수용체 점유율</strong></td><td>표적에 실제로 결합한 비율. 용량 정당화 근거</td></tr>
+          <tr><td style="padding-left:0"><strong>knockdown %</strong></td><td>RNA 치료제의 표적 단백질 감소율. <b>임상적 이득과는 별개</b></td></tr>
+        </tbody></table>
+      </div>
+      <div class="card">
+        <h4 style="font-size:13.5px;margin-bottom:10px">삶의 질(PRO) · 통계</h4>
+        <table style="font-size:12.5px"><tbody>
+          <tr><td style="padding-left:0"><strong>PRO</strong></td><td>환자 보고 결과. EORTC QLQ-C30(항암), SF-36, EQ-5D</td></tr>
+          <tr><td style="padding-left:0"><strong>MCID</strong></td><td>최소 임상적 중요 차이 — <b>"통계적으로 유의"와 "환자가 체감"의 경계선</b></td></tr>
+          <tr><td style="padding-left:0"><strong>HR</strong></td><td>위험비. 1보다 작으면 시험군 유리. <b>중앙값 차이와 함께 봐야 한다</b></td></tr>
+          <tr><td style="padding-left:0"><strong>OR · RR</strong></td><td>오즈비 / 상대위험비 — 이분형 결과(달성률 등)에 사용</td></tr>
+          <tr><td style="padding-left:0"><strong>95% CI</strong></td><td>HR·OR은 1을, 차이값은 0을 포함하지 않아야 유의</td></tr>
+          <tr><td style="padding-left:0"><strong>NNT</strong></td><td>1명이 이득을 보게 하려면 몇 명을 치료해야 하는가 = 1 ÷ 절대위험감소. <b>절대 효과의 직관적 표현</b></td></tr>
+          <tr><td style="padding-left:0"><strong>비열등성 마진</strong></td><td>"이 정도 열등까지는 허용"의 사전 정의값. 시밀러·제형변경 임상의 핵심</td></tr>
+          <tr><td style="padding-left:0"><strong>추적기간 중앙값</strong></td><td>median follow-up. <b>"중앙값 미도달(NR)"의 의미를 판단하는 유일한 근거</b></td></tr>
+        </tbody></table>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:16px"><b>지표 하나로 임상의 성격을 읽는 법</b><br>
+    1차 지표가 <b>ORR</b>이면 → 단일군 초기 임상이거나 가속승인을 노리는 후기 라인 전략이다.<br>
+    1차 지표가 <b>PFS</b>면 → 무작위 3상이지만 OS까지는 아직 못 간 단계, 또는 OS 도달이 너무 오래 걸리는 질환이다.<br>
+    1차 지표가 <b>OS</b>면 → 정면 승부다. 성공하면 라인 교체까지 간다.<br>
+    1차 지표가 <b>MRD·pCR 같은 대리지표</b>면 → 개발 기간 단축을 노린 것이고, <b>확증임상 의무가 붙는다.</b><br>
+    비항암에서 1차 지표가 <b>악화율·목표 도달률</b>이면 → 단계 상승(step-up) 시장을 겨냥한 것이고, <b>중단율이 진짜 승부처</b>다.</div>
+  </div>
+
   <div class="sec">
     <h3>자주 나오는 오독 7가지</h3>
     <div class="grid g2" style="margin-top:16px">
@@ -683,15 +786,311 @@ td strong{font-weight:600}
       <div class="card"><h4 style="font-size:14px;margin-bottom:8px;color:var(--alert)">③ 상대위험 착시</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.62">"사망 위험 40% 감소"가 절대 생존 차이 1.9개월인 경우가 흔하다. <b>상대값과 절대값을 함께</b> 봐야 하며, 임상적 의미는 절대값에 있다.</p></div>
       <div class="card"><h4 style="font-size:14px;margin-bottom:8px;color:var(--alert)">④ 대리지표 과신</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.62">종양 축소·바이오마커 개선이 생존 연장으로 이어지지 않은 사례가 많다. 가속승인 후 <b>확증임상 실패로 철회</b>된 전례를 항상 염두에 둘 것.</p></div>
       <div class="card"><h4 style="font-size:14px;margin-bottom:8px;color:var(--alert)">⑤ 안전성을 발생률로만 보기</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.62">Grade 1~2가 많은 것과 <b>중단율이 높은 것</b>은 전혀 다른 문제다. 중단율·감량률·대조군 대비 초과분 세 가지를 본다.</p></div>
-      <div class="card"><h4 style="font-size:14px;margin-bottom:8px;color:var(--alert)">⑥ 규제 지정 = 승인 임박</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.62">Fast Track·희귀의약품 지정은 데이터의 질에 대한 판단이 아니다. 05번 탭의 파급력 서열을 기준으로 해석할 것.</p></div>
+      <div class="card"><h4 style="font-size:14px;margin-bottom:8px;color:var(--alert)">⑥ 규제 지정 = 승인 임박</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.62">Fast Track·희귀의약품 지정은 데이터의 질에 대한 판단이 아니다. 06번 탭의 파급력 서열을 기준으로 해석할 것.</p></div>
       <div class="card" style="grid-column:1/-1"><h4 style="font-size:14px;margin-bottom:8px;color:var(--alert)">⑦ "통계적 유의" = "임상적 의미"</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.62">N이 충분히 크면 아주 작은 차이도 p&lt;0.05가 된다. 알츠하이머 임상에서 반복적으로 논쟁이 되는 지점이 정확히 이것이다. <b>그 차이가 환자·의사에게 체감되는 크기인가</b>를 별도로 물어야 하고, 이 질문에 답하지 못하면 상업성 추정이 통째로 흔들린다.</p></div>
     </div>
   </div>
 </section>
 
+<!-- ==================== 05 치료 라인 ==================== -->
+<section class="pane" id="p-lines">
+  <div class="eyebrow">05 — Line of Therapy</div>
+  <h2>질환별 치료 라인</h2>
+  <p class="lede">약은 "그 병에 쓰는 약"이 아니라 <b>"그 병의 몇 번째 순서에 쓰는 약"</b>이다. 같은 약도 3차에서 1차로 올라가면 대상 환자가 몇 배로 늘고 매출 규모가 자릿수로 바뀐다. <b>라인이 곧 TAM</b>이며, 라인 이동이 이 산업 최대의 밸류에이션 이벤트다.</p>
+
+  <div class="callout w" style="margin-top:20px"><b>이 탭의 데이터는 2026년 8월 기준이고, 유효기간이 짧다.</b> 혈액암(다발골수종·CLL·MCL)과 방광암·전립선암은 1년 전 자료가 이미 틀린 경우가 많다. 각 표의 <b>최근 변화</b> 열에 붙은 날짜를 반드시 함께 읽고, 실무 인용 전에는 NCCN·ESMO 최신판과 국내 급여 고시를 대조할 것.</p></div>
+
+  <div class="sec">
+    <h3>라인이란 무엇인가 — 항암과 비항암은 다른 개념이다</h3>
+    <p class="note">같은 "1차·2차·3차"라는 말을 쓰지만 작동 방식이 완전히 다르다. 이걸 섞으면 TAM 추정이 통째로 틀어진다.</p>
+    <div class="card" style="margin-top:16px">
+      <figure class="fig" style="margin:0">
+        <svg viewBox="0 0 700 300" role="img" aria-label="항암은 이전 약을 끊고 다음 약으로 교체하는 구조이고, 비항암은 기존 약을 유지한 채 위에 얹는 누적 구조다">
+          <text x="14" y="20" font-size="11.5" fill="currentColor" opacity=".75">항암 — 교체(replacement)</text>
+          <line x1="14" y1="30" x2="330" y2="30" stroke="currentColor" opacity=".2"/>
+          <rect x="14" y="46" width="88" height="30" rx="5" style="fill:var(--accent)" opacity=".18"/><rect x="14" y="46" width="88" height="30" rx="5" fill="none" style="stroke:var(--accent)"/>
+          <text x="58" y="66" font-size="11" text-anchor="middle" fill="currentColor">1차</text>
+          <rect x="118" y="46" width="88" height="30" rx="5" fill="none" stroke="currentColor" opacity=".3"/><text x="162" y="66" font-size="11" text-anchor="middle" fill="currentColor" opacity=".45">2차</text>
+          <rect x="222" y="46" width="88" height="30" rx="5" fill="none" stroke="currentColor" opacity=".3"/><text x="266" y="66" font-size="11" text-anchor="middle" fill="currentColor" opacity=".45">3차</text>
+          <rect x="14" y="92" width="88" height="30" rx="5" fill="none" stroke="currentColor" opacity=".22"/><text x="58" y="112" font-size="11" text-anchor="middle" fill="currentColor" opacity=".3">중단</text>
+          <rect x="118" y="92" width="88" height="30" rx="5" style="fill:var(--accent)" opacity=".18"/><rect x="118" y="92" width="88" height="30" rx="5" fill="none" style="stroke:var(--accent)"/><text x="162" y="112" font-size="11" text-anchor="middle" fill="currentColor">2차</text>
+          <rect x="222" y="92" width="88" height="30" rx="5" fill="none" stroke="currentColor" opacity=".3"/><text x="266" y="112" font-size="11" text-anchor="middle" fill="currentColor" opacity=".45">3차</text>
+          <rect x="14" y="138" width="88" height="30" rx="5" fill="none" stroke="currentColor" opacity=".22"/><text x="58" y="158" font-size="11" text-anchor="middle" fill="currentColor" opacity=".3">중단</text>
+          <rect x="118" y="138" width="88" height="30" rx="5" fill="none" stroke="currentColor" opacity=".22"/><text x="162" y="158" font-size="11" text-anchor="middle" fill="currentColor" opacity=".3">중단</text>
+          <rect x="222" y="138" width="88" height="30" rx="5" style="fill:var(--accent)" opacity=".18"/><rect x="222" y="138" width="88" height="30" rx="5" fill="none" style="stroke:var(--accent)"/><text x="266" y="158" font-size="11" text-anchor="middle" fill="currentColor">3차</text>
+          <text x="14" y="196" font-size="10.5" fill="currentColor" opacity=".75">전환 트리거 — 영상학적 진행(RECIST) · 이분법적</text>
+          <text x="14" y="214" font-size="10.5" fill="currentColor" opacity=".75">라인마다 환자가 30~50% 이탈 → 뒤로 갈수록 시장이 작아진다</text>
+          <text x="14" y="232" font-size="10.5" fill="currentColor" opacity=".75">치료기간 = median PFS (수개월~수년)</text>
+          <text x="14" y="262" font-size="11" fill="currentColor" style="fill:var(--accent)">TAM = 유병환자 × 라인 도달률 × 치료기간(월)</text>
+          <line x1="352" y1="14" x2="352" y2="286" stroke="currentColor" stroke-dasharray="3 4" opacity=".3"/>
+          <text x="376" y="20" font-size="11.5" fill="currentColor" opacity=".75">비항암 — 강화(step-up / add-on)</text>
+          <line x1="376" y1="30" x2="686" y2="30" stroke="currentColor" opacity=".2"/>
+          <rect x="376" y="46" width="88" height="30" rx="5" style="fill:var(--accent)" opacity=".18"/><rect x="376" y="46" width="88" height="30" rx="5" fill="none" style="stroke:var(--accent)"/><text x="420" y="66" font-size="11" text-anchor="middle" fill="currentColor">1단계</text>
+          <rect x="376" y="92" width="88" height="30" rx="5" style="fill:var(--accent)" opacity=".18"/><rect x="376" y="92" width="88" height="30" rx="5" fill="none" style="stroke:var(--accent)"/><text x="420" y="112" font-size="11" text-anchor="middle" fill="currentColor">1단계</text>
+          <rect x="480" y="92" width="88" height="30" rx="5" style="fill:var(--accent)" opacity=".18"/><rect x="480" y="92" width="88" height="30" rx="5" fill="none" style="stroke:var(--accent)"/><text x="524" y="112" font-size="11" text-anchor="middle" fill="currentColor">2단계</text>
+          <rect x="376" y="138" width="88" height="30" rx="5" style="fill:var(--accent)" opacity=".18"/><rect x="376" y="138" width="88" height="30" rx="5" fill="none" style="stroke:var(--accent)"/><text x="420" y="158" font-size="11" text-anchor="middle" fill="currentColor">1단계</text>
+          <rect x="480" y="138" width="88" height="30" rx="5" style="fill:var(--accent)" opacity=".18"/><rect x="480" y="138" width="88" height="30" rx="5" fill="none" style="stroke:var(--accent)"/><text x="524" y="158" font-size="11" text-anchor="middle" fill="currentColor">2단계</text>
+          <rect x="584" y="138" width="88" height="30" rx="5" style="fill:var(--accent)" opacity=".18"/><rect x="584" y="138" width="88" height="30" rx="5" fill="none" style="stroke:var(--accent)"/><text x="628" y="158" font-size="11" text-anchor="middle" fill="currentColor">3단계</text>
+          <text x="376" y="196" font-size="10.5" fill="currentColor" opacity=".75">전환 트리거 — 목표치 미달(HbA1c·LDL-C·PASI) · 연속형</text>
+          <text x="376" y="214" font-size="10.5" fill="currentColor" opacity=".75">기존 약이 그대로 깔린 채 위에 얹힌다 → 상위 단계가 누적</text>
+          <text x="376" y="232" font-size="10.5" fill="currentColor" opacity=".75">치료기간 = 사실상 평생</text>
+          <text x="376" y="262" font-size="11" fill="currentColor" style="fill:var(--accent)">TAM = 유병환자 × 단계 도달률 × 잔여 수명</text>
+        </svg>
+        <figcaption>비항암에서 신약 진입은 기존 약을 100% 잠식하지 않는다 — PCSK9 저해제가 들어와도 스타틴 처방량은 유지된다. 반대로 항암에서 1차 신약은 기존 1차를 그대로 대체한다. <b>같은 "1차 진입"이라도 기존 약에 미치는 영향이 정반대</b>다.</figcaption>
+      </figure>
+    </div>
+    <div class="tw" style="margin-top:16px"><table>
+      <thead><tr><th>축</th><th>항암 (Oncology)</th><th>비항암 만성질환</th></tr></thead>
+      <tbody>
+        <tr><td><strong>라인 정의</strong></td><td>1L / 2L / 3L — 이전 요법 <b>실패 후 교체</b></td><td>Step 1~5 — 기존 약 위에 <b>얹는 강화</b></td></tr>
+        <tr><td><strong>전환 트리거</strong></td><td>영상학적 진행(PD, RECIST), 독성 불내성 — <b>이분법적·객관적</b></td><td>지표 목표 미달(HbA1c·LDL-C·PASI·DAS28·악화 횟수) — <b>연속형·역치 기반</b></td></tr>
+        <tr><td><strong>이전 약제</strong></td><td>대부분 <b>중단</b></td><td>대부분 <b>유지</b> — 메트포르민·스타틴·MTX·ICS는 계속 깔린다</td></tr>
+        <tr><td><strong>치료 기간</strong></td><td>진행/사망까지 (median PFS 수개월~수년)</td><td><b>평생</b> — LOT보다 지속성(persistence)이 핵심</td></tr>
+        <tr><td><strong>라인당 환자</strong></td><td>1L→2L 이탈률 30~50%대 — 뒤로 갈수록 급감</td><td>완만 — 오히려 상위 단계가 누적</td></tr>
+        <tr><td><strong>최대 리스크</strong></td><td>임상 실패, 라인 경쟁 진입</td><td><b>중도 이탈</b> — 무증상 질환의 동기 부족·자기부담금 (GLP-1 비만약이 대표)</td></tr>
+        <tr><td><strong>시밀러 충격 형태</strong></td><td>라인 이동으로 회피 여지 있음</td><td>동일 라인 내 가격 경쟁 → <b>ASP 붕괴형</b> (휴미라·스텔라라·아일리아)</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout" style="margin-top:16px"><b>예외 — 면역질환은 중간 형태다.</b> 류마티스·IBD·건선은 항약물항체(ADA)와 이차 무반응 때문에 항암처럼 <b>계열 교체(switch/cycling)</b>가 일어난다. 다만 MTX·5-ASA 같은 기저약은 남고, 교체는 <b>생물학제제 레이어 안에서만</b> 벌어지는 2층 구조다. 비항암 중 "라인"이라는 말이 가장 항암스럽게 쓰이는 영역이 여기다.</div>
+  </div>
+
+  <div class="sec">
+    <h3>신약은 어떻게 후기 라인에서 1차로 올라오는가</h3>
+    <p class="note">거의 모든 신약이 <b>맨 뒤에서 시작해 앞으로 걸어 올라온다.</b> 이 경로와 각 단계의 관문을 알면, 지금 3L에 있는 약이 언제 1L로 올라올지, 그때 매출이 몇 배가 될지를 역산할 수 있다.</p>
+    <div class="card" style="margin-top:16px">
+      <figure class="fig" style="margin:0">
+        <svg viewBox="0 0 700 340" role="img" aria-label="신약이 후기 라인에서 시작해 1차 치료로 전진하는 경로와, 각 단계에서 통과해야 하는 허가·가이드라인·급여 세 관문">
+          <text x="14" y="20" font-size="11.5" fill="currentColor" opacity=".75">① 임상 개발 순서 — 뒤에서 앞으로</text>
+          <rect x="14" y="34" width="150" height="52" rx="7" fill="none" stroke="currentColor" opacity=".45"/>
+          <text x="89" y="54" font-size="11" text-anchor="middle" fill="currentColor">3차 이상 · 불응성</text>
+          <text x="89" y="70" font-size="9.5" text-anchor="middle" fill="currentColor" opacity=".7">단일군 · ORR로 가속승인</text>
+          <text x="89" y="82" font-size="9.5" text-anchor="middle" fill="currentColor" opacity=".7">환자 적고 대조군 불필요</text>
+          <rect x="188" y="34" width="150" height="52" rx="7" fill="none" stroke="currentColor" opacity=".55"/>
+          <text x="263" y="54" font-size="11" text-anchor="middle" fill="currentColor">2차</text>
+          <text x="263" y="70" font-size="9.5" text-anchor="middle" fill="currentColor" opacity=".7">무작위 3상 · 표준요법 대조</text>
+          <text x="263" y="82" font-size="9.5" text-anchor="middle" fill="currentColor" opacity=".7">PFS/OS 요구</text>
+          <rect x="362" y="34" width="150" height="52" rx="7" style="fill:var(--accent)" opacity=".16"/>
+          <rect x="362" y="34" width="150" height="52" rx="7" fill="none" style="stroke:var(--accent)"/>
+          <text x="437" y="54" font-size="11" text-anchor="middle" fill="currentColor">1차</text>
+          <text x="437" y="70" font-size="9.5" text-anchor="middle" fill="currentColor" opacity=".75">대규모 3상 · OS 요구</text>
+          <text x="437" y="82" font-size="9.5" text-anchor="middle" fill="currentColor" opacity=".75">환자 수 최대 · 개발비 최대</text>
+          <rect x="536" y="34" width="150" height="52" rx="7" fill="none" stroke="currentColor" opacity=".35" stroke-dasharray="4 3"/>
+          <text x="611" y="54" font-size="11" text-anchor="middle" fill="currentColor" opacity=".8">보조요법 · 조기병기</text>
+          <text x="611" y="70" font-size="9.5" text-anchor="middle" fill="currentColor" opacity=".65">DFS/EFS · 추적 길다</text>
+          <text x="611" y="82" font-size="9.5" text-anchor="middle" fill="currentColor" opacity=".65">TAM 최대</text>
+          <line x1="164" y1="60" x2="186" y2="60" stroke="currentColor" stroke-width="1.4" marker-end="url(#arL)" opacity=".6"/>
+          <line x1="338" y1="60" x2="360" y2="60" stroke="currentColor" stroke-width="1.4" marker-end="url(#arL)" opacity=".6"/>
+          <line x1="512" y1="60" x2="534" y2="60" stroke="currentColor" stroke-width="1.4" marker-end="url(#arL)" opacity=".6"/>
+          <text x="14" y="118" font-size="10.5" fill="currentColor" opacity=".7">환자 수 · 매출 규모 →</text>
+          <rect x="150" y="106" width="536" height="10" rx="5" fill="none" stroke="currentColor" opacity=".25"/>
+          <path d="M150 116 L686 116 L686 106 L150 111 Z" style="fill:var(--accent)" opacity=".3"/>
+          <line x1="14" y1="140" x2="686" y2="140" stroke="currentColor" opacity=".2"/>
+          <text x="14" y="164" font-size="11.5" fill="currentColor" opacity=".75">② 각 라인마다 통과해야 하는 세 관문</text>
+          <rect x="14" y="178" width="212" height="86" rx="7" fill="none" stroke="currentColor" opacity=".4"/>
+          <text x="28" y="198" font-size="11" fill="currentColor" style="fill:var(--accent)">관문 1 — 허가 (FDA·EMA·식약처)</text>
+          <text x="28" y="216" font-size="10" fill="currentColor" opacity=".8">해당 라인의 적응증 라벨을 받는가</text>
+          <text x="28" y="232" font-size="10" fill="currentColor" opacity=".8">가속승인은 확증임상 조건부</text>
+          <text x="28" y="252" font-size="10" style="fill:var(--warn)">실패 사례: 글로피타맙 2L, FDA CRL</text>
+          <rect x="244" y="178" width="212" height="86" rx="7" fill="none" stroke="currentColor" opacity=".4"/>
+          <text x="258" y="198" font-size="11" fill="currentColor" style="fill:var(--accent)">관문 2 — 가이드라인</text>
+          <text x="258" y="216" font-size="10" fill="currentColor" opacity=".8">NCCN Category 1 · ESMO 권고 등재</text>
+          <text x="258" y="232" font-size="10" fill="currentColor" opacity=".8">실제 처방을 움직이는 것은 여기</text>
+          <text x="258" y="252" font-size="10" fill="currentColor" opacity=".7">가이드라인이 승인보다 6개월 늦기도</text>
+          <rect x="474" y="178" width="212" height="86" rx="7" style="fill:var(--warn)" opacity=".08"/>
+          <rect x="474" y="178" width="212" height="86" rx="7" fill="none" style="stroke:var(--warn)" opacity=".5"/>
+          <text x="488" y="198" font-size="11" style="fill:var(--warn)">관문 3 — 급여 (한국)</text>
+          <text x="488" y="216" font-size="10" fill="currentColor" opacity=".85">암질심 → 약평위 → 약가협상 → 고시</text>
+          <text x="488" y="232" font-size="10" fill="currentColor" opacity=".85">글로벌 대비 통상 1~3년 지연</text>
+          <text x="488" y="252" font-size="10" style="fill:var(--warn)">고가 병용은 허가 후에도 막힌다</text>
+          <line x1="226" y1="221" x2="242" y2="221" stroke="currentColor" stroke-width="1.4" marker-end="url(#arL)" opacity=".6"/>
+          <line x1="456" y1="221" x2="472" y2="221" stroke="currentColor" stroke-width="1.4" marker-end="url(#arL)" opacity=".6"/>
+          <rect x="14" y="284" width="672" height="44" rx="7" fill="none" stroke="currentColor" opacity=".25"/>
+          <text x="28" y="304" font-size="10.5" fill="currentColor">한국에서 "라인"은 가이드라인이 아니라 <tspan style="fill:var(--warn)">급여기준이 결정한다.</tspan> 지침상 1차라도 급여상 3차면 시장에서는 3차다.</text>
+          <text x="28" y="321" font-size="10.5" fill="currentColor" opacity=".8">→ 국내 매출 추정의 기준선은 <tspan style="fill:var(--accent)">허가 시점이 아니라 급여 등재 시점</tspan>이다.</text>
+          <defs><marker id="arL" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0, 7 3.5, 0 7" fill="currentColor" opacity=".65"/></marker></defs>
+        </svg>
+        <figcaption>후기 라인은 <b>승인받기 쉽고 시장이 작다</b>. 1차 라인은 <b>승인받기 어렵고 시장이 크다</b>. 그래서 신약은 뒤에서 승인을 따내 현금을 만들고, 그 돈으로 앞 라인 3상을 돌린다 — 파이프라인 가치 평가에서 "지금 몇 차에 있는가"보다 "앞 라인 3상이 돌고 있는가"가 더 중요한 이유다.</figcaption>
+      </figure>
+    </div>
+    <div class="grid g3" style="margin-top:16px">
+      <div class="card"><h4 style="font-size:13.5px;margin-bottom:7px">라인 전진의 3대 근거 유형</h4><p style="font-size:12.5px;color:var(--ink-2);line-height:1.62"><b>① 정면 대결</b> — 기존 1차 표준과 head-to-head 3상에서 우위 (엔허투 vs THP, EV+P vs 백금)<br><b>② 병용 강화</b> — 기존 표준에 얹어 이득 입증 (오시머티닙+화학요법)<br><b>③ 라인 신설</b> — 없던 자리를 만든다 (SCLC 1차 유지요법)</p></div>
+      <div class="card"><h4 style="font-size:13.5px;margin-bottom:7px">라인이 올라갈 때 생기는 공백</h4><p style="font-size:12.5px;color:var(--ink-2);line-height:1.62">엔허투가 유방암 1L로 가면 <b>2L가 비고</b>, 방광암에서 EV+P가 1L로 가면 백금이 2L로 밀린다. 이 <b>새로 생긴 공백이 후속 물질의 시장</b>이다 — 라인 전진 뉴스는 선발주자만의 호재가 아니다.</p></div>
+      <div class="card"><h4 style="font-size:13.5px;margin-bottom:7px">시퀀싱 딜레마</h4><p style="font-size:12.5px;color:var(--ink-2);line-height:1.62">가장 좋은 약을 1차에 쓰면 <b>2차에 쓸 카드가 사라진다.</b> ALK 폐암의 로라티닙, HER2 유방암의 엔허투가 대표 사례. NCCN도 "현대적 1L 이후의 최적 시퀀싱은 아직 정의되지 않았다"고 명시한다.</p></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>고형암 — 암종별 라인 <span class="tag t-ok" style="margin-left:auto">2026.08 기준</span></h3>
+    <p class="note">약제는 <b>성분명(상품명)</b> 순. 2024~2026년의 지배적 흐름은 <b>ADC의 전진 배치</b>와 <b>1차 병용 강화</b> 두 축이다.</p>
+    <div class="tw" style="margin-top:16px"><table>
+      <thead><tr><th style="min-width:120px">암종 / 아형</th><th style="min-width:220px">1차 (1L)</th><th style="min-width:200px">2차 (2L)</th><th style="min-width:190px">3차 이상</th><th style="min-width:150px">라인을 가르는 것</th></tr></thead>
+      <tbody>
+        <tr><td><strong>NSCLC</strong><br><span style="color:var(--ink-3);font-size:12px">EGFR 변이</span></td><td>오시머티닙(타그리소) 단독 / <b>오시머티닙+페메트렉시드·백금</b>(FLAURA2, mOS 47.5개월) / <b>아미반타맙(리브리반트)+레이저티닙(렉라자)</b>(MARIPOSA, HR 0.75)</td><td>아미반타맙+화학요법(MARIPOSA-2) · 오시머티닙+백금 지속(COMPEL) · <b>다토포타맙 데룩스테칸(다트로웨이)</b></td><td>텔리소투주맙 베도틴(엠렐리스, c-MET 고발현) · 트라스투주맙 데룩스테칸(엔허투, HER2) · 화학요법</td><td>변이 아형(Exon19/L858R vs Exon20) · 뇌전이 · 수행능력 · <b>c-MET 단백 발현(2026 신규)</b></td></tr>
+        <tr><td><strong>NSCLC</strong><br><span style="color:var(--ink-3);font-size:12px">ALK 양성</span></td><td>로라티닙(로비큐아) / 알렉티닙(알레센자) / 브리가티닙(알룬브릭)</td><td>1L 알렉티닙·브리가티닙 → 로라티닙. <b>1L 로라티닙 실패 시 표준 부재</b></td><td>백금 화학요법 ± 베바시주맙 <span class="tag t-warn">추정</span></td><td><b>1L 선택이 2L 옵션을 결정하는 시퀀싱 딜레마</b> · 뇌전이 · 로라티닙 CNS 부작용</td></tr>
+        <tr><td><strong>NSCLC</strong><br><span style="color:var(--ink-3);font-size:12px">드라이버 없음</span></td><td>PD-L1 ≥50%: 펨브롤리주맙(키트루다)·세미플리맙·아테졸리주맙 단독, 또는 IO+화학요법, 니볼루맙+이필리무맙<br>PD-L1 &lt;50%: <b>화학요법+IO 병용 선호</b></td><td>1L에 IO를 받았으면 <b>백금 더블렛 화학요법</b></td><td>페메트렉시드/나브-파클리탁셀/젬시타빈 · <b>텔리소투주맙 베도틴</b> · <b>엔허투(HER2)</b></td><td><b>PD-L1 TPS</b>(≥50 / 1~49 / &lt;1) · 조직형 · 자가면역 병력 · c-MET·HER2 단백(3L 신규)</td></tr>
+        <tr><td><strong>SCLC</strong></td><td>더발루맙(임핀지) 또는 아테졸리주맙(티쎈트릭) + 백금/에토포시드<br><b>1L 유지: 루르비넥테딘(젭젤카)+아테졸리주맙</b> — 2025.10 승인, 라인 자체가 신설</td><td><b>탈라타맙(임델트라)</b> — DLL3×CD3 이중항체, 2025.11 정식승인 · 루르비넥테딘 단독</td><td>표준 부재. 백금 재도전·토포테칸 <span class="tag t-warn">추정</span></td><td>병기(제한 vs 확장) · 유도 후 반응 여부 · 백금 무재발 기간 · 혈액학적 기능</td></tr>
+        <tr><td><strong>유방암</strong><br><span style="color:var(--ink-3);font-size:12px">HR+/HER2−</span></td><td>아로마타제 억제제 + CDK4/6 억제제 — <b>리보시클립(키스칼리)이 유일한 Category 1</b>(NCCN v4.2026), 아베마시클립·팔보시클립 2A</td><td><b>바이오마커가 갈림길</b> — PIK3CA: 이나볼리십+풀베스트란트+팔보시클립(Cat 1) / AKT1·PTEN: 카피바세르팁(트룩캅)(Cat 1) / ESR1: 엘라세스트란트·임루네스트란트·베프데게스트란트</td><td><b>엔허투</b>(HER2-low 및 <b>ultralow</b>) · 사시투주맙 고비테칸(트로델비) · 다토포타맙 데룩스테칸 · 단일 화학요법</td><td>PIK3CA/AKT1/PTEN/ESR1 변이 — <b>진행 시점마다 반복 검사</b> · HER2 IHC 점수 · BRCA</td></tr>
+        <tr><td><strong>유방암</strong><br><span style="color:var(--ink-3);font-size:12px">HER2 양성</span></td><td>도세탁셀+트라스투주맙+퍼투주맙(THP) — 20년 표준<br><b>신규: 엔허투+퍼투주맙</b> — DESTINY-Breast09, mPFS 40.7 vs 26.9개월</td><td>투카티닙(투키사)+카페시타빈+트라스투주맙(Cat 1, <b>CNS 진행에도</b>) · <b>엔허투</b>(Cat 1)</td><td>T-DM1(캐싸일라) — 엔허투 부적합 시 · 라파티닙+카페시타빈 <span class="tag t-warn">추정</span></td><td>뇌전이 → 투카티닙 우선 · <b>1L에 엔허투를 쓰면 2L가 빈다</b> · ILD 위험</td></tr>
+        <tr><td><strong>유방암</strong><br><span style="color:var(--ink-3);font-size:12px">삼중음성</span></td><td>CPS ≥10: 화학요법+펨브롤리주맙 / 트로델비+펨브롤리주맙<br>CPS &lt;10·BRCA 야생형: <b>트로델비 또는 다트로웨이(둘 다 Cat 1)</b><br>CPS &lt;10·BRCA 변이: 올라파립(린파자)·탈라조파립(Cat 1)</td><td colspan="2">면역요법 지속 · 추가 ADC · 이전 노출 기반 화학요법 <span class="tag t-warn">추정</span></td><td><b>PD-L1 CPS 10 컷오프</b> · 생식세포 BRCA · 이전 taxane 노출 · 무병기간</td></tr>
+        <tr><td><strong>위암·GEJ</strong></td><td>HER2+: 펨브롤리주맙+트라스투주맙+화학요법 (<b>CPS ≥1로 적응증 축소</b>)<br>HER2−: <b>PD-L1 CPS × CLDN18.2 2축 매트릭스</b> — CPS≥10은 니볼루맙·티슬렐리주맙 병용 / CLDN18.2 양성·CPS 낮으면 <b>졸베툭시맙(빌로이)</b></td><td>HER2+: <b>엔허투가 2025년 표준 교체</b>(DESTINY-Gastric04) — 라무시루맙+파클리탁셀 대체<br>HER2−: 라무시루맙(사이람자)+파클리탁셀</td><td>트리플루리딘/티피라실(론서프) · 이리노테칸 <span class="tag t-warn">추정</span></td><td>HER2 → PD-L1 CPS(1/5/10 컷오프가 약제별 상이) → <b>CLDN18.2 IHC(신규 필수 검사)</b> → MSI-H</td></tr>
+        <tr><td><strong>대장직장암</strong></td><td>MSI-H/dMMR(약 5%): <b>화학요법을 건너뛰고 니볼루맙+이필리무맙</b><br>RAS 변이: FOLFOXIRI+베바시주맙<br><b>BRAF V600E: FOLFOX/FOLFIRI+엔코라페닙+세툭시맙</b>(2L→1L 전진, BREAKWATER)<br>야생형: 좌측은 항EGFR, 우측은 베바시주맙</td><td>백본 교체(FOLFOX ↔ FOLFIRI) ± 표적 · BRAF V600E 미사용 시 엔코라페닙+세툭시맙</td><td>트리플루리딘–티피라실 ± 베바시주맙 → 레고라페닙(스티바가) 또는 프룩인티닙(프루자클라)</td><td><b>MSI/MMR이 최우선 분기</b> · RAS 변이(항EGFR 절대 조건) · BRAF V600E · <b>원발 부위 좌/우</b></td></tr>
+        <tr><td><strong>전립선암</strong></td><td>mHSPC: ADT+ARPI 더블렛(아비라테론·아팔루타마이드·엔잘루타마이드·다롤루타마이드) / 트리플렛(+도세탁셀)<br><b>2026.7 신규: ADT+ARPI+플루빅토(Lu-177 PSMA-617)</b> — PSMAddition, rPFS HR 0.67<br>BRCA2: +니라파립 / PTEN 결손: +카피바세르팁</td><td colspan="2">mCRPC — 순번보다 <b>이전 노출 이력</b>으로 배치: ARPI(미사용 시) · 도세탁셀 → 카바지탁셀 · PARP 억제제(HRR 변이) · 플루빅토(PSMA 양성) · 라듐-223(골전이 우세)</td><td>거세 민감/저항 · 종양 부담 · <b>PSMA-PET 양성</b> · HRR 변이 · PTEN 결손 · 골 vs 내장 전이</td></tr>
+        <tr><td><strong>신세포암</strong></td><td>IO 기반 4개 요법 — 니볼루맙+이필리무맙(9년 OS 31%, <b>육종양에 강력</b>) / 카보잔티닙+니볼루맙 / 렌바티닙+펨브롤리주맙(<b>ORR 71%</b>) / 악시티닙+펨브롤리주맙</td><td>VEGFR-TKI 단독(카보잔티닙·렌바티닙) · <b>벨주티판(웰리렉, HIF-2α)</b> · 렌바티닙+벨주티판(LITESPARK-011, PFS 14.8 vs 10.7) · <b>IO 재도전은 배제</b>(CONTACT-03 실패)</td><td>미사용 VEGFR-TKI · 벨주티판 · 에베로리무스 조합</td><td>IMDC 위험도(예후는 유효하나 <b>1L을 지시하진 못함</b>) · 육종양 분화 · 종양 부담·진행 속도 · <b>검증된 예측 바이오마커 부재</b></td></tr>
+        <tr><td><strong>흑색종</strong></td><td><b>BRAF 변이와 무관하게 면역요법 우선</b> — 니볼루맙+이필리무맙(10년 흑색종 특이생존 52%) / 니볼루맙+렐라틀리맙(옵두알라그) / 단독 IO<br>BRAF/MEK는 급속 진행·증상성 뇌전이 등 제한적 상황만</td><td>BRAF V600: BRAF/MEK 억제제 · BRAF 야생형: 니볼루맙+이필리무맙 · 리필류셀(암타그비, TIL) <span class="tag t-warn">추정</span></td><td>TIL·조작 TIL(OBX-115, ORR 67%) · 종양용해 바이러스 RP1+니볼루맙</td><td><b>DREAMseq</b>: IO 선행군이 표적 선행군 대비 OS 20.3%p 우위 → <b>순서 자체가 근거</b> · 증상성 뇌전이 · LDH</td></tr>
+        <tr><td><strong>간세포암</strong></td><td>아테졸리주맙+베바시주맙(IMbrave150) / 더발루맙+트레멜리무맙(STRIDE) / 부적합 시 렌바티닙·소라페닙</td><td><b>표준 부재</b> — 2026년에도 "표준화 합의"가 논문 주제. 실무는 렌바티닙·레고라페닙·카보잔티닙·라무시루맙(AFP≥400)</td><td>2L 미사용 TKI 순차 <span class="tag t-alert">3L 표준 없음</span></td><td><b>간기능(Child-Pugh A vs B/C)</b>이 최상위 · 식도정맥류(베바시주맙 금기) · <b>바이러스 병인</b> — 국내는 HBV 기반이 압도적</td></tr>
+        <tr><td><strong>췌장암</strong></td><td>전신상태 3분할 — 양호: FOLFIRINOX / NALIRIFOX / 중간: 젬시타빈+나브-파클리탁셀 / 불량: 젬시타빈 단독<br>1L 유지: 생식세포 BRCA면 올라파립(POLO)</td><td>1L 젬시타빈 계열 → 5-FU + 나노리포조말 이리노테칸(오니바이드) · 1L FOLFIRINOX → 젬시타빈+나브-파클리탁셀 교차</td><td><span class="tag t-alert">표준 없음</span> — 임상시험 권고</td><td><b>수행능력(ECOG PS)이 가장 강력</b> · BRCA/PALB2 · MSI-H · NTRK. <b>12개 암종 중 라인 변화가 가장 적다</b></td></tr>
+        <tr><td><strong>난소암</strong></td><td>카보플라틴+파클리탁셀 ± 베바시주맙 → <b>유지요법으로 이행</b><br>BRCA 변이: 올라파립(2년)·루카파립(2년)·니라파립(3년) / HRD 양성: 루카파립·니라파립·올라파립+베바시주맙</td><td>백금 감수성 재발(PFI ≥6개월): 백금 재도전 → PARP 유지 · <b>PARP 재도전+베바시주맙</b>(2026 근거)</td><td>백금 저항성: 미르베툭시맙 소라브탄신(엘라헤어, FRα≥75%) · <b>2026 신규 2종</b> — 펨브롤리주맙+파클리탁셀(2026.2 미국), 렐라코릴란트+나브-파클리탁셀(2026.3)</td><td><b>BRCA·HRD 상태</b>(유지요법의 절대 기준) · <b>무백금기간(PFI)</b> · FRα 발현율 · 이전 PARP 노출</td></tr>
+        <tr><td><strong>방광·요로상피암</strong></td><td><b>엔포투맙 베도틴(파드셉)+펨브롤리주맙(EV+P)</b> — EV-302, mOS <b>31.5 vs 16.1개월</b>. <b>시스플라틴 적격·PD-L1 무관 전 환자군 이득</b></td><td>FGFR2/3 변이: <b>어다피티닙(발버사)</b>(THOR, mOS 12.1 vs 7.8) · 야생형: 백금 화학요법(1L에서 밀려남)</td><td>미사용 백금·탁산 <span class="tag t-warn">추정</span></td><td><b>FGFR2/3 분자검사 필수</b> · 시스플라틴 적격 여부·PD-L1은 <b>EV+P 시대에 중요도 급락</b></td></tr>
+      </tbody>
+    </table></div>
+    <div class="srcline"><b>출처</b> NCCN Breast v4.2026 · ASCO Living Guideline NSCLC v2026.3.0 · ESMO 2026 CRC · SITC 2026 RCC · 각 FDA 승인 공고 및 학회 리뷰(2024~2026) <span class="tag t-ok">웹 확인</span><br><b>재확인 권장</b> 간세포암(최신성 가장 약함) · 췌장암 KRAS 표적 승인 여부 · 방광암 트로델비 적응증 상태 · 대부분 암종의 국내 급여 세부 기준</div>
+  </div>
+<div class="sec">
+    <h3>혈액암 — 질환별 라인 <span class="tag t-ok" style="margin-left:auto">2026.08 기준</span></h3>
+    <p class="note">2024~2026년 사이 라인 구조가 <b>가장 빠르게 뒤집힌 영역</b>이다. 특히 다발골수종·CLL·맨틀세포림프종은 1년 전 자료가 이미 틀린 경우가 많다.</p>
+    <div class="tw" style="margin-top:16px"><table>
+      <thead><tr><th style="min-width:110px">질환</th><th style="min-width:210px">1차 (1L)</th><th style="min-width:200px">2차 (2L)</th><th style="min-width:190px">3차 이상</th><th style="min-width:150px">라인을 가르는 것</th></tr></thead>
+      <tbody>
+        <tr><td><strong>다발골수종</strong></td><td>항-CD38 기반 <b>4제</b>로 수렴 — 이식 적합: D-VRd(2024.7) / 이식 부적합: Isa-VRd(2024.9), <b>D-VRd(2026.1, CEPHEUS)</b><br><span style="color:var(--ink-3);font-size:12px">CEPHEUS는 MRD 음성률을 1차 지표로 승인된 최초 4제</span></td><td><b>카빅티(cilta-cel) CAR-T가 2L로 전진</b> — ≥1 prior line, 레날리도마이드 불응 조건(CARTITUDE-4)<br>블렌렙+Vd(2025.10 재승인, ≥2 라인) · 이전과 기전이 다른 3제</td><td>3L: 아베크마(ide-cel, ≥2 라인)<br>4L+: <b>이중항체 4종이 라벨상 ≥4 prior lines</b> — 테크베일리·엘렉스피오·리노자이픽(BCMA) · <b>탈베이(GPRC5D)</b></td><td>이식 적합성 · 고위험 세포유전(del17p 등) · <b>레날리도마이드 불응 여부</b>(카빅티 2L 라벨 조건) · <b>BCMA 사전 노출</b> → 탈베이가 시퀀싱 탈출구 · CAR-T 제조 리드타임</td></tr>
+        <tr><td><strong>DLBCL</strong></td><td>R-CHOP / <b>Pola-R-CHP</b>(POLARIX, IPI 2 이상)<br>2026 신규 근거: 몬주비+레날리도마이드+R-CHOP(frontMIND, HR 0.75) — <b>즉시 practice change는 아니라는 평</b></td><td><b>재발까지의 시간이 분기점</b><br>12개월 내 재발·원발 불응 → <b>CAR-T 선호</b>(예스카타 ZUMA-7 / 브레얀지 TRANSFORM). 자가이식이 아니다<br>12개월 초과 → 구제항암 후 자가이식</td><td>이중항체(컬럼비·엡킨리) · ADC(진론타 CD19 · 몬주비+레날리도마이드)</td><td><b>≤12개월 vs &gt;12개월 재발</b>이 가장 강력 · 아페레시스 접근성·제조 리드타임 · 세포기원(GCB vs ABC)<br><span style="color:var(--warn)">규제 리스크 실례: 컬럼비+GemOx 2L 진입이 FDA CRL(2025), EU만 승인</span></td></tr>
+        <tr><td><strong>여포성림프종</strong></td><td>무증상 저부하는 경과관찰 · 치료 필요 시 BR·R-CHOP·R² <span class="tag t-warn">추정</span></td><td>다른 계열 항-CD20 화학면역요법 · R²<br>이중항체 2L 진입 임상 진행 중(CELESTIMO·EPCORE FL-1)</td><td>CAR-T 3종 모두 3L+ — <b>브레얀지 CR 94%</b>(TRANSCEND-FL) · 이중항체 룬수미오·엡킨리·오드스포노(EU만)</td><td>종양 부하(GELF) · <b>POD24</b>(24개월 내 진행) · 조직학적 형질전환 여부 · CAR-T(장기 plateau·고독성) vs 이중항체(오프더셸프·저독성)</td></tr>
+        <tr><td><strong>CLL/SLL</strong></td><td><b>화학면역요법은 사실상 퇴출</b> — 지속형 BTKi(칼퀀스·브루킨사가 이브루티닙 대비 선호) 또는 고정기간 Ven-Obi(CLL14, 5년 PFS 62.6%)<br><b>2026.2 신규: 아칼라브루티닙+베네토클락스</b> — 최초의 전경구·고정기간 1차 병용(AMPLIFY)</td><td colspan="2"><b>숫자 라인보다 "무엇에 실패했는가"</b>로 정리해야 정확하다<br>1L BTKi 실패 → 베네토클락스 기반 / 1L 고정기간 Ven 실패 → 재투여 또는 BTKi<br><b>공유결합 BTKi 실패 → 제이피르카(피르토브루티닙)</b> — 2025.12 정식승인으로 요건이 "공유결합 BTKi 사전 노출"만으로 완화 = 사실상 2L 전진<br>BTKi+BCL2i 이중 불응 → <b>브레얀지</b>(CLL 유일 CAR-T, 2024.3 가속승인)</td><td><b>TP53 변이/del(17p)</b> → 지속형 BTKi 선호(Ven-Obi는 열위) · IGHV 변이 여부 · 동반 심혈관질환 · 고정기간 vs 지속투여 선호</td></tr>
+        <tr><td><strong>맨틀세포림프종</strong></td><td><b>자가이식 시대 종료</b> — TRIANGLE 5년: 이브루티닙 기반 레짐에 ASCT를 더해도 이득 없음<br>젊은층: 무화학요법 BTKi 3제(BOVEN·TrAVeRse 등, ORR 86~100%)<br>고령: <b>ECHO</b>(아칼라브루티닙+BR)가 SHINE 대체</td><td colspan="2">BTKi 노출 여부로 분기 → 피르토브루티닙 · CAR-T(테카투스 ORR 91% / 브레얀지) · 이중항체 컬럼비(CAR-T 실패 후에도 활성) · 진론타 · 동종이식</td><td><b>TP53 변이가 최강 예후인자</b> — 고강도 항암 이득 없음, CAR-T 관해도 짧다 → 조기 무화학요법 3제<br><span style="color:var(--ink-3);font-size:12px">특이: BTKi 전방 배치로 CAR-T가 상대적으로 뒤로 밀린 유일한 질환</span></td></tr>
+        <tr><td><strong>AML</strong></td><td colspan="2"><b>라인이 아니라 「고강도 항암 적합 여부 × 유전자 변이」 매트릭스</b><br>Fit — CBF: 7+3 / <b>FLT3: 7+3+미도스타우린 또는 퀴자티닙(반플리타)</b> / TP53: 임상시험 권고<br>Unfit — 일반: <b>베네토클락스+HMA</b> / IDH1: 아이보시데닙+아자시티딘(mOS 24 vs 7.9개월) / <b>TP53: HMA 단독</b>(베네토클락스 추가 이득 없음)</td><td>재발/불응 — <b>메닌 억제제 등장</b>: 레부포지(레부메닙, KMT2A·NPM1) · <b>KOMZIFTI(지프토메닙, 2025.11 NPM1)</b> · 조스파타(FLT3) · IDH 억제제<br><b>최종 목표는 언제나 동종이식으로의 브리징</b></td><td><b>CAR-T·이중항체가 없다</b> — 표적(CD33·CD123·CLL-1)이 정상 조혈줄기세포에도 발현. 저분자 정밀표적의 무대</td></tr>
+        <tr><td><strong>ALL</strong> <span style="color:var(--ink-3);font-size:12px">(성인 B-ALL)</span></td><td><b>이중항체가 1차 공고요법으로 전진</b> — 블린사이토(블리나투모맙) 2024.6 FDA 승인, E1910에서 <b>5년 OS 82.4% vs 62.5%</b><br>Ph+: TKI+화학요법 또는 +블리나투모맙(무화학요법)</td><td colspan="2">블린사이토 · 베스폰사(이노투주맙, CD22 ADC) · <b>CAR-T 3종</b> — 킴리아·테카투스·<b>오캇질(obe-cel, 2024.11, CRS/ICANS 낮은 설계)</b></td><td>Ph 상태 · <b>MRD가 가장 중요한 조정 변수</b> · CD19/CD22 사전 노출 · 동종이식 적합성</td></tr>
+        <tr><td><strong>MDS</strong></td><td colspan="2"><b>라인 개념이 약하고 저위험/고위험 이분법이 실질적 라인</b><br>저위험 — del(5q): 레날리도마이드 / RS≥15% 또는 SF3B1: <b>레블로질(루스파터셉트)이 Category 1 preferred로 격상</b>(COMMANDS 60% vs 35%) / 대안 라이텔로(이메텔스타트, 2024.6)<br>고위험 — HMA(아자시티딘·데시타빈·인쿠비) → <b>동종이식이 유일한 근치</b></td><td>HMA 실패 후 <b>표준 구제요법 없음</b> — 최대 미충족 수요<br><span style="color:var(--warn)">2025.6 VERONA 3상 실패(VEN+AZA, OS 미달) · 타미바로텐도 실패 → 고위험 MDS는 3상 실패가 반복된 고위험 개발 영역</span></td><td>IPSS-M(분자정보 반영) 위험도 · 이식 적합성 · del(5q)·SF3B1·IDH1 변이</td></tr>
+        <tr><td><strong>골수섬유증</strong></td><td colspan="2"><b>"라인"이 아니라 「표현형」으로 고른다</b> — JAK 억제제 4종은 순차 대체가 아니라 병렬 선택지<br>자카비(룩소리티닙) — 혈구수 보존형 / 인레빅(페드라티닙) — 룩소리티닙 후 구제 / <b>본조(파크리티닙) — 혈소판 &lt;50,000</b> / <b>오자라(모멜로티닙) — 빈혈 동반(Hb&lt;10), ACVR1 억제</b></td><td>동종이식이 유일한 근치<br><b>미충족: 현행 JAK 억제제는 질병 변형(섬유화 역전)에 도달 못 함</b> → 셀리넥서·펠라브레십·나비토클락스 등 JAK+제2기전 병용 3상이 2026~27 최대 촉매</td><td><b>혈소판 수치와 헤모글로빈</b>이 약제를 직접 지정 · 비장 크기·전신증상 · JAK 사전 노출</td></tr>
+      </tbody>
+    </table></div>
+
+    <h4 style="font-size:14.5px;margin:26px 0 11px">신규 모달리티가 지금 어느 라인에 있나</h4>
+    <div class="tw"><table>
+      <thead><tr><th>질환</th><th>CAR-T</th><th>이중항체</th><th>2024~2026 이동</th></tr></thead>
+      <tbody>
+        <tr><td><strong>다발골수종</strong></td><td>카빅티 <b>2L+</b> · 아베크마 3L+ · anito-cel 미승인(길리어드가 아셀엑스 78억$ 인수)</td><td>4종 모두 라벨 <b>5L+</b>(≥4 prior). 단 MajesTEC-3/9·MonumenTAL-3로 <b>2L 근거 확보 완료</b></td><td>CAR-T 4L+ → 2L+. <b>이중항체 2L 라벨 확장이 2026~27 최대 이벤트</b></td></tr>
+        <tr><td><strong>DLBCL</strong></td><td>예스카타·브레얀지 <b>2L</b>(12개월 내 재발/불응)</td><td>미국 3L+ / 컬럼비+GemOx만 EU 2L+</td><td>CAR-T는 2022년 이미 2L. <b>이중항체 2L는 미국 규제에서 한 번 꺾임</b></td></tr>
+        <tr><td><strong>여포성림프종</strong></td><td>3종 모두 3L+ (정체)</td><td>미국 3L+ · <b>국내는 엡킨리 R² 병용이 2026.7 2L 허가</b></td><td>국내가 미국보다 앞선 드문 사례</td></tr>
+        <tr><td><strong>CLL</strong></td><td>브레얀지 3L+ (BTKi+BCL2i 실패 후)</td><td>없음</td><td>정체 — 저분자가 주역</td></tr>
+        <tr><td><strong>맨틀세포림프종</strong></td><td>테카투스·브레얀지 2L+/3L+</td><td>컬럼비, GLOBRYTE 3상 대기</td><td><b>BTKi 전방 배치로 CAR-T가 상대적 후퇴</b>. WINDOW-3·CARMAN이 1L 진입 시도</td></tr>
+        <tr><td><strong>ALL</strong></td><td>킴리아·테카투스·오캇질 2L+/3L+</td><td><b>블린사이토 1L 공고요법</b></td><td>이중항체가 재발 세팅 → 1차 공고로 전진</td></tr>
+        <tr><td><strong>AML · MDS · 골수섬유증</strong></td><td colspan="2" style="color:var(--warn)"><b>없다</b> — 골수계 표적(CD33·CD123·CLL-1)이 정상 조혈줄기세포에도 발현</td><td>저분자(메닌·FLT3·IDH·JAK)의 무대</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout" style="margin-top:16px"><b>왜 혈액암이 신규 모달리티의 첫 무대인가 — 고형암으로 선형 외삽하면 안 되는 이유</b><br>
+    <b>① 계열 제한 항원</b> — CD19·BCMA는 악성세포에 풍부하고 필수 정상조직엔 거의 없다. 고형암 항원(HER2·EGFR)은 이질적이고 정상조직에도 발현한다. <b>혈액암에는 "죽여도 되는 세포 계열"이 있고 고형암엔 없다.</b><br>
+    <b>② 부작용을 메울 수 있다</b> — B세포를 전멸시켜도 면역글로불린 보충으로 관리된다. 고형암엔 이런 안전 마진이 없다.<br>
+    <b>③ 도달률 50배 차이</b> — 주입된 CAR-T 중 고형암 부위에 도달하는 비율은 <b>1% 미만</b>, 혈액암은 <b>50% 이상</b> 축적된다.<br>
+    <b>④ 면역억제 미세환경</b> — 고형암 TME에는 Treg·MDSC·TAM이 풍부하다.<br>
+    <b>⑤ 항원 소실률</b> — 고형암 <b>30% 초과</b> vs 다발골수종 <b>5~10%</b>.<br>
+    <span style="font-size:12px;color:var(--ink-3)">출처: Journal of Hematology &amp; Oncology, "Challenges and limitations of CAR T-cell therapies in solid tumors"</span></div>
+  </div>
+
+  <div class="sec">
+    <h3>비항암 만성질환 — 단계별 치료 <span class="tag t-ok" style="margin-left:auto">2026.08 기준</span></h3>
+    <p class="note">여기서 "라인"은 교체가 아니라 <b>누적</b>이다. 아래 표의 상위 단계는 하위 단계 약을 계속 쓰면서 얹는 구조로 읽어야 한다.</p>
+    <div class="tw" style="margin-top:16px"><table>
+      <thead><tr><th style="min-width:110px">질환</th><th style="min-width:200px">1단계</th><th style="min-width:200px">2~3단계</th><th style="min-width:180px">4단계 이상</th><th style="min-width:170px">상향(step-up) 트리거</th></tr></thead>
+      <tbody>
+        <tr><td><strong>제2형 당뇨</strong></td><td>메트포르민<br><b>단, ASCVD·심부전·CKD·비만 동반 시 HbA1c와 무관하게 GLP-1 또는 SGLT-2를 처음부터</b> — 메트포르민 선행 불필요(2026 ADA 핵심)</td><td>미사용 계열 추가(메트포르민+SGLT-2+GLP-1 3제) · DPP-4 · TZD · SU(후순위)</td><td>기저 인슐린 ± GLP-1 고정용량 → 기저-볼루스 다회요법 · <b>모든 인슐린 사용 성인에 자동인슐린주입(AID) 제공(2026 신규)</b></td><td>HbA1c 목표(대부분 &lt;7.0%) 3개월 미달 · <b>동반질환 존재 자체</b>가 트리거 · uACR ≥100 &amp; eGFR 30~90 → SGLT-2+피네레논 동시 개시</td></tr>
+        <tr><td><strong>비만</strong></td><td>생활습관 — <b>단독이 아니라 약물과 병행</b>(ACP 2026)</td><td><b>사실상 1차 약물</b>: 세마글루티드(위고비)·티르제파타이드(젭바운드)<br>경구: <b>경구 위고비</b>(2025.12) · <b>오포글리프론(Foundayo, 2026.4)</b> — 음식·물 제한 없음</td><td>펜터민-토피라메이트(큐시미아) → 리라글루티드 → 날트렉손-부프로피온 → <b>대사수술</b></td><td>12주 시점 기저체중 5% 미만 감량 → 증량·교체 · BMI ≥35(또는 ≥30+합병증)에 약물 반응 불충분 → 수술</td></tr>
+        <tr><td><strong>이상지질혈증</strong></td><td>스타틴 — ASCVD 전원 고강도(아토르바 40~80 / 로수바 20~40)</td><td>에제티미브(복합제 로수젯·아토젯) → <b>PCSK9 항체(레파타·프랄런트)</b> · <b>벰페도익산(2026 Class 1 복수 획득)</b></td><td>인클리시란(렉비오, siRNA, 6개월 1회) · HoFH는 에비나쿠맙·로미타파이드·LDL 아페레시스</td><td>최대내약 스타틴 4~12주 후 <b>LDL-C 목표 미달</b>(초고위험 &lt;55, 고위험 &lt;70) · <b>Lp(a) ≥50 → 더 공격적으로</b></td></tr>
+        <tr><td><strong>고혈압</strong></td><td>생활습관(130~139/80~89 &amp; 저위험은 3~6개월) → 4대 계열(티아지드·CCB·ACEi·ARB). <b>대부분 2제를 처음부터, 가능하면 단일정 복합제</b></td><td>다른 계열 추가(통상 ARB/ACEi+CCB+티아지드 3제)</td><td>저항성: 스피로놀락톤(MRA) → β차단제·α차단제·<b>박스드로스타트(Baxfendy, 2026.5, 최초 알도스테론 합성효소 억제제)</b> · 신장 신경차단술</td><td>목표 &lt;130/80 미달 · 3제(이뇨제 포함) 최대용량에도 미조절 = 저항성 고혈압</td></tr>
+        <tr><td><strong>류마티스 관절염</strong></td><td>MTX + 단기 스테로이드 브리징 (금기 시 레플루노미드·설파살라진)</td><td>3~6개월 불충분 → bDMARD 추가: TNF억제제 · IL-6R(악템라) · 아바타셉트 · 리툭시맙 / 또는 JAK 억제제(<b>위험인자 고려 필수</b>)</td><td>첫 bDMARD/JAKi 실패 → <b>다른 계열 또는 같은 계열 교체(TNF cycling도 명시적 허용)</b><br>지속 관해 시 감량 가능하나 <b>중단은 재발 유발</b></td><td>Treat-to-target — 3개월 개선 없음 / <b>6개월 목표 미달</b> · 예후불량인자(자가항체 고역가·조기 골미란) 있으면 조기 상향</td></tr>
+        <tr><td><strong>IBD</strong><br><span style="color:var(--ink-3);font-size:12px">궤양성대장염</span></td><td>경구 5-ASA ≥2g/일 + 직장 5-ASA (범위 넓으면 병용)</td><td>부데소니드 MMX → 전신 스테로이드 → <b>스테로이드 의존/불응이면 즉시 advanced therapy</b>(티오퓨린·MTX 단독은 권고하지 않음)</td><td>Advanced therapy가 <b>동등 병렬 선택지</b>: 항TNF(인플릭시맙 선호) · 베돌리주맙 · 우스테키누맙 · <b>IL-23p19 3종(미리키주맙·리산키주맙·구셀쿠맙)</b> · JAK · <b>S1P 경구(오자니모드·에트라시모드)</b></td><td>Treat-to-target — 목표가 <b>내시경적 개선</b>(Mayo 0~1), 8주 재평가 · 이차 무반응 → <b>약물농도+항약물항체 측정(TDM)</b> 후 증량 vs 교체</td></tr>
+        <tr><td><strong>IBD</strong><br><span style="color:var(--ink-3);font-size:12px">크론병</span></td><td>스테로이드 유도(회맹부 국한은 부데소니드)</td><td colspan="2"><b>AGA 2025가 전통적 step-up을 공식 폐기</b> — "스테로이드·면역조절제로 시작하기보다 advanced therapy를 전면(upfront)에"<br>고효능군: 인플릭시맙·아달리무맙·리산키주맙·구셀쿠맙·우스테키누맙·미리키주맙·베돌리주맙 <span class="tag t-warn">개별 tier는 요약본 간 상충</span><br>항TNF 실패 후 주력: 리산키주맙·구셀쿠맙·우파다시티닙</td><td>협착·누공·수술력·조기 발병 = 예후불량 → 조기 advanced therapy</td></tr>
+        <tr><td><strong>건선</strong></td><td>국소(스테로이드·비타민D 유도체·타피나로프·로플루밀라스트 크림)</td><td>광선치료 + 전신 conventional(MTX·사이클로스포린·아시트레틴·아프레밀라스트)<br><b>중증은 생물학제제를 처음부터 가능</b></td><td>생물학제제 — <b>IL-17</b>(코센틱스·탈츠·실리크·<b>빔젤릭스 IL-17A/F</b>) · <b>IL-23p19</b>(트렘피어·스카이리치·일루미아) · IL-12/23(스텔라라) · TNF<br>경구 신규: <b>듀크라바시티닙(소틱투, TYK2)</b></td><td>중등증~중증 정의 = (PASI &gt;10 또는 BSA &gt;10) <b>AND</b> DLQI &gt;10 · 12~16주 PASI 75 미달 또는 목표(<b>PASI ≤2</b>) 미달 → 계열 교체</td></tr>
+        <tr><td><strong>아토피 피부염</strong></td><td>보습 + 국소 스테로이드 · 국소 칼시뉴린억제제 · 국소 신약(크리사보롤·루솔리티닙 크림·타피나로프)</td><td>광선치료 / 전통 전신면역억제제(사이클로스포린·MTX·아자티오프린)</td><td>생물학제제 — 듀피젠트(IL-4Rα, 근거 High) · 아트랄자(IL-13) · <b>엡글리스(IL-13, High)</b> · 미티큐(IL-31RA)<br>JAK — <b>린버크(High)</b> · 시빈코 · 올루미언트<br>4단계: 계열 교체(IL-4/13 ↔ IL-13 ↔ JAK)</td><td>국소치료 최적화에도 조절 실패 · 전신치료 12~16주 EASI-75 미달 → 교체<br><span style="color:var(--warn)">주의: OX40 계열은 2026년 현재 전무 — 로카틴리맙(2026.3)·암리텔리맙(2026.7) 모두 개발 중단</span></td></tr>
+        <tr><td><strong>천식</strong></td><td>Step 1~2: 필요시 저용량 ICS-포르모테롤 (<b>2026년 ICS-SABA AIR가 Step 1 정식 편입</b>)<br><b>SABA 단독은 어느 단계에서도 지지되지 않는다</b></td><td>Step 3~4: 저~중용량 ICS-포르모테롤 MART, 또는 ICS-LABA ± LAMA</td><td>Step 5: 고용량 MART + LAMA(<b>3제 흡입, 2026 신규</b>) → <b>생물학제제</b><br>항IgE 졸레어(+시밀러 편입) · 항IL-5 누칼라·파센라·<b>엑스덴서(데페모키맙, 26주 1회)</b> · 항IL-4Rα 듀피젠트 · <b>항TSLP 테즈스파이어(바이오마커 무관)</b></td><td>지난 1년 중증 악화 ≥1회 · 조절되지 않는 증상 · Step 4~5 최적화에도 미조절 → 순응도·흡입기술 배제 후 생물학제제</td></tr>
+        <tr><td><strong>COPD</strong></td><td>그룹 A: 기관지확장제 1제 / 그룹 B: LABA+LAMA<br>그룹 E(악화 위험): LABA+LAMA, <b>호산구 &gt;300이면 ICS 추가(3제)</b></td><td>호흡곤란 지속 → LABA+LAMA · 악화 지속 → <b>3제(트렐리지·브레즈트리)</b></td><td>3제에도 악화 → 로플루밀라스트 · 아지스로마이신 · <b>생물학제제(2026 도표 신설)</b> — 듀피젠트(호산구 ≥300, 악화 ~30%↓) · 누칼라(18~21%↓)</td><td><b>2026 최대 변화: 중등도 악화 "1회"만으로 상향 고려</b>(기존 ≥2회) · <b>Disease Activity 개념 신설</b> — COPD에 treat-to-target 도입</td></tr>
+        <tr><td><strong>MASH</strong></td><td>체중감량 중심 생활습관(≥5% 지방간, ≥7~10% 염증·섬유화) + 대사동반질환 관리</td><td colspan="2">F2~F3 섬유화 동반 시 — <b>레즈디프라(레스메티롬, 경구 THR-β, 2024.3 최초 승인)</b> 또는 <b>위고비(세마글루티드 2.4mg, 2025 MASH 적응증 + AASLD 2025.11 편입)</b><br>ESSENCE: MASH 해소·섬유화 무진행 <b>62.9% vs 34.3%</b><br><b>두 약제 병용 권고는 없다</b>(데이터 부재). 3차: 비타민E·피오글리타존 / 4차: 대사수술·간이식</td><td><b>비침습검사(NIT)로 F2~F3 확인</b> 시 약물 진입 — VCTE(파이브로스캔)·MRE·ELF. <b>생검 불필요로 패러다임 이동</b><br><span style="color:var(--warn)">F4 간경변에는 두 약제 모두 미승인</span></td></tr>
+        <tr><td><strong>알츠하이머</strong></td><td colspan="2"><b>"라인"이 아니라 질병 단계별 분기 — 항체는 도네페질의 2차가 아니다</b><br>MCI~경증(아밀로이드 확인): <b>항아밀로이드 항체</b> — 레켐비(레카네맙, <b>IQLIK 피하 자가주사 2026.7 도입용량까지 승인</b>) · 키선라(도나네맙, 플라크 소실 시 중단 고려)<br>경증~중등도: 도네페질·리바스티그민·갈란타민 / 중등도~중증: 메만틴 ± 콜린에스터라제</td><td>증상 관리 — 브렉스피프라졸(초조) 등</td><td><b>게이트키핑이 곧 시장 크기</b> — ① MCI/경증 단계 ② 아밀로이드 확인(PET·CSF·<b>혈액 pTau217</b>) ③ APOE ε4 검사 ④ 베이스라인+감시 MRI(ARIA) ⑤ 항응고제·CAA 배제</td></tr>
+        <tr><td><strong>황반변성(nAMD)</strong></td><td colspan="2"><b>"라인"이 아니라 투여 간격(durability) 경쟁</b> — 경쟁 축은 다음 약제가 아니라 <b>연간 주사 횟수</b><br>1세대: 아일리아 2mg·루센티스(4~8주) → 2세대: <b>아일리아 8mg(국내 최장 20주)</b> · <b>바비스모(파리시맙, 최대 16주)</b><br>시밀러 대거 진입(2024~2026): 아필리부·아이덴젤트·SCD411·아이루비</td><td>Susvimo 삽입형 포트 · 유전자치료(RGX-314 등)</td><td>OCT상 망막내액/망막하액 지속·재발 · loading 4~6회 후 반응 불충분 → 다른 기전으로 스위치<br><b>2026 리얼월드: 2세대를 더 일찍 도입할수록 결과가 좋다</b></td></tr>
+        <tr><td><strong>골다공증</strong></td><td colspan="2"><b>순서가 효과를 바꾸는 유일한 영역</b><br>고위험: 비스포스포네이트 → 데노수맙(프롤리아)<br><b>초고위험(최근 골절·T ≤ −3.0): 골형성제 먼저 → 골흡수억제제로 공고화</b> — 테리파라타이드·아발로파라타이드·로모소주맙(이베니티) → 이후 비스포스포네이트·데노수맙</td><td>금기·불내성 시 SERM(랄록시펜·바제독시펜)</td><td><b>역순(흡수억제제 먼저)은 골형성 반응을 둔화시킨다</b> · <b>데노수맙 중단 시 rebound로 다발성 척추골절</b> → 반드시 비스포스포네이트로 공고화 후 중단</td></tr>
+        <tr><td><strong>만성신장질환</strong></td><td colspan="3"><b>"4개 기둥"의 동시 축적 — 순차 아님. 비항암 중 라인 개념이 가장 붕괴된 영역</b><br>① RAS 억제제(ACEi/ARB, 최대내약용량) ② <b>SGLT-2</b>(eGFR ≥20에서 시작, 그 아래로 떨어져도 유지) ③ <b>비스테로이드성 MRA 피네레논(케렌디아)</b> ④ <b>GLP-1</b>(투석 환자에서도 개시·유지 가능, 2026 신규)<br>KDIGO 2026: 부작용 프로파일이 겹치지 않으면 <b>여러 개입을 동시에 시작</b>하는 것이 최적 조합 도달을 앞당긴다</td><td>알부민뇨 지속(UACR ≥30, 특히 ≥300) · eGFR 감소 속도 가속 · <b>혈청 칼륨 정상 유지 여부가 nsMRA 사용의 관문</b></td></tr>
+      </tbody>
+    </table></div>
+    <div class="srcline"><b>출처</b> ADA Standards of Care 2026 · 2026 ACC/AHA 이상지질혈증 지침 · 2025 AHA/ACC 고혈압 지침 · EULAR RA 2025 update · AGA 크론병 2025 / ECCO UC 2026 · EuroGuiDerm 건선 · AAD 아토피 2026 · GINA 2026 · GOLD 2026 · AASLD MASH 2025.11 · KDIGO 2026 · ACP 골다공증 <span class="tag t-ok">웹 확인</span></div>
+  </div>
+
+  <div class="sec">
+    <h3>한국에서는 급여기준이 곧 라인이다</h3>
+    <p class="note">지침상 1차라도 급여상 3차면 시장에서는 3차다. 국내 매출을 추정할 때 <b>글로벌 라인이 아니라 이 표를 기준선으로 잡아야 한다.</b></p>
+    <div class="tw" style="margin-top:16px"><table>
+      <thead><tr><th style="min-width:120px">영역</th><th>핵심 급여 게이트</th><th style="min-width:110px">지침 대비</th></tr></thead>
+      <tbody>
+        <tr><td><strong>항암 전반</strong></td><td>글로벌 가이드라인 대비 통상 <b>1~3년 지연</b>. 암질심 → 약평위 → 약가협상 → 고시의 4단 관문</td><td><span class="tag t-warn">지연</span></td></tr>
+        <tr><td><strong>고가 병용요법</strong></td><td><b>렉라자+리브리반트</b> — 2025.1 식약처 1차 치료 허가, 2026.8 현재까지 급여 미적용. 암질심 반복 부결, 환자 부담 <b>연 약 1.5억원</b>, 급여 청원 2.7만명</td><td><span class="tag t-alert">차단</span></td></tr>
+        <tr><td><strong>면역항암제</strong></td><td><b>키트루다 급여가 2026.1.1부로 4개 → 13개 암종 확대</b>(3년 만). 신규 9개: 두경부·위·식도·자궁내막·소장·담도·직결장·삼중음성유방·자궁경부암. 환자 연 본인부담 약 365만원</td><td><span class="tag t-ok">대폭 확대</span></td></tr>
+        <tr><td><strong>혈액암 CAR-T</strong></td><td>급여 CAR-T는 킴리아가 유일했고 <b>예스카타가 2026.1 암질심 통과(3차 이상만, 2차는 미설정)</b>. <b>카빅티 국내 라벨은 여전히 5차 이상</b>(2023.3 허가) — 미국 2L와 3라인 격차. MM CAR-T·이중항체는 급여 미적용</td><td><span class="tag t-alert">글로벌과 3라인 격차</span></td></tr>
+        <tr><td><strong>당뇨</strong></td><td>메트포르민 선행을 사실상 요구, 2제·3제 조합 제약, GLP-1 급여 제한</td><td><span class="tag t-warn">지침보다 엄격</span></td></tr>
+        <tr><td><strong>비만</strong></td><td><b>전액 비급여</b> — 가격 민감도·이탈률이 매출 모델의 최대 변수</td><td><span class="tag t-alert">급여 부재</span></td></tr>
+        <tr><td><strong>이상지질혈증</strong></td><td>PCSK9 항체: <b>최대내약 스타틴 + 에제티미브 실패</b> 필수, ASCVD 초고위험·FH 한정. 지침 목표(LDL &lt;55)와 급여 역치가 어긋나 "지침대로 쓰면 삭감" 문제 지속</td><td><span class="tag t-warn">지침보다 엄격</span></td></tr>
+        <tr><td><strong>골다공증</strong></td><td><b>골형성제 급여를 받으려면 비스포스포네이트를 1년 이상 먼저 사용</b>해야 함 → <b>지침이 권고하는 anabolic-first가 급여상 불가능</b>. 2024.5 개선으로 최대 2년 연속 투여 인정</td><td><span class="tag t-alert">지침과 정면 충돌</span></td></tr>
+        <tr><td><strong>만성신장질환</strong></td><td>케렌디아: eGFR 25~75 &amp; <b>UACR &gt;300</b> &amp; RAS 4주 이상 — 지침(UACR ≥30)보다 <b>10배 엄격</b></td><td><span class="tag t-alert">10배 엄격</span></td></tr>
+        <tr><td><strong>천식</strong></td><td>듀피젠트 2026.2 급여(호산구 ≥150 또는 FeNO ≥25, OCS 의존 시 무관 — 관대한 편). 단 <b>생물학제제 간 교체투여 차단</b> → 첫 선택이 곧 최종 선택. 산정특례 대상 아님</td><td><span class="tag t-warn">교체 차단이 병목</span></td></tr>
+        <tr><td><strong>아토피</strong></td><td>EASI ≥23 + 전신면역억제제 이력. <b>JAK 교체투여는 RA와 달리 미인정</b>(재정영향 검토 지연)</td><td><span class="tag t-warn">지침보다 엄격</span></td></tr>
+        <tr><td><strong>건선</strong></td><td>급여는 (약물 <b>또는</b> 광선) 3개월 실패인데 <b>산정특례 등록은 둘 다</b> 요구 — 기준 불일치. 5년 후 재등록 시 생물학제제를 끊고 악화됨을 입증해야 하는 역설</td><td><span class="tag t-warn">제도 간 불일치</span></td></tr>
+        <tr><td><strong>알츠하이머</strong></td><td><b>레켐비 전액 비급여</b> — 연 약 3,000~4,000만원. 키선라는 2025.12 허가 신청, 2026년 말 결정 전망</td><td><span class="tag t-alert">급여 부재</span></td></tr>
+        <tr><td><strong>황반변성</strong></td><td>아일리아 8mg 급여 2024.10.1(T&amp;E 안정 시 최대 20주), 바비스모 PFS 2026.4.1. <b>평생 총 투여 횟수 상한</b>이 핵심 변수</td><td><span class="tag t-ok">대체로 정합</span></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="sec">
+    <h3>2024~2026 라인 이동 — 실제로 벌어진 일들</h3>
+    <p class="note">라인 이동은 이 섹터에서 가장 큰 밸류에이션 이벤트다. 아래는 최근 2년간 확인된 사례이며, <b>패턴을 익히면 다음 이동을 예측할 수 있다.</b></p>
+    <div class="tw" style="margin-top:16px"><table>
+      <thead><tr><th style="min-width:96px">시점</th><th style="min-width:130px">질환</th><th>무슨 일이 있었나</th><th style="min-width:150px">구조적 의미</th></tr></thead>
+      <tbody>
+        <tr><td class="tk">2024.06</td><td>ALL</td><td><b>블린사이토가 1차 공고요법으로 승인</b> — E1910에서 5년 OS 82.4% vs 62.5%</td><td>이중항체가 재발 세팅 → <b>1차로 전진한 첫 사례</b></td></tr>
+        <tr><td class="tk">2024~2025</td><td>방광암</td><td><b>EV+P가 1차 표준으로 완전 교체</b> — mOS 16.1 → <b>31.5개월</b>. 시스플라틴 적격·PD-L1 무관 전 환자군 이득</td><td>백금 화학요법이 30년 만에 <b>1L에서 2L로 밀려남</b> — 라인 전체가 한 칸 이동</td></tr>
+        <tr><td class="tk">2024~2026</td><td>다발골수종</td><td><b>카빅티가 4L+ → 2L+로</b>(CARTITUDE-4). 아베크마도 3L+로</td><td>CAR-T가 후기 라인 구제에서 <b>주류 치료로 이동</b></td></tr>
+        <tr><td class="tk">2025.05</td><td>NSCLC</td><td>텔리소투주맙 베도틴 승인 — <b>c-MET 단백이 새 층화 마커로 편입</b></td><td>"드라이버 없음" 군에도 <b>바이오마커 기반 후기 라인</b>이 생김</td></tr>
+        <tr><td class="tk">2025.10</td><td>SCLC</td><td><b>1차 유지요법이라는 라인 자체가 신설</b> — 루르비넥테딘+아테졸리주맙(IMforte)</td><td>없던 자리를 만드는 <b>세 번째 전진 유형</b>. 동시에 루르비넥테딘이 2L에서 빠지며 <b>탈라타맙이 그 자리를 채움</b></td></tr>
+        <tr><td class="tk">2025.11</td><td>IBD(크론)</td><td>AGA 지침이 <b>"upfront advanced therapy"를 명시</b>하며 전통적 step-up 폐기</td><td>비항암에서도 <b>생물학제제가 앞 단계로</b> — 스테로이드·면역조절제 단계 단축</td></tr>
+        <tr><td class="tk">2025.12</td><td>CLL</td><td>피르토브루티닙 정식승인 — 요건이 <b>"공유결합 BTKi 사전 노출"만으로 완화</b></td><td>라벨 문구 한 줄로 <b>3L → 사실상 2L 전진</b></td></tr>
+        <tr><td class="tk">2026.01</td><td>다발골수종</td><td>D-VRd 이식 부적합 1차 승인(CEPHEUS) — <b>MRD 음성률을 1차 지표로 승인된 최초 4제</b></td><td><b>MRD가 규제 엔드포인트로 인정</b>된 사건 — 개발 기간 단축의 문이 열림</td></tr>
+        <tr><td class="tk">2026.01</td><td>국내 전 암종</td><td><b>키트루다 급여가 4개 → 13개 암종으로 확대</b></td><td>국내 면역항암제 시장의 <b>구조적 확대 이벤트</b>. PD-L1 진단 시장도 동반 확대</td></tr>
+        <tr><td class="tk">2026.02</td><td>CLL</td><td>아칼라브루티닙+베네토클락스 1차 승인(AMPLIFY) — <b>최초의 전경구·고정기간 병용</b></td><td>"지속 투여 vs 고정기간" 경쟁 축 형성 — 총 약제비 구조가 바뀐다</td></tr>
+        <tr><td class="tk">2026.03~04</td><td>난소암</td><td>백금 저항성 구간에 <b>OS 개선 약제 2종 동시 진입</b> — 펨브롤리주맙+파클리탁셀, 렐라코릴란트+나브-파클리탁셀</td><td>수십 년간 "OS 개선 실패의 무덤"이던 구간이 열림</td></tr>
+        <tr><td class="tk">2026</td><td>유방암 HER2+</td><td><b>엔허투가 2L → 1L로</b> — DESTINY-Breast09, mPFS 40.7 vs 26.9개월, NCCN v4.2026 등재</td><td>THP의 20년 아성이 처음 흔들림. <b>동시에 2L 공백이 생겨 후속 물질의 시장이 열림</b></td></tr>
+        <tr><td class="tk">2026</td><td>대장암 BRAF</td><td>엔코라페닙 3제가 <b>2L → 1L</b>(BREAKWATER) — 2024.12 가속승인 → 2026 정식승인</td><td>가속승인 → 정식승인 → 가이드라인 1L의 <b>표준 경로</b></td></tr>
+        <tr><td class="tk">2026.07</td><td>전립선암</td><td><b>플루빅토가 mCRPC 후기 라인 → mHSPC 1차로</b>(PSMAddition, rPFS HR 0.67)</td><td>방사성리간드치료가 <b>주류 1차로 진입한 첫 사례</b> — 국내 퓨쳐켐 등 동일 계열에 시장 확대 신호</td></tr>
+        <tr><td class="tk" style="color:var(--warn)">실패 사례</td><td>DLBCL</td><td><b>컬럼비+GemOx의 2L 진입이 FDA CRL로 거절</b>(2025) — EU는 승인</td><td>"이중항체가 앞 라인으로 간다"는 서사가 <b>규제에서 실제로 꺾인 사례.</b> 지역별 라벨 차이가 매출 추정에 직결</td></tr>
+        <tr><td class="tk" style="color:var(--warn)">실패 사례</td><td>고위험 MDS</td><td><b>VERONA 3상 OS 미달</b>(2025.6, VEN+AZA) · 타미바로텐도 실패</td><td>고위험 MDS는 <b>3상 실패가 반복된 영역</b> — 여기 걸린 파이프라인은 할인 폭을 크게</td></tr>
+        <tr><td class="tk" style="color:var(--warn)">실패 사례</td><td>알츠하이머</td><td><b>세마글루티드 EVOKE/EVOKE+ 3상 실패</b>(2026, Lancet)</td><td>"GLP-1의 신경퇴행 확장" 내러티브 후퇴 — <b>적응증 확장 스토리의 한계</b></td></tr>
+        <tr><td class="tk" style="color:var(--warn)">실패 사례</td><td>아토피</td><td><b>OX40 계열 전멸</b> — 로카틴리맙(2026.3, 악성종양 신호) · 암리텔리맙(2026.7, 전략 판단) 개발 중단</td><td>신규 기전 하나가 통째로 사라짐 → IL-4/13·IL-13·JAK 3축으로 재수렴</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="sec">
+    <h3>국내 상장사가 걸려 있는 라인</h3>
+    <p class="note">국내 자산이 실제로 어느 질환의 어느 라인에 위치하는지. <b>1차 라인에 진입한 국내 자산은 극히 드물다</b>는 점이 이 표의 핵심이다.</p>
+    <div class="tw" style="margin-top:16px"><table>
+      <thead><tr><th style="min-width:130px">기업</th><th style="min-width:150px">자산</th><th style="min-width:140px">질환 · 라인</th><th>상태 · 코멘트</th></tr></thead>
+      <tbody>
+        <tr><td><strong>유한양행 · 오스코텍</strong></td><td>렉라자(레이저티닙)</td><td><b>NSCLC EGFR 1차</b></td><td><span class="tag t-ok">유일하게 글로벌 1L 진입</span> MARIPOSA HR 0.75. 단 <b>국내 병용 급여는 암질심 반복 부결</b> — 로열티는 글로벌 매출 기반이라 국내 급여와는 별개 트랙</td></tr>
+        <tr><td><strong>큐로셀</strong></td><td>림카토주(안발셀, CD19 CAR-T)</td><td>DLBCL·PMBCL <b>3차 이상</b></td><td><b>국산 1호 CAR-T.</b> 2026.4.29 식약처 허가 → 2026.7.8 암질심 통과 → 약평위·약가협상 진행 → <b>2026 하반기 급여 등재 전망</b></td></tr>
+        <tr><td><strong>앱클론</strong></td><td>네스페셀/AT101(CD19 CAR-T)</td><td>재발·불응 혈액암</td><td>임상 2상 등록 완료(2026.7), <b>ORR 94% / CR 68%</b>. 연내 품목허가 신청 추진. 종근당 지분투자+이중항체 공동개발, GC셀과 in vivo CAR-T 협력</td></tr>
+        <tr><td><strong>리가켐바이오</strong></td><td>LCB14(HER2) · LCB84(TROP2) · LNCB74(B7-H4) · LCB97(L1CAM)</td><td>유방암 <b>3차 이상</b> · 식도암 · 부인과암</td><td>1~1b상. <b>엔허투 불응 환자를 겨냥</b> — 엔허투가 1L·2L로 전진할수록 "엔허투 이후" 시장이 커지는 구조</td></tr>
+        <tr><td><strong>에이비엘바이오</strong></td><td>ABL001(토베시미그, 이중항체)</td><td>담도암 <b>2차</b></td><td>2/3상, <b>2026 연말 가속승인 기대</b></td></tr>
+        <tr><td><strong>한미약품</strong></td><td>투스페티닙(HM43239)</td><td><b>AML 1차</b>(VEN+AZA 3제)</td><td>앱토즈 바이오사이언스에 기술이전. TUSCANY 1/2상 <b>CRc 86.2%</b>(2026.6). <b>한미가 앱토즈 인수 추진</b> — 기술수출에서 자산 지배로 전략 전환</td></tr>
+        <tr><td><strong>퓨쳐켐</strong></td><td>FC705(Lu-177 PSMA)</td><td>전립선암</td><td>국내 3상, 2026 탑라인 목표. <b>플루빅토의 mHSPC 1L 전진은 이 계열 전체의 시장 확대 신호</b></td></tr>
+        <tr><td><strong>셀트리온</strong></td><td>트룩시마(리툭시맙 시밀러) 외</td><td>B세포 림프종·CLL <b>전 라인 백본</b></td><td>R-CHOP·BR·Ven-R 등 거의 모든 레짐의 백본. 미국 점유율 1위, <b>FDA 상호교환성 최초 획득</b>. <b>라인 구조가 어떻게 바뀌든 백본 수요는 유지</b> — 신규 모달리티 진입의 헤지</td></tr>
+        <tr><td><strong>삼성바이오에피스 · 셀트리온<br>삼천당제약 · 알테오젠</strong></td><td>아일리아 시밀러(아필리부·아이덴젤트·SCD411·아이루비)</td><td>nAMD — <b>동일 라인 내 가격 경쟁</b></td><td>2024~2026 글로벌 동시다발 출시. 시장 약 13조원. 오리지널 방어는 8mg 고용량(특허 2039년)과 바비스모 PFS</td></tr>
+        <tr><td><strong>디앤디파마텍 · 한미약품<br>유한양행 · 동아에스티 · 올릭스</strong></td><td>DD01 · MK-6024 · HM15211 · YH25724 · 바노글리펠 · OLX702A</td><td>MASH <b>2차</b>(F2~F3)</td><td>국내 파이프라인이 두터운 영역. 레즈디프라·위고비 2강 구도 이후의 3의 자리를 노리는 구조</td></tr>
+        <tr><td><strong>뉴로핏</strong></td><td>뉴로핏 아쿠아 AD 플러스</td><td>알츠하이머 — <b>항체 처방의 인프라</b></td><td>ARIA 자동 검출·정량화 SW, <b>2026 상반기 FDA 510(k) 획득</b>. 항아밀로이드 항체 처방 확대 = 감시 MRI 판독 수요 증가 → 직접 수혜</td></tr>
+        <tr><td><strong>대웅제약 · 보령 · 한미약품</strong></td><td>엔블로(이나보글리플로진) · 카나브(피마사르탄) · 아모잘탄·로수젯</td><td>당뇨·고혈압·이상지질혈증 <b>1~2단계</b></td><td>국산 신약·복합제의 상업화 성공 사례군. <b>비항암은 라인이 누적되므로 1단계 진입 제품의 LTV가 길다</b></td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout w" style="margin-top:16px"><b>주의</b> 위 표의 파이프라인 단계와 이벤트 시점은 2026년 8월 시점의 웹 리서치 기반이며, <b>시가총액·재무·계약 조건은 포함하지 않았다.</b> 개별 종목 검토 시 DART 공시로 대조할 것. 특히 언론 보도로만 확인된 항목(수치가 매체 간 상충하는 경우 포함)은 원문 확인이 필요하다.</div>
+  </div>
+</section>
+
 <!-- ==================== 05 규제 ==================== -->
 <section class="pane" id="p-reg">
-  <div class="eyebrow">05 — Regulatory</div>
+  <div class="eyebrow">06 — Regulatory</div>
   <h2>규제·제도</h2>
   <p class="lede">규제는 이 산업에서 <b>비용이자 동시에 진입장벽</b>이다. 어떤 신속심사 트랙을 받았느냐가 주가 반응의 크기를 결정하고, 한국의 약가·상장 제도가 국내 종목의 이익 추정치와 IPO 가능성을 좌우한다.</p>
 
@@ -791,7 +1190,7 @@ td strong{font-weight:600}
 
 <!-- ==================== 05 시장 규모 ==================== -->
 <section class="pane" id="p-market">
-  <div class="eyebrow">06 — Market Size</div>
+  <div class="eyebrow">07 — Market Size</div>
   <h2>시장 규모</h2>
   <p class="lede">시장규모 숫자는 <b>리서치사마다 정의·기준연도·집계방식이 달라 상호 비교가 불가능</b>하다. 아래 표는 출처와 기준연도를 강제로 병기했다. 서로 다른 리서치사 수치를 한 표에서 합산·비교하지 말 것.</p>
 
@@ -870,7 +1269,7 @@ td strong{font-weight:600}
 
 <!-- ==================== 06 테마 딥다이브 ==================== -->
 <section class="pane" id="p-theme">
-  <div class="eyebrow">07 — Deep Dive</div>
+  <div class="eyebrow">08 — Deep Dive</div>
   <h2>테마 딥다이브</h2>
   <p class="lede">국내 헬스케어 종목은 개별 펀더멘털보다 <b>테마 단위</b>로 움직인다. 각 테마의 드라이버 · 경쟁구도 · 국내 플레이어를 한 장으로 정리했다.</p>
 
@@ -982,7 +1381,7 @@ td strong{font-weight:600}
 
 <!-- ==================== 07 정책 워치 ==================== -->
 <section class="pane" id="p-policy">
-  <div class="eyebrow">08 — Policy Watch 2026</div>
+  <div class="eyebrow">09 — Policy Watch 2026</div>
   <h2>2026 정책 워치</h2>
   <p class="lede">2026년 헬스케어 섹터의 방향은 임상 데이터보다 <b>정책</b>이 더 크게 흔들고 있다. 관세·약가·공급망 안보 세 축이 동시에 움직이는 해다.</p>
 
@@ -1114,7 +1513,7 @@ td strong{font-weight:600}
 
 <!-- ==================== 08 밸류에이션 ==================== -->
 <section class="pane" id="p-val">
-  <div class="eyebrow">09 — Valuation</div>
+  <div class="eyebrow">10 — Valuation</div>
   <h2>밸류에이션 프레임</h2>
   <p class="lede">제약바이오는 <b>이익이 없는 기업을 평가해야 하는</b> 거의 유일한 대형 섹터다. 그래서 방법론 선택 자체가 결론을 좌우한다. 회사가 밸류체인의 어느 칸에 있는지에 따라 쓸 수 있는 방법이 정해진다.</p>
 
@@ -1204,7 +1603,7 @@ td strong{font-weight:600}
 
 <!-- ==================== 10 체크포인트 ==================== -->
 <section class="pane" id="p-check">
-  <div class="eyebrow">10 — Diligence Checklist</div>
+  <div class="eyebrow">11 — Diligence Checklist</div>
   <h2>체크포인트</h2>
   <p class="lede">모달리티와 질환마다 <b>깨지는 지점이 정해져 있다.</b> 아래는 기업을 처음 볼 때 순서대로 물어야 할 질문들이다. 04번 탭이 "발표된 데이터를 읽는 법"이라면, 여기는 "무엇을 물어봐야 하는가"다.</p>
 
@@ -1302,7 +1701,7 @@ td strong{font-weight:600}
 
 <!-- ==================== 11 유니버스 ==================== -->
 <section class="pane" id="p-universe">
-  <div class="eyebrow">11 — Coverage Universe</div>
+  <div class="eyebrow">12 — Coverage Universe</div>
   <h2>국내 커버리지 유니버스</h2>
   <p class="lede">국내 상장 제약·바이오·의료기기 <span id="ucount2" class="mono"></span>개사를 서브섹터로 분류했다. 피어 그룹을 좁히거나 특정 모달리티 노출 종목을 찾을 때 쓴다.</p>
 
@@ -1325,7 +1724,7 @@ td strong{font-weight:600}
 
 <!-- ==================== 10 캘린더 ==================== -->
 <section class="pane" id="p-cal">
-  <div class="eyebrow">12 — Calendar</div>
+  <div class="eyebrow">13 — Calendar</div>
   <h2>이벤트 캘린더</h2>
   <p class="lede">학회는 이 산업의 <b>실적 발표일</b>이다. 데이터가 공개되는 날짜가 정해져 있고, 그 전후로 자금조달 창구가 열리고 닫힌다. ECM 관점의 활용 포인트를 함께 붙였다.</p>
 
@@ -1365,7 +1764,7 @@ td strong{font-weight:600}
 
 <!-- ==================== 11 용어사전 ==================== -->
 <section class="pane" id="p-gloss">
-  <div class="eyebrow">13 — Glossary</div>
+  <div class="eyebrow">14 — Glossary</div>
   <h2>용어 사전</h2>
   <p class="lede">기초 레이어 원자료와 2026년 최신 자료에서 실제로 등장한 용어 <span id="gcount2" class="mono"></span>개. 리포트를 읽다 막히는 지점을 그때그때 찾아보는 용도다.</p>
 
@@ -1382,7 +1781,7 @@ td strong{font-weight:600}
 
 <!-- ==================== 12 출처 ==================== -->
 <section class="pane" id="p-src">
-  <div class="eyebrow">14 — Sources &amp; Data Quality</div>
+  <div class="eyebrow">15 — Sources &amp; Data Quality</div>
   <h2>출처 · 데이터 품질</h2>
   <p class="lede">이 도구는 두 개의 레이어로 만들어졌다. <b>기초 레이어</b>는 산업 입문 자료·공공기관 발간물·FDA 원문에서 정리한 구조적 지식이고, <b>최신 레이어</b>는 2026년 8월 웹 검색이다. 각 레이어의 한계를 아래에 그대로 적었다.</p>
 
@@ -2195,3 +2594,6 @@ document.getElementById('gchips').addEventListener('click',e=>{const b=e.target.
 document.getElementById('gsearch').addEventListener('input',e=>{gq=e.target.value; renderG();});
 renderG();
 </script>
+
+</body>
+</html>
