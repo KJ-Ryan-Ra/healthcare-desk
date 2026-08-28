@@ -1,8 +1,3 @@
-<!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>헬스케어 리서치 데스크</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -222,6 +217,13 @@ td strong{font-weight:600}
 .evt .n{font-size:14px; font-weight:600}
 .evt .m{font-size:12.5px; color:var(--ink-3); margin-top:2px; line-height:1.5}
 
+/* figure */
+.fig{margin:18px 0 0; padding:0}
+.fig svg{display:block; width:100%; max-width:100%; height:auto; color:var(--ink-2)}
+.fig figcaption{margin-top:12px; font-size:12.5px; color:var(--ink-3); line-height:1.62; padding-left:12px; border-left:2px solid var(--line)}
+.fig figcaption b{color:var(--ink-2); font-weight:600}
+.mod .body .fig{margin-top:16px; padding-top:14px; border-top:1px dashed var(--line)}
+
 .gt{font-size:13px}
 .gt td:first-child{font-weight:600; white-space:nowrap}
 .gt td:nth-child(2){font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--ink-3); white-space:nowrap}
@@ -240,8 +242,6 @@ td strong{font-weight:600}
 }
 </style>
 
-</head>
-<body>
 <div class="shell">
 <aside class="rail">
   <div class="brand">
@@ -254,20 +254,22 @@ td strong{font-weight:600}
     <button data-p="map" aria-current="true"><span class="k">01</span>산업 지도</button>
     <button data-p="modality"><span class="k">02</span>모달리티 백과</button>
     <button data-p="rnd"><span class="k">03</span>신약개발 프로세스</button>
-    <button data-p="reg"><span class="k">04</span>규제·제도</button>
+    <button data-p="clin"><span class="k">04</span>임상 데이터 읽기</button>
+    <button data-p="reg"><span class="k">05</span>규제·제도</button>
     <div class="nav-group">시장 · 자본</div>
-    <button data-p="market"><span class="k">05</span>시장 규모</button>
-    <button data-p="theme"><span class="k">06</span>테마 딥다이브</button>
-    <button data-p="policy"><span class="k">07</span>2026 정책 워치</button>
-    <button data-p="val"><span class="k">08</span>밸류에이션</button>
+    <button data-p="market"><span class="k">06</span>시장 규모</button>
+    <button data-p="theme"><span class="k">07</span>테마 딥다이브</button>
+    <button data-p="policy"><span class="k">08</span>2026 정책 워치</button>
+    <button data-p="val"><span class="k">09</span>밸류에이션</button>
     <div class="nav-group">데스크 도구</div>
-    <button data-p="universe"><span class="k">09</span>커버리지 유니버스</button>
-    <button data-p="cal"><span class="k">10</span>이벤트 캘린더</button>
-    <button data-p="gloss"><span class="k">11</span>용어 사전</button>
-    <button data-p="src"><span class="k">12</span>출처·데이터 품질</button>
+    <button data-p="check"><span class="k">10</span>체크포인트</button>
+    <button data-p="universe"><span class="k">11</span>커버리지 유니버스</button>
+    <button data-p="cal"><span class="k">12</span>이벤트 캘린더</button>
+    <button data-p="gloss"><span class="k">13</span>용어 사전</button>
+    <button data-p="src"><span class="k">14</span>출처·데이터 품질</button>
   </nav>
   <div class="railfoot">
-    <span class="mono" style="font-size:10px;color:var(--ink-4)">v1.0 · 2026.08.28</span>
+    <span class="mono" style="font-size:10px;color:var(--ink-4)">v2.0 · 2026.08.28</span>
     <button class="tbtn" id="theme">테마</button>
   </div>
 </aside>
@@ -325,9 +327,9 @@ td strong{font-weight:600}
   <div class="sec">
     <h3>이 도구의 사용법</h3>
     <div class="grid g2" style="margin-top:16px">
-      <div class="card"><h4 style="font-size:14.5px;margin-bottom:8px">처음 배울 때 순서</h4><p style="font-size:13.5px;color:var(--ink-2);line-height:1.65">01 산업지도 → <b>02 모달리티</b>(약이 어떻게 작동하는가) → <b>03 신약개발</b>(어떤 단계를 거치는가) → <b>04 규제</b>(누가 통과시켜 주는가) → 05~08 시장·자본. 여기까지가 "산업을 안다"의 최소 단위다.</p></div>
-      <div class="card"><h4 style="font-size:14.5px;margin-bottom:8px">딜 검토할 때</h4><p style="font-size:13.5px;color:var(--ink-2);line-height:1.65"><b>09 유니버스</b>에서 피어 그룹을 좁히고 → <b>08 밸류에이션</b>으로 방법론 확정 → <b>07 정책워치</b>로 관세·약가 리스크 체크 → <b>10 캘린더</b>로 데이터 발표 타이밍을 잡는다.</p></div>
-      <div class="card"><h4 style="font-size:14.5px;margin-bottom:8px">숫자를 인용하기 전에</h4><p style="font-size:13.5px;color:var(--ink-2);line-height:1.65">모든 수치에 <span class="tag t-ok">확인</span> <span class="tag t-warn">추정</span> <span class="tag t-dim">구자료</span> <span class="tag t-alert">미확인</span> 태그가 붙어 있다. <b>구자료·추정 태그가 붙은 숫자는 대외 자료에 그대로 옮기지 말 것.</b> 12번 탭에 원출처 목록이 있다.</p></div>
+      <div class="card"><h4 style="font-size:14.5px;margin-bottom:8px">처음 배울 때 순서</h4><p style="font-size:13.5px;color:var(--ink-2);line-height:1.65">01 산업지도 → <b>02 모달리티</b>(약이 어떻게 작동하는가) → <b>03 신약개발</b>(어떤 단계를 거치는가) → <b>04 임상 데이터 읽기</b>(결과를 어떻게 해석하는가) → <b>05 규제</b>(누가 통과시켜 주는가) → 06~09 시장·자본. 여기까지가 "산업을 안다"의 최소 단위다.</p></div>
+      <div class="card"><h4 style="font-size:14.5px;margin-bottom:8px">딜 검토할 때</h4><p style="font-size:13.5px;color:var(--ink-2);line-height:1.65"><b>10 체크포인트</b>로 무엇을 물어볼지 정하고 → <b>11 유니버스</b>에서 피어 그룹을 좁히고 → <b>09 밸류에이션</b>으로 방법론 확정 → <b>08 정책워치</b>로 관세·약가 리스크 체크 → <b>12 캘린더</b>로 데이터 발표 타이밍을 잡는다.</p></div>
+      <div class="card"><h4 style="font-size:14.5px;margin-bottom:8px">숫자를 인용하기 전에</h4><p style="font-size:13.5px;color:var(--ink-2);line-height:1.65">모든 수치에 <span class="tag t-ok">확인</span> <span class="tag t-warn">추정</span> <span class="tag t-dim">구자료</span> <span class="tag t-alert">미확인</span> 태그가 붙어 있다. <b>구자료·추정 태그가 붙은 숫자는 대외 자료에 그대로 옮기지 말 것.</b> 14번 탭에 원출처 목록이 있다.</p></div>
       <div class="card"><h4 style="font-size:14.5px;margin-bottom:8px">이 자료의 한계</h4><p style="font-size:13.5px;color:var(--ink-2);line-height:1.65">기초 레이어 자료 상당수가 2016~2023년 것이고, 일부는 스캔본이라 원문 확보에 실패했다(ADC·바이오시밀러 항목). 최신 레이어는 웹 검색 기반이라 <b>종목코드·시가총액은 미검증</b>이다.</p></div>
     </div>
   </div>
@@ -337,7 +339,7 @@ td strong{font-weight:600}
 <section class="pane" id="p-modality">
   <div class="eyebrow">02 — Modality</div>
   <h2>모달리티 백과</h2>
-  <p class="lede">모달리티는 <b>"약이 어떤 물리적 형태로, 어떤 원리로 작동하는가"</b>다. 제약바이오 종목은 사실상 모달리티별로 테마가 형성되고 함께 움직인다. 각 항목의 <b>투자 체크포인트</b>가 실무에서 가장 자주 쓰는 부분이다.</p>
+  <p class="lede">모달리티는 <b>"약이 어떤 물리적 형태로, 어떤 원리로 작동하는가"</b>다. 제약바이오 종목은 사실상 모달리티별로 테마가 형성되고 함께 움직인다. 각 항목을 펼치면 <b>구조 도식</b>과 <b>투자 체크포인트</b>가 나온다 — 임상 결과를 읽는 기준은 04번 탭, 실사 질문 목록은 10번 탭에 있다.</p>
 
   <div class="chips" id="mchips">
     <button class="chip" aria-pressed="true" data-f="all">전체</button>
@@ -487,9 +489,209 @@ td strong{font-weight:600}
   </div>
 </section>
 
-<!-- ==================== 04 규제 ==================== -->
+<!-- ==================== 04 임상 데이터 읽기 ==================== -->
+<section class="pane" id="p-clin">
+  <div class="eyebrow">04 — Reading Clinical Data</div>
+  <h2>임상 데이터 읽는 법</h2>
+  <p class="lede">보도자료의 헤드라인 숫자만 보면 거의 항상 틀린 결론에 도달한다. 이 탭은 <b>어떤 순서로, 무엇을, 어느 모달리티·질환 기준으로 봐야 하는지</b>를 정리한 것이다. 03번 탭이 "언제 무슨 일이 일어나는가"라면 여기는 "그 결과를 어떻게 읽는가"다.</p>
+
+  <div class="sec">
+    <h3>읽는 순서 — 6단계</h3>
+    <p class="note">순서를 바꾸면 판단이 흔들린다. 특히 ①과 ②를 건너뛰고 숫자부터 보면 거의 반드시 과대평가하게 된다.</p>
+    <div style="margin-top:20px">
+      <div class="stage"><div class="col"><div class="dot">1</div></div><div class="content">
+        <h4>1차 평가지표가 무엇이었나 <span class="tag t-alert">가장 중요</span></h4>
+        <p>사전에 정한 1차 지표(primary endpoint)를 달성했는지가 전부다. <b>"2차 지표에서 유의미한 개선"</b>은 임상 실패를 완곡하게 표현한 문장인 경우가 많다. 통계적 검정력은 1차 지표 기준으로만 설계되므로, 2차 지표의 p값은 탐색적 근거일 뿐이다.</p>
+        <div class="chk"><b>확인</b> ClinicalTrials.gov에 등록된 프로토콜의 primary outcome measure와 보도자료의 표현이 일치하는가. 도중에 지표가 바뀌었다면(엔드포인트 변경) 그 자체가 신호다.</div>
+      </div></div>
+      <div class="stage"><div class="col"><div class="dot">2</div></div><div class="content">
+        <h4>무엇과 비교했나</h4>
+        <p>위약 대조인지, 표준치료(활성대조) 대조인지, 아니면 대조군이 아예 없는 단일군(single-arm)인지. <b>단일군 임상의 ORR은 다른 약의 ORR과 직접 비교할 수 없다</b> — 환자군 구성이 다르기 때문이다. 비열등성(non-inferiority) 설계라면 마진(margin)을 얼마로 잡았는지까지 확인한다.</p>
+        <div class="chk"><b>실무 함정</b> "경쟁약 대비 우수"라는 표현이 <b>교차시험 비교(cross-trial comparison)</b>에 근거한 경우가 많다. 서로 다른 임상의 숫자를 나란히 놓는 것은 근거가 아니다.</div>
+      </div></div>
+      <div class="stage"><div class="col"><div class="dot">3</div></div><div class="content">
+        <h4>몇 명인가, 누구인가</h4>
+        <p>N이 작으면 ORR 한두 명 차이로 수치가 크게 흔들린다. 20명 임상의 ORR 40%는 8명이고, 그중 2명만 바뀌어도 30%나 50%가 된다. 또한 <b>전처치 라인 수</b>(1차 치료인지 3차 이상 불응 환자인지), 바이오마커 선별 여부, 인종 구성이 결과를 좌우한다.</p>
+        <div class="chk"><b>확인</b> ITT(배정된 전원) 분석인지 PP(프로토콜 준수자만) 분석인지. PP만 발표했다면 중도탈락자가 결과에서 빠졌다는 뜻이다.</div>
+      </div></div>
+      <div class="stage"><div class="col"><div class="dot">4</div></div><div class="content">
+        <h4>효과 크기 — 상대값이 아니라 절대값으로</h4>
+        <p>"위험 30% 감소(HR 0.70)"가 실제로는 중앙값 2개월 차이일 수 있다. <b>HR과 함께 중앙값 차이(delta)를 반드시 함께 본다.</b> 반대로 HR이 평범해도 곡선의 꼬리(tail)에서 장기 생존자가 갈리면 면역항암제에서는 큰 의미가 된다.</p>
+        <div class="chk"><b>확인</b> 95% 신뢰구간의 폭. HR 0.70 (95% CI 0.45–1.09)는 유의하지 않다 — 구간이 1을 포함한다.</div>
+      </div></div>
+      <div class="stage"><div class="col"><div class="dot">5</div></div><div class="content">
+        <h4>안전성 — 중단율이 진실을 말한다</h4>
+        <p>이상반응 발생률보다 <b>치료 관련 중단율(discontinuation due to AE)</b>과 <b>용량 감량률</b>이 실제 상업성에 직결된다. 효과가 좋아도 환자가 못 견디면 처방이 유지되지 않는다. Grade 3 이상 비율, 사망 사례(Grade 5), 그리고 대조군 대비 초과분을 본다.</p>
+        <div class="chk"><b>확인</b> 모달리티마다 봐야 할 안전성 신호가 다르다 — 아래 표 참조.</div>
+      </div></div>
+      <div class="stage"><div class="col"><div class="dot">6</div></div><div class="content">
+        <h4>이미 주가에 반영됐나</h4>
+        <p>여기까지가 임상 판단이고, 여기서부터가 투자 판단이다. 좋은 데이터가 나와도 시장이 이미 성공을 가정하고 있었다면 주가는 빠진다. <b>합의된 기대치(consensus)와 실제 결과의 차이</b>가 주가를 움직인다.</p>
+        <div class="chk"><b>참고</b> 유한양행 레이저티닙은 FDA 승인 발표 당일 주가가 거의 보합이었다. 승인 자체는 이미 반영돼 있었고, 이후 실제 처방 확대가 확인되며 올랐다.</div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Kaplan-Meier 곡선 읽는 법</h3>
+    <p class="note">항암·심혈관·희귀질환 임상의 결과는 거의 항상 이 그림으로 나온다. 네 군데만 보면 된다 — <b>중앙값 · 곡선이 갈라지는 시점 · 꼬리 · 신뢰구간</b>.</p>
+    <div class="card" style="margin-top:16px">
+      <figure class="fig" style="margin:0">
+        <svg viewBox="0 0 700 330" role="img" aria-label="카플란-마이어 생존곡선 예시 — 시험군과 대조군의 계단형 곡선, 중앙값 위치, 곡선이 갈라지는 시점, 장기 생존 꼬리를 표시">
+          <line x1="60" y1="30" x2="60" y2="260" stroke="currentColor" stroke-width="1.2" opacity=".55"/>
+          <line x1="60" y1="260" x2="660" y2="260" stroke="currentColor" stroke-width="1.2" opacity=".55"/>
+          <g font-size="10" fill="currentColor" opacity=".55">
+            <text x="52" y="34" text-anchor="end">100%</text><line x1="60" y1="30" x2="660" y2="30" stroke="currentColor" stroke-dasharray="2 5" opacity=".3"/>
+            <text x="52" y="149" text-anchor="end">50%</text><line x1="60" y1="145" x2="660" y2="145" stroke="currentColor" stroke-dasharray="2 5" opacity=".45"/>
+            <text x="52" y="264" text-anchor="end">0%</text>
+            <text x="160" y="278" text-anchor="middle">6</text><text x="280" y="278" text-anchor="middle">12</text>
+            <text x="400" y="278" text-anchor="middle">18</text><text x="520" y="278" text-anchor="middle">24</text><text x="640" y="278" text-anchor="middle">30</text>
+            <text x="360" y="296" text-anchor="middle">개월</text>
+          </g>
+          <text x="60" y="18" font-size="10" fill="currentColor" opacity=".65">무진행 생존율 (%)</text>
+          <polyline points="60,30 90,30 90,52 130,52 130,78 170,78 170,106 210,106 210,134 250,134 250,168 300,168 300,196 360,196 360,214 430,214 430,224 520,224 520,230 660,230" fill="none" stroke="currentColor" stroke-width="2.4" style="stroke:var(--accent)"/>
+          <polyline points="60,30 84,30 84,64 112,64 112,98 142,98 142,132 176,132 176,166 214,166 214,196 258,196 258,220 310,220 310,238 370,238 370,248 440,248 440,254 660,254" fill="none" stroke="currentColor" stroke-width="2.4" opacity=".55"/>
+          <g stroke="currentColor" stroke-width="1.4" style="stroke:var(--accent)" opacity=".9">
+            <line x1="330" y1="190" x2="330" y2="202"/><line x1="470" y1="218" x2="470" y2="230"/><line x1="580" y1="224" x2="580" y2="236"/>
+          </g>
+          <line x1="60" y1="145" x2="250" y2="145" stroke="currentColor" stroke-width="1" opacity=".5"/>
+          <line x1="176" y1="145" x2="176" y2="260" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
+          <line x1="250" y1="145" x2="250" y2="260" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" style="stroke:var(--accent)" opacity=".8"/>
+          <text x="172" y="130" font-size="10" text-anchor="end" fill="currentColor" opacity=".7">중앙값 9.6</text>
+          <text x="256" y="130" font-size="10" text-anchor="start" fill="currentColor" style="fill:var(--accent)">중앙값 12.4개월</text>
+          <text x="214" y="108" font-size="11" text-anchor="middle" fill="currentColor">Δ 2.8개월</text>
+          <line x1="110" y1="82" x2="126" y2="70" stroke="currentColor" stroke-width="1" opacity=".6"/>
+          <text x="130" y="68" font-size="10" fill="currentColor" opacity=".8">곡선이 갈라지는 시점 — 늦게 갈라지면 지연효과</text>
+          <line x1="600" y1="230" x2="600" y2="200" stroke="currentColor" stroke-width="1" opacity=".6"/>
+          <text x="604" y="196" font-size="10" fill="currentColor" opacity=".8">꼬리(tail) — 장기 반응자 비율</text>
+          <rect x="404" y="36" width="252" height="62" rx="6" fill="none" stroke="currentColor" opacity=".3"/>
+          <text x="416" y="56" font-size="11" fill="currentColor">HR 0.68 (95% CI 0.54–0.86), p=0.001</text>
+          <text x="416" y="74" font-size="10" fill="currentColor" opacity=".75">CI 상단 0.86 &lt; 1 → 통계적으로 유의</text>
+          <text x="416" y="90" font-size="10" fill="currentColor" opacity=".75">세로 눈금(│)은 중도절단(censoring)</text>
+          <text x="60" y="318" font-size="10" fill="currentColor" opacity=".75">시험군</text>
+          <line x1="98" y1="314" x2="126" y2="314" stroke="currentColor" stroke-width="2.4" style="stroke:var(--accent)"/>
+          <text x="140" y="318" font-size="10" fill="currentColor" opacity=".75">대조군</text>
+          <line x1="180" y1="314" x2="208" y2="314" stroke="currentColor" stroke-width="2.4" opacity=".55"/>
+          <text x="230" y="318" font-size="10" fill="currentColor" opacity=".55">위험집단 수(number at risk)가 표 아래 함께 제시되는지 반드시 확인</text>
+        </svg>
+        <figcaption>같은 HR이라도 곡선의 모양이 다르면 의미가 다르다. 면역항암제는 초기에 겹치다 늦게 갈라지며 꼬리가 두껍고(지연효과+장기반응), 표적항암제는 초기부터 갈라지되 꼬리가 얇다.</figcaption>
+      </figure>
+    </div>
+    <div class="grid g3" style="margin-top:14px">
+      <div class="card"><h4 style="font-size:13.5px;margin-bottom:7px">곡선이 교차하면</h4><p style="font-size:12.5px;color:var(--ink-2);line-height:1.6">비례위험 가정(proportional hazards)이 깨진 것이다. 이때 HR 하나로 요약한 숫자는 <b>신뢰하기 어렵다.</b> 초기에 대조군이 더 나았다가 뒤집히는 형태라면 초기 사망 위험을 별도로 봐야 한다.</p></div>
+      <div class="card"><h4 style="font-size:13.5px;margin-bottom:7px">중도절단이 몰려 있으면</h4><p style="font-size:12.5px;color:var(--ink-2);line-height:1.6">한쪽 군에서 추적 소실이 유독 많으면(informative censoring) 곡선 끝부분은 소수 환자에 의존한다. 꼬리 부분의 생존율 차이를 크게 해석하면 안 된다.</p></div>
+      <div class="card"><h4 style="font-size:13.5px;margin-bottom:7px">중앙값에 도달 안 했으면</h4><p style="font-size:12.5px;color:var(--ink-2);line-height:1.6">"NR(not reached)"은 좋은 신호일 수도, 추적기간이 짧을 뿐일 수도 있다. <b>추적기간 중앙값(median follow-up)</b>을 함께 봐야 판단이 가능하다.</p></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>HR · 신뢰구간 한눈에 보기</h3>
+    <div class="card" style="margin-top:16px">
+      <figure class="fig" style="margin:0">
+        <svg viewBox="0 0 680 250" role="img" aria-label="위험비 포레스트 플롯 예시 — 신뢰구간이 1을 포함하는지에 따라 유의성이 갈린다">
+          <line x1="360" y1="24" x2="360" y2="196" stroke="currentColor" stroke-width="1.2" opacity=".6"/>
+          <text x="360" y="216" font-size="10.5" text-anchor="middle" fill="currentColor" opacity=".75">HR = 1 (차이 없음)</text>
+          <text x="180" y="20" font-size="10" text-anchor="middle" fill="currentColor" opacity=".65">← 시험군이 유리</text>
+          <text x="540" y="20" font-size="10" text-anchor="middle" fill="currentColor" opacity=".65">대조군이 유리 →</text>
+          <g font-size="10.5" fill="currentColor">
+            <text x="14" y="52">전체 (N=620)</text>
+            <line x1="196" y1="48" x2="300" y2="48" stroke="currentColor" stroke-width="1.6" style="stroke:var(--accent)"/>
+            <line x1="196" y1="42" x2="196" y2="54" stroke="currentColor" stroke-width="1.6" style="stroke:var(--accent)"/>
+            <line x1="300" y1="42" x2="300" y2="54" stroke="currentColor" stroke-width="1.6" style="stroke:var(--accent)"/>
+            <rect x="240" y="42" width="12" height="12" style="fill:var(--accent)"/>
+            <text x="596" y="52" text-anchor="end" opacity=".8">0.68 (0.54–0.86)</text>
+            <text x="608" y="52" style="fill:var(--accent)">✓</text>
+
+            <text x="14" y="92">PD-L1 ≥50% (N=210)</text>
+            <line x1="150" y1="88" x2="262" y2="88" stroke="currentColor" stroke-width="1.6" style="stroke:var(--accent)"/>
+            <line x1="150" y1="82" x2="150" y2="94" stroke="currentColor" stroke-width="1.6" style="stroke:var(--accent)"/>
+            <line x1="262" y1="82" x2="262" y2="94" stroke="currentColor" stroke-width="1.6" style="stroke:var(--accent)"/>
+            <rect x="200" y="82" width="12" height="12" style="fill:var(--accent)"/>
+            <text x="596" y="92" text-anchor="end" opacity=".8">0.52 (0.38–0.71)</text>
+            <text x="608" y="92" style="fill:var(--accent)">✓</text>
+
+            <text x="14" y="132">PD-L1 &lt;1% (N=180)</text>
+            <line x1="284" y1="128" x2="452" y2="128" stroke="currentColor" stroke-width="1.6" opacity=".65"/>
+            <line x1="284" y1="122" x2="284" y2="134" stroke="currentColor" stroke-width="1.6" opacity=".65"/>
+            <line x1="452" y1="122" x2="452" y2="134" stroke="currentColor" stroke-width="1.6" opacity=".65"/>
+            <rect x="352" y="122" width="12" height="12" fill="currentColor" opacity=".65"/>
+            <text x="596" y="132" text-anchor="end" opacity=".8">0.97 (0.71–1.32)</text>
+            <text x="608" y="132" opacity=".55">—</text>
+
+            <text x="14" y="172">아시아인 (N=140)</text>
+            <line x1="168" y1="168" x2="392" y2="168" stroke="currentColor" stroke-width="1.6" opacity=".65"/>
+            <line x1="168" y1="162" x2="168" y2="174" stroke="currentColor" stroke-width="1.6" opacity=".65"/>
+            <line x1="392" y1="162" x2="392" y2="174" stroke="currentColor" stroke-width="1.6" opacity=".65"/>
+            <rect x="254" y="162" width="12" height="12" fill="currentColor" opacity=".65"/>
+            <text x="596" y="172" text-anchor="end" opacity=".8">0.71 (0.44–1.15)</text>
+            <text x="608" y="172" opacity=".55">—</text>
+          </g>
+          <rect x="14" y="228" width="652" height="0" fill="none"/>
+          <text x="14" y="240" font-size="10.5" fill="currentColor" opacity=".8">막대(신뢰구간)가 세로선을 지나가면 유의하지 않다. 하위군 분석은 사전 지정된 것만 근거가 되며, 사후(post-hoc) 하위군은 가설 생성용이다.</text>
+        </svg>
+        <figcaption>바이오마커로 환자를 좁히면 HR이 개선되는 패턴이 전형적이다. 다만 하위군에서만 유의한 결과는 <b>다음 임상의 설계 근거</b>이지 승인의 근거가 아니다.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>모달리티별 — 무엇을 보고, 무엇을 의심하는가</h3>
+    <div class="tw" style="margin-top:16px"><table>
+      <thead><tr><th style="min-width:110px">모달리티</th><th>핵심 효능 지표</th><th>반드시 보는 안전성 신호</th><th>가장 흔한 함정</th></tr></thead>
+      <tbody>
+        <tr><td><strong>저분자 표적항암</strong></td><td>ORR · PFS · 뇌전이 환자 반응률(CNS ORR) · <b>내성 변이 대응 범위</b></td><td>QT 연장, 간효소 상승, 피부·설사(EGFR 계열), 용량 감량률</td><td>내성 변이가 생기는 시점이 곧 매출 곡선의 끝. <b>2차 내성 프로파일</b>을 안 보면 지속기간을 과대평가한다</td></tr>
+        <tr><td><strong>항체 (mAb)</strong></td><td>ORR · PFS · OS · 반감기 기반 투여 간격</td><td>주입 관련 반응(IRR), 면역원성(ADA 발생률과 중화항체 여부)</td><td><b>ADA(항약물항체)</b> 데이터는 잘 보도되지 않는다. 장기 투여 약에서 ADA가 높으면 효과가 시간이 갈수록 떨어진다</td></tr>
+        <tr><td><strong>이중항체</strong></td><td>ORR · CR률 · 반응 지속기간(DoR)</td><td><b>CRS·ICANS 등급별 비율</b>, step-up dosing 필요 여부, 입원 요구</td><td>단일 항체와 같은 기준으로 안전성을 비교하면 안 된다. 외래 투여 가능 여부가 상업성을 가른다</td></tr>
+        <tr><td><strong>ADC</strong></td><td>ORR · DoR · 항원 발현 수준별 반응(HER2-low 등) · <b>DAR</b></td><td>호중구감소·혈소판감소, <b>간질성 폐질환(ILD)</b>, 안구독성, 말초신경병증 — 페이로드 계열마다 다르다</td><td>링커 불안정으로 인한 <b>오프타깃 독성</b>은 후기 임상에서야 드러난다. 초기 ORR만 보고 판단하면 위험</td></tr>
+        <tr><td><strong>면역항암제</strong></td><td><b>OS와 장기 생존 꼬리</b> · 반응 지속기간 · 바이오마커별 하위군</td><td>면역관련 이상반응(irAE) — 갑상선·폐렴·대장염·간염, 스테로이드 사용률</td><td>PFS만으로 판단 금지. <b>지연 효과</b> 때문에 초기 곡선이 겹치거나 오히려 역전되는 것이 정상이다</td></tr>
+        <tr><td><strong>CAR-T / 세포치료</strong></td><td>ORR · <b>CR률</b> · MRD 음성률 · 무재발 생존</td><td><b>CRS·ICANS Grade 3+ 비율</b>, 장기 혈구감소, 2차 악성종양</td><td>제조 실패·vein-to-vein 기간 중 탈락 환자가 ITT에서 빠졌는지 확인. <b>enrolled vs treated</b> 숫자 차이가 핵심</td></tr>
+        <tr><td><strong>유전자치료</strong></td><td>바이오마커 발현량(단백질 수치) · <b>지속기간</b> · 기능적 개선</td><td>간독성(AAV 고용량), 보체 활성화·혈전성 미세혈관병증, 삽입 변이</td><td>단기 발현은 대부분 성공한다. <b>3년·5년 추적에서 감소하는지</b>가 진짜 질문이며, 여기서 밸류가 갈린다</td></tr>
+        <tr><td><strong>RNA 치료제</strong></td><td>표적 단백질 감소율(knockdown %) · 투여 간격 · 조직 전달률</td><td>주사부위 반응, 간·신장 지표, 혈소판감소(일부 ASO)</td><td>knockdown이 잘 되는 것과 임상적 이득은 별개다. <b>대리지표만으로 승인된 사례의 확증임상</b>을 확인할 것</td></tr>
+        <tr><td><strong>바이오시밀러</strong></td><td>PK 동등성(AUC·Cmax 90% CI가 80~125% 이내) · 분석적 유사성</td><td>면역원성 비교, 스위칭 시 안전성</td><td>임상보다 <b>특허·소송·생산 CAPA</b>가 실제 리스크. "동등성 입증"은 출시 시점을 보장하지 않는다</td></tr>
+        <tr><td><strong>백신</strong></td><td>면역원성(항체가·중화항체 역가·seroconversion) · 예방 효능(VE)</td><td>반응원성(reactogenicity), 희귀 이상반응은 대규모에서만 드러남</td><td>면역원성 지표가 좋아도 실제 예방 효과와 직결되지 않는다. <b>상관면역지표(CoP)</b>가 확립된 질환인지 확인</td></tr>
+        <tr><td><strong>대사 (GLP-1 등)</strong></td><td>체중 감소율(%) · HbA1c 변화 · <b>제지방 보존 비율</b> · 심혈관 아웃컴</td><td>위장관 이상반응으로 인한 <b>중단율</b>, 췌장염, 담낭질환, 근육량 감소</td><td>72주 체중감소율만 보면 안 된다. <b>중단율과 투약 중단 후 재증가(rebound)</b>가 실제 처방 지속성을 결정한다</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="sec">
+    <h3>질환별 — 표준 엔드포인트와 승인의 문턱</h3>
+    <p class="note">같은 ORR 30%도 질환에 따라 승인 근거가 되기도 하고 아무 의미가 없기도 하다. 규제기관이 그 질환에서 무엇을 요구하는지가 기준이다.</p>
+    <div class="tw" style="margin-top:16px"><table>
+      <thead><tr><th style="min-width:100px">질환 영역</th><th>1차 지표 표준</th><th>가속승인 가능 대리지표</th><th>실무에서 집중할 포인트</th></tr></thead>
+      <tbody>
+        <tr><td><strong>고형암</strong></td><td><b>OS</b>가 최종 기준. 1·2차 치료는 PFS도 인정</td><td>ORR + DoR (불응성·희귀 암종), pCR(수술 전 보조요법)</td><td>전처치 라인 수 · 뇌전이 포함 여부 · RECIST 판정을 독립위원회(BICR)가 했는지</td></tr>
+        <tr><td><strong>혈액암</strong></td><td>OS · PFS · EFS</td><td><b>CR률 · MRD 음성률</b> (규제기관 수용도 높음)</td><td>MRD 측정 방법(NGS vs 유세포)과 민감도. 이식으로 넘어간 환자 처리 방식</td></tr>
+        <tr><td><strong>자가면역</strong></td><td>질환별 반응 기준 달성률 — ACR20/50/70(류마티스), PASI 75/90(건선), 관해율(IBD)</td><td>드묾 — 대부분 임상적 지표를 직접 요구</td><td><b>위약 반응률이 높다</b>(20~40%). 절대 차이(delta)를 봐야 하며, 유지기 데이터가 유도기보다 중요</td></tr>
+        <tr><td><strong>대사 (당뇨·비만)</strong></td><td>HbA1c 변화 · 체중 변화율</td><td>—</td><td><b>심혈관 안전성·아웃컴 임상(CVOT)</b>이 사실상 필수. 체중감소약은 근육량 보존과 중단율이 차별화 축</td></tr>
+        <tr><td><strong>MASH(NASH)</strong></td><td>조직학적 개선 — 섬유화 악화 없는 지방간염 해소, 또는 섬유화 1단계 이상 개선</td><td>위 조직학적 지표로 가속승인 후 아웃컴 확증</td><td><b>생검 기반</b>이라 판독자 간 변동이 크다. 비침습 지표(MRI-PDFF, ELF)와의 상관성 확인</td></tr>
+        <tr><td><strong>CNS — 알츠하이머</strong></td><td>인지·기능 복합지표(CDR-SB, ADAS-Cog)</td><td>아밀로이드 제거(PET) — 논쟁적</td><td>통계적 유의와 <b>임상적 의미</b>가 다르다. ARIA(뇌부종·미세출혈) 발생률과 APOE4 보인자 하위군을 반드시 확인</td></tr>
+        <tr><td><strong>CNS — 뇌전증·정신</strong></td><td>발작 빈도 감소율 · 증상척도 변화</td><td>—</td><td>위약 반응이 크고 변동성이 높다. 중도탈락률과 맹검 유지 여부(부작용으로 배정군이 드러나는지)</td></tr>
+        <tr><td><strong>희귀 유전질환</strong></td><td>기능적 지표(보행·운동기능) 또는 질환 특이 척도</td><td><b>바이오마커</b>(효소 활성, 단백질 발현) — 수용도 높음</td><td>자연경과(natural history) 대조가 흔하다 → 비교 대조군의 질이 전부. 환자 수가 적어 개별 사례가 결과를 흔든다</td></tr>
+        <tr><td><strong>안과</strong></td><td>최대교정시력(BCVA) 문자 수 변화 · 망막 두께</td><td>—</td><td>비열등성 설계가 많다(마진 통상 4문자). <b>투여 간격 연장</b>이 실제 차별화 포인트 — 효능이 같아도 주사 횟수가 적으면 이긴다</td></tr>
+        <tr><td><strong>감염·백신</strong></td><td>예방 효능(VE) · 바이러스 억제율</td><td>면역원성(CoP 확립 질환에 한함)</td><td>변이주 대응 데이터. 조달 계약이 매출을 결정하므로 임상보다 <b>공급 계약</b>이 중요한 경우가 많다</td></tr>
+        <tr><td><strong>호흡기 (COPD·천식·IPF)</strong></td><td>FEV1 변화 · 악화(exacerbation) 빈도 · FVC 감소율(IPF)</td><td>—</td><td>계절성과 흡입 순응도가 결과를 흔든다. IPF는 FVC 연간 감소폭 차이(mL)로 승부가 나며 절대값이 작다</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="sec">
+    <h3>자주 나오는 오독 7가지</h3>
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card"><h4 style="font-size:14px;margin-bottom:8px;color:var(--alert)">① 교차시험 비교</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.62">"우리 ORR 45%, 경쟁약 38%" — 다른 임상, 다른 환자군이다. 환자 선별 기준 하나만 달라도 ORR은 10%p 넘게 움직인다. <b>같은 임상 안의 대조군과만 비교 가능하다.</b></p></div>
+      <div class="card"><h4 style="font-size:14px;margin-bottom:8px;color:var(--alert)">② 하위군 체리피킹</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.62">전체에서 실패하고 특정 하위군에서만 유의했다면, 그건 <b>다음 임상의 가설</b>이지 결과가 아니다. 사전 지정(pre-specified) 여부를 반드시 확인한다.</p></div>
+      <div class="card"><h4 style="font-size:14px;margin-bottom:8px;color:var(--alert)">③ 상대위험 착시</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.62">"사망 위험 40% 감소"가 절대 생존 차이 1.9개월인 경우가 흔하다. <b>상대값과 절대값을 함께</b> 봐야 하며, 임상적 의미는 절대값에 있다.</p></div>
+      <div class="card"><h4 style="font-size:14px;margin-bottom:8px;color:var(--alert)">④ 대리지표 과신</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.62">종양 축소·바이오마커 개선이 생존 연장으로 이어지지 않은 사례가 많다. 가속승인 후 <b>확증임상 실패로 철회</b>된 전례를 항상 염두에 둘 것.</p></div>
+      <div class="card"><h4 style="font-size:14px;margin-bottom:8px;color:var(--alert)">⑤ 안전성을 발생률로만 보기</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.62">Grade 1~2가 많은 것과 <b>중단율이 높은 것</b>은 전혀 다른 문제다. 중단율·감량률·대조군 대비 초과분 세 가지를 본다.</p></div>
+      <div class="card"><h4 style="font-size:14px;margin-bottom:8px;color:var(--alert)">⑥ 규제 지정 = 승인 임박</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.62">Fast Track·희귀의약품 지정은 데이터의 질에 대한 판단이 아니다. 05번 탭의 파급력 서열을 기준으로 해석할 것.</p></div>
+      <div class="card" style="grid-column:1/-1"><h4 style="font-size:14px;margin-bottom:8px;color:var(--alert)">⑦ "통계적 유의" = "임상적 의미"</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.62">N이 충분히 크면 아주 작은 차이도 p&lt;0.05가 된다. 알츠하이머 임상에서 반복적으로 논쟁이 되는 지점이 정확히 이것이다. <b>그 차이가 환자·의사에게 체감되는 크기인가</b>를 별도로 물어야 하고, 이 질문에 답하지 못하면 상업성 추정이 통째로 흔들린다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 05 규제 ==================== -->
 <section class="pane" id="p-reg">
-  <div class="eyebrow">04 — Regulatory</div>
+  <div class="eyebrow">05 — Regulatory</div>
   <h2>규제·제도</h2>
   <p class="lede">규제는 이 산업에서 <b>비용이자 동시에 진입장벽</b>이다. 어떤 신속심사 트랙을 받았느냐가 주가 반응의 크기를 결정하고, 한국의 약가·상장 제도가 국내 종목의 이익 추정치와 IPO 가능성을 좌우한다.</p>
 
@@ -589,7 +791,7 @@ td strong{font-weight:600}
 
 <!-- ==================== 05 시장 규모 ==================== -->
 <section class="pane" id="p-market">
-  <div class="eyebrow">05 — Market Size</div>
+  <div class="eyebrow">06 — Market Size</div>
   <h2>시장 규모</h2>
   <p class="lede">시장규모 숫자는 <b>리서치사마다 정의·기준연도·집계방식이 달라 상호 비교가 불가능</b>하다. 아래 표는 출처와 기준연도를 강제로 병기했다. 서로 다른 리서치사 수치를 한 표에서 합산·비교하지 말 것.</p>
 
@@ -668,7 +870,7 @@ td strong{font-weight:600}
 
 <!-- ==================== 06 테마 딥다이브 ==================== -->
 <section class="pane" id="p-theme">
-  <div class="eyebrow">06 — Deep Dive</div>
+  <div class="eyebrow">07 — Deep Dive</div>
   <h2>테마 딥다이브</h2>
   <p class="lede">국내 헬스케어 종목은 개별 펀더멘털보다 <b>테마 단위</b>로 움직인다. 각 테마의 드라이버 · 경쟁구도 · 국내 플레이어를 한 장으로 정리했다.</p>
 
@@ -780,7 +982,7 @@ td strong{font-weight:600}
 
 <!-- ==================== 07 정책 워치 ==================== -->
 <section class="pane" id="p-policy">
-  <div class="eyebrow">07 — Policy Watch 2026</div>
+  <div class="eyebrow">08 — Policy Watch 2026</div>
   <h2>2026 정책 워치</h2>
   <p class="lede">2026년 헬스케어 섹터의 방향은 임상 데이터보다 <b>정책</b>이 더 크게 흔들고 있다. 관세·약가·공급망 안보 세 축이 동시에 움직이는 해다.</p>
 
@@ -912,7 +1114,7 @@ td strong{font-weight:600}
 
 <!-- ==================== 08 밸류에이션 ==================== -->
 <section class="pane" id="p-val">
-  <div class="eyebrow">08 — Valuation</div>
+  <div class="eyebrow">09 — Valuation</div>
   <h2>밸류에이션 프레임</h2>
   <p class="lede">제약바이오는 <b>이익이 없는 기업을 평가해야 하는</b> 거의 유일한 대형 섹터다. 그래서 방법론 선택 자체가 결론을 좌우한다. 회사가 밸류체인의 어느 칸에 있는지에 따라 쓸 수 있는 방법이 정해진다.</p>
 
@@ -1000,9 +1202,107 @@ td strong{font-weight:600}
   </div>
 </section>
 
-<!-- ==================== 09 유니버스 ==================== -->
+<!-- ==================== 10 체크포인트 ==================== -->
+<section class="pane" id="p-check">
+  <div class="eyebrow">10 — Diligence Checklist</div>
+  <h2>체크포인트</h2>
+  <p class="lede">모달리티와 질환마다 <b>깨지는 지점이 정해져 있다.</b> 아래는 기업을 처음 볼 때 순서대로 물어야 할 질문들이다. 04번 탭이 "발표된 데이터를 읽는 법"이라면, 여기는 "무엇을 물어봐야 하는가"다.</p>
+
+  <div class="sec">
+    <h3>기업 유형별 5분 스캔</h3>
+    <p class="note">회사 소개를 받고 5분 안에 던져야 할 질문. 여기서 막히면 그 이상 들여다볼 필요가 없는 경우가 많다.</p>
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card"><h4 style="font-size:14.5px;margin-bottom:9px">플랫폼 바이오텍</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.68">① 플랫폼으로 <b>몇 개의 독립적인 딜</b>이 나왔나 — 한 건이면 플랫폼이 아니라 물질이다<br>② 파트너가 <b>자체 파이프라인에 실제로 적용</b>했나, 옵션만 산 것인가<br>③ 업프론트 누적액 vs 누적 R&amp;D 비용<br>④ 원천특허 만료 시점과 회피 설계 가능성<br>⑤ 로열티 단계에 진입한 자산이 있나</p></div>
+      <div class="card"><h4 style="font-size:14.5px;margin-bottom:9px">신약 개발사</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.68">① 캐시 러너웨이 몇 개월인가 — <b>다음 데이터 발표 전에 증자가 필요한가</b><br>② 파이프라인 중 <b>3상 진입 가능한 자금</b>이 있는 것이 몇 개인가<br>③ 1등 자산이 실패하면 남는 것이 있나(단일 자산 리스크)<br>④ 같은 표적을 겨냥한 글로벌 경쟁자가 몇 단계 앞서 있나<br>⑤ 경영진이 이전에 허가까지 끌고 간 경험이 있나</p></div>
+      <div class="card"><h4 style="font-size:14.5px;margin-bottom:9px">CDMO</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.68">① 수주잔고의 <b>소진 스케줄</b>과 가동률 전망<br>② 상위 3개 고객 매출 비중(집중도 리스크)<br>③ 신규 캐파 가동 시점과 감가상각 반영 시점<br>④ 규제 실사(FDA·EMA) 이력에 483/Warning Letter가 있나<br>⑤ 모달리티 확장(ADC·CGT·펩타이드)이 실제 수주로 연결됐나</p></div>
+      <div class="card"><h4 style="font-size:14.5px;margin-bottom:9px">바이오시밀러</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.68">① 타깃 오리지널의 <b>미국·EU 특허 만료일이 각각</b> 언제인가<br>② 진입 순번 몇 번째인가, 이미 몇 개사가 승인받았나<br>③ 상호교환성(interchangeability) 지정 여부<br>④ 직판인가 파트너 유통인가 — 마진 구조가 완전히 다르다<br>⑤ 오리지널사의 방어 전략(제형 전환·오센트릭 시밀러)</p></div>
+      <div class="card"><h4 style="font-size:14.5px;margin-bottom:9px">의료기기 · 진단</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.68">① 인허가 경로(510(k)/PMA/De Novo)와 소요 예상<br>② <b>수가(보험) 등재</b>가 됐나 — 안 됐으면 매출은 없다<br>③ 장비 설치기반 대비 <b>소모품 재구매율</b><br>④ 국가별 인허가 진행 현황(비관세장벽)<br>⑤ 대체 기술의 등장 주기 — 미용기기는 특히 짧다</p></div>
+      <div class="card"><h4 style="font-size:14.5px;margin-bottom:9px">의료 AI · 디지털헬스</h4><p style="font-size:13px;color:var(--ink-2);line-height:1.68">① 허가받은 제품이 <b>수가를 받고 있나</b><br>② 유료 고객 병원 수와 <b>재계약률</b><br>③ 매출이 정부 과제/용역인가, 반복 매출인가<br>④ 학습 데이터의 확보 경로와 지속 가능성<br>⑤ 해외 인허가(FDA·CE)와 현지 파트너</p></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>모달리티별 실사 체크리스트</h3>
+    <div class="tw" style="margin-top:16px"><table>
+      <thead><tr><th style="min-width:106px">모달리티</th><th>기술 확인사항</th><th>상업 확인사항</th><th style="min-width:200px">레드플래그</th></tr></thead>
+      <tbody>
+        <tr><td><strong>저분자 표적</strong></td><td>표적 선택성(오프타깃 키나아제) · 뇌 투과 필요 여부 · 내성 변이 커버 범위 · 대사 안정성</td><td>제조원가 · 경구 제형 편의성 · 특허 존속기간 · 동일 표적 선발주자와의 격차</td><td>선발주자가 이미 3상인데 차별점이 "더 좋은 안전성"뿐 · 내성 변이 대응 전략 부재</td></tr>
+        <tr><td><strong>항체</strong></td><td>항원 발현 특이성(정상조직 발현) · 이펙터 기능 설계 의도 · 면역원성(ADA) · 반감기</td><td>투여 간격과 SC 제형 전환 가능성 · 생산 수율(g/L) · 시밀러 진입 예상 시점</td><td>정상조직에도 표적이 발현 · SC 전환 계획 없이 IV만 · 세포주 수율이 업계 평균 이하</td></tr>
+        <tr><td><strong>이중항체</strong></td><td>플랫폼 종류(Fc 유무) · chain mispairing 해결 방식 · 정제 수율 · CRS 완화 설계(step-up)</td><td>외래 투여 가능 여부 · 경쟁 이중항체 대비 표적 조합의 독자성</td><td>입원이 필요한 투여 스케줄 · 같은 표적 조합을 빅파마가 이미 후기 임상 진행</td></tr>
+        <tr><td><strong>ADC</strong></td><td><b>링커 안정성 데이터(혈중 반감기)</b> · 페이로드 계열과 기전 · DAR 균일도 · 방관자 효과(bystander) 유무</td><td>ADC 전용 생산 CAPA 확보 · 페이로드 원료 공급망 · 링커 특허 방어력</td><td>링커 원천기술이 라이선스인 · 페이로드가 이미 내성이 알려진 계열 · CMC(공정) 미확립</td></tr>
+        <tr><td><strong>면역항암</strong></td><td>바이오마커 선별 전략 · 병용 파트너 확보 · 종양미세환경 근거</td><td>키트루다·옵디보 병용 계약 가능성 · 단독 vs 병용 포지셔닝</td><td>바이오마커 없이 전체 환자 대상 설계 · 이미 포화된 PD-1 계열에 후발 진입</td></tr>
+        <tr><td><strong>CAR-T · 세포</strong></td><td>자가 vs 동종 · 공동자극 도메인 선택 근거 · 제조 성공률 · <b>vein-to-vein 기간</b> · 지속성(persistence)</td><td>제조 CAPA와 원가 · 치료 가능 병원 수(REMS) · 급여 등재 구조</td><td>제조 실패율 미공개 · 자가유래인데 원가 절감 계획 없음 · 고형암 데이터가 혈액암 성공의 근거로 제시됨</td></tr>
+        <tr><td><strong>유전자치료</strong></td><td>벡터 종류와 적재 용량 · <b>중화항체 유병률</b>(투여 가능 환자 비율) · 재투여 가능성 · 발현 지속 데이터</td><td>1회 투여 가격 근거 · 지불자 협상 구조(성과기반 환급) · 환자 풀 규모</td><td>지속기간 데이터가 1년 미만 · NAb 양성 환자를 제외했는데 그 비율이 큼 · 고용량 AAV 간독성 사례</td></tr>
+        <tr><td><strong>RNA · 올리고</strong></td><td>전달 기술 보유 여부(GalNAc·LNP·컨쥬게이트) · <b>간 외 조직 전달 근거</b> · 오프타깃 프로파일</td><td>올리고 원료(API) 조달 · 투여 간격(분기 1회면 강력한 차별점)</td><td>전달기술을 외부에 의존 · 간 표적 외 데이터가 전임상뿐 · API 공급처 단일</td></tr>
+        <tr><td><strong>바이오시밀러</strong></td><td>분석적 유사성 데이터 범위 · 세포주·공정 자체 보유 여부 · 스위칭 데이터</td><td><b>특허 소송 상태</b> · 진입 순번 · 상호교환성 · 유통 채널</td><td>특허 회피 설계 미확정 · 이미 4~5개사 승인된 품목에 진입 · 위탁 생산 의존</td></tr>
+        <tr><td><strong>백신</strong></td><td>플랫폼(단백질·mRNA·벡터) · 변이 대응 속도 · 콜드체인 요구</td><td>정부·국제기구 조달 계약 · 생산 CAPA · 계절성 수요 예측</td><td>조달 계약 없이 CAPA만 확장 · 팬데믹 특수 매출을 정상 매출로 제시</td></tr>
+        <tr><td><strong>미용 · 톡신</strong></td><td>균주 출처의 법적 안정성 · 내성(중화항체) 프로파일 · 지속기간</td><td>국가별 인허가 진행 · 현지 파트너 · 가격 포지셔닝</td><td>균주 분쟁 진행 중 · 미국 진출 계획이 파트너 계약 없이 발표만 · 중국 의존도 과다</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="sec">
+    <h3>질환별 체크리스트</h3>
+    <p class="note">질환마다 임상의 난이도와 상업화 구조가 다르다. "좋은 데이터"의 기준선 자체가 다르다는 뜻이다.</p>
+    <div class="tw" style="margin-top:16px"><table>
+      <thead><tr><th style="min-width:96px">질환</th><th>시장·경쟁 구조</th><th>임상 난이도 요인</th><th style="min-width:220px">이 질환에서만 특별히 물어야 할 것</th></tr></thead>
+      <tbody>
+        <tr><td><strong>고형암</strong></td><td>표적별로 잘게 쪼개진 시장. 1차 치료 진입 여부가 매출 규모를 10배 가른다</td><td>OS 도달까지 시간이 길다 · 후속 치료(crossover)가 OS를 희석</td><td>1차로 갈 수 있나 아니면 후기 라인 전용인가 · 동반진단이 필요한가 · 병용 파트너의 특허 만료 시점</td></tr>
+        <tr><td><strong>혈액암</strong></td><td>환자 수는 적지만 고가. CAR-T·이중항체 경쟁이 매우 빠르게 재편</td><td>이식으로 넘어가는 환자 처리 · MRD 측정 표준화</td><td>이식 가능 환자와 불가 환자 중 어느 쪽인가 · 앞선 계열 치료 실패 후에도 듣는가(불응성 데이터)</td></tr>
+        <tr><td><strong>자가면역</strong></td><td>블록버스터 밀집 지역. 시밀러 침투로 가격이 빠르게 하락</td><td><b>위약 반응률 20~40%</b> · 장기 유지 데이터 필요</td><td>기존 TNF·IL 계열 실패 환자에서 듣는가 · 경구 옵션인가 · 유지기 데이터가 있는가</td></tr>
+        <tr><td><strong>대사 (비만·당뇨)</strong></td><td>양강 과점. 후발주자는 <b>차별화 축</b>(경구·근육보존·병용)이 없으면 진입 불가</td><td>CVOT 등 대규모 아웃컴 임상 필수 · 장기 추적</td><td>근육 보존 데이터가 있나 · 중단율이 선발주자보다 낮은가 · 생산 CAPA(펩타이드) 확보</td></tr>
+        <tr><td><strong>MASH</strong></td><td>미충족 수요 크지만 <b>생검 기반</b>이라 개발이 오래 걸린다</td><td>조직 판독 변동성 · 환자 모집 난이도 · 위약 반응</td><td>비침습 지표와 조직 결과의 상관성 · GLP-1 계열과의 병용/경합 포지션</td></tr>
+        <tr><td><strong>CNS — 알츠하이머</strong></td><td>환자 풀 거대, 성공 시 폭발적. 다만 실패율이 가장 높은 영역</td><td>인지 지표의 변동성 · 진단 확정(아밀로이드 PET) 비용 · 장기 추적</td><td>ARIA 발생률과 APOE4 하위군 · 통계적 유의가 <b>임상적으로 체감</b>되는 크기인가 · 투여 인프라(PET·MRI 모니터링) 요구</td></tr>
+        <tr><td><strong>CNS — 기타</strong></td><td>뇌전증·정신질환은 제네릭 경쟁이 심하고 신약 프리미엄이 짧다</td><td>혈뇌장벽 투과 · 위약 반응 · 맹검 유지 어려움</td><td>BBB 투과 근거가 전임상뿐인가 · 기존 약 대비 차별점이 부작용 감소뿐인가</td></tr>
+        <tr><td><strong>희귀질환</strong></td><td>소수 환자·초고가. 7년 시장독점 등 인센티브가 강력</td><td>환자 모집 자체가 최대 난관 · 자연경과 대조의 질</td><td>전 세계 환자 수 추정의 근거 · 진단율(진단 안 된 환자가 대부분인 경우 많음) · 지불자 협상 사례</td></tr>
+        <tr><td><strong>안과</strong></td><td>아일리아·루센티스 시밀러 경쟁 본격화. 투여 간격이 차별화 축</td><td>비열등성 설계 · 시력 지표의 측정 표준화</td><td>주사 간격을 실제로 늘렸나 · 병용 없이 단독으로 유지되나 · 유리체강내 투여 인프라</td></tr>
+        <tr><td><strong>감염·백신</strong></td><td>정부 조달 중심으로 단가가 낮고, 유행 사이클에 실적이 좌우</td><td>유행 시점에 임상을 맞춰야 함 · 변이 대응</td><td>조달 계약이 체결됐나 · 평시 수요가 있는 제품인가 · CAPA가 유휴가 되지 않나</td></tr>
+        <tr><td><strong>호흡기</strong></td><td>흡입제는 디바이스 특허가 진입장벽. IPF는 미충족 수요 큼</td><td>계절성 · 순응도 · 폐기능 지표의 절대 변화폭이 작다</td><td>디바이스 특허가 물질특허보다 오래 남아 있나 · 기존 표준요법과 병용 데이터가 있나</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="sec">
+    <h3>기술이전(L/O) 계약 뜯어보기</h3>
+    <p class="note">헤드라인 총액은 거의 언제나 최대 이론치다. 아래 순서로 분해하면 실제 확보된 현금이 보인다.</p>
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card">
+        <h4 style="font-size:14.5px;margin-bottom:10px">숫자 분해</h4>
+        <table style="font-size:12.5px"><tbody>
+          <tr><td style="padding-left:0"><strong>① 업프론트 / 총액</strong></td><td>이 비율이 계약의 진정성 지표. <b>5% 미만이면 사실상 옵션 계약</b>에 가깝다</td></tr>
+          <tr><td style="padding-left:0"><strong>② 마일스톤 구성</strong></td><td>개발 마일스톤 vs <b>판매 마일스톤</b> 구분. 판매 마일스톤은 상업화 성공 이후라 현실화 확률이 훨씬 낮다</td></tr>
+          <tr><td style="padding-left:0"><strong>③ 로열티율</strong></td><td>대개 미공개. 공개됐다면 순매출 기준인지 총매출 기준인지 확인</td></tr>
+          <tr><td style="padding-left:0"><strong>④ 권리 범위</strong></td><td>전세계인가 특정 지역인가 · 적응증 제한이 있나 · 서브라이선스 가능한가</td></tr>
+          <tr><td style="padding-left:0"><strong>⑤ 비용 분담</strong></td><td>이후 개발비를 누가 대는가. 공동 부담이면 현금 유출이 계속된다</td></tr>
+          <tr><td style="padding-left:0"><strong>⑥ 반환 조건</strong></td><td>파트너가 언제든 반환 가능한 구조인가. 통지 기간과 자산 반환 조건</td></tr>
+        </tbody></table>
+      </div>
+      <div class="card">
+        <h4 style="font-size:14.5px;margin-bottom:10px">계약 이후에 확인할 것</h4>
+        <p style="font-size:13px;color:var(--ink-2);line-height:1.7">· 파트너가 <b>실제로 임상을 개시했나</b> — ClinicalTrials.gov에 스폰서 이름으로 등록됐는지 확인<br>
+        · 파트너의 파이프라인 우선순위에서 몇 번째인가 — IR 자료에 언급되지 않으면 후순위 신호<br>
+        · 파트너사에 <b>인수·구조조정</b>이 있었나 — 자산 재검토로 반환되는 전형적 경로<br>
+        · 마일스톤 수령 공시가 예정 시점에 실제로 나왔나<br>
+        · 회계상 수익 인식 방식(K-IFRS 1115) — 일시 인식인지 진행기준인지</p>
+        <div class="callout w" style="margin-top:12px;font-size:12.5px"><b>반환 리스크</b> 이미 받은 업프론트는 돌려주지 않지만, 반환 공시가 나오면 마일스톤·로열티 기대가 한 번에 사라진다. 계약 총액을 기업가치에 반영해둔 상태였다면 하락폭이 크다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>공통 레드플래그</h3>
+    <div class="grid g3" style="margin-top:16px">
+      <div class="card"><h4 style="font-size:13.5px;margin-bottom:7px;color:var(--alert)">데이터 관련</h4><p style="font-size:12.5px;color:var(--ink-2);line-height:1.6">· 1차 지표 미달성인데 "긍정적 경향"으로 발표<br>· 임상 도중 엔드포인트·모집 규모 변경<br>· 대조군 없는 데이터로 경쟁약과 직접 비교<br>· 안전성 상세(등급별 비율·중단율) 미공개<br>· 학회 발표 없이 보도자료만</p></div>
+      <div class="card"><h4 style="font-size:13.5px;margin-bottom:7px;color:var(--alert)">재무·지배구조</h4><p style="font-size:12.5px;color:var(--ink-2);line-height:1.6">· 캐시 러너웨이 12개월 미만<br>· 반복되는 CB·BW 발행과 전환가 조정<br>· 대주주 지분율 급락 또는 담보 설정<br>· 감사의견 강조사항(계속기업 불확실성)<br>· 관계사 간 자금 대여·거래 비중이 큼</p></div>
+      <div class="card"><h4 style="font-size:13.5px;margin-bottom:7px;color:var(--alert)">커뮤니케이션</h4><p style="font-size:12.5px;color:var(--ink-2);line-height:1.6">· 규제 지정(Fast Track·ODD)을 승인 임박처럼 표현<br>· "글로벌 제약사와 협의 중" 반복<br>· 시장규모(TAM)만 강조하고 침투율 가정 없음<br>· 파이프라인 수만 늘고 단계가 안 올라감<br>· 핵심 연구인력 이탈</p></div>
+    </div>
+    <div class="callout" style="margin-top:16px"><b>실무 요령</b> 위 항목 중 하나가 걸린다고 탈락은 아니다. 다만 <b>세 개 이상이 동시에 걸리면</b> 통계적으로 좋지 않은 조합이며, 그때부터는 밸류에이션이 아니라 존속 가능성을 먼저 확인하는 것이 순서다.</div>
+  </div>
+</section>
+
+<!-- ==================== 11 유니버스 ==================== -->
 <section class="pane" id="p-universe">
-  <div class="eyebrow">09 — Coverage Universe</div>
+  <div class="eyebrow">11 — Coverage Universe</div>
   <h2>국내 커버리지 유니버스</h2>
   <p class="lede">국내 상장 제약·바이오·의료기기 <span id="ucount2" class="mono"></span>개사를 서브섹터로 분류했다. 피어 그룹을 좁히거나 특정 모달리티 노출 종목을 찾을 때 쓴다.</p>
 
@@ -1025,7 +1325,7 @@ td strong{font-weight:600}
 
 <!-- ==================== 10 캘린더 ==================== -->
 <section class="pane" id="p-cal">
-  <div class="eyebrow">10 — Calendar</div>
+  <div class="eyebrow">12 — Calendar</div>
   <h2>이벤트 캘린더</h2>
   <p class="lede">학회는 이 산업의 <b>실적 발표일</b>이다. 데이터가 공개되는 날짜가 정해져 있고, 그 전후로 자금조달 창구가 열리고 닫힌다. ECM 관점의 활용 포인트를 함께 붙였다.</p>
 
@@ -1065,7 +1365,7 @@ td strong{font-weight:600}
 
 <!-- ==================== 11 용어사전 ==================== -->
 <section class="pane" id="p-gloss">
-  <div class="eyebrow">11 — Glossary</div>
+  <div class="eyebrow">13 — Glossary</div>
   <h2>용어 사전</h2>
   <p class="lede">기초 레이어 원자료와 2026년 최신 자료에서 실제로 등장한 용어 <span id="gcount2" class="mono"></span>개. 리포트를 읽다 막히는 지점을 그때그때 찾아보는 용도다.</p>
 
@@ -1082,7 +1382,7 @@ td strong{font-weight:600}
 
 <!-- ==================== 12 출처 ==================== -->
 <section class="pane" id="p-src">
-  <div class="eyebrow">12 — Sources &amp; Data Quality</div>
+  <div class="eyebrow">14 — Sources &amp; Data Quality</div>
   <h2>출처 · 데이터 품질</h2>
   <p class="lede">이 도구는 두 개의 레이어로 만들어졌다. <b>기초 레이어</b>는 산업 입문 자료·공공기관 발간물·FDA 원문에서 정리한 구조적 지식이고, <b>최신 레이어</b>는 2026년 8월 웹 검색이다. 각 레이어의 한계를 아래에 그대로 적었다.</p>
 
@@ -1256,6 +1556,276 @@ const MOD=[
  chk:'정부·국제기구(Gavi, WHO, UNICEF) 조달계약 확보 여부 · <b>치료백신</b>으로의 확장 · mRNA 등 신규 플랫폼 전환 속도. Moderna/Merck의 개인맞춤형 암백신 mRNA-4157이 대표적 확장 사례',
  src:'산업 입문 자료 — 적응증별 시장 편'}
 ];
+/* ============ 모달리티 구조 도식 ============ */
+const DIA={};
+
+DIA['저분자화합물']=`<figure class="fig"><svg viewBox="0 0 660 190" role="img" aria-label="저분자화합물과 항체의 크기 비교 — 저분자는 약 500 달톤으로 세포막을 통과해 세포 내부 표적에 결합하고, 항체는 약 15만 달톤으로 세포막을 통과하지 못해 세포 표면 표적만 공격한다">
+<line x1="330" y1="18" x2="330" y2="176" stroke="currentColor" stroke-width="1" stroke-dasharray="3 4" opacity=".35"/>
+<text x="14" y="20" font-size="11" fill="currentColor" opacity=".7">저분자 · ~500 Da · 경구 가능</text>
+<text x="346" y="20" font-size="11" fill="currentColor" opacity=".7">항체 · ~150,000 Da · 정맥주사</text>
+<rect x="14" y="34" width="300" height="140" rx="10" fill="none" stroke="currentColor" opacity=".22"/>
+<rect x="346" y="34" width="300" height="140" rx="10" fill="none" stroke="currentColor" opacity=".22"/>
+<path d="M30 104 Q164 62 298 104" stroke="currentColor" stroke-width="6" fill="none" opacity=".28"/>
+<path d="M30 118 Q164 76 298 118" stroke="currentColor" stroke-width="6" fill="none" opacity=".28"/>
+<text x="164" y="150" font-size="10.5" text-anchor="middle" fill="currentColor" opacity=".65">세포막</text>
+<circle cx="120" cy="90" r="5" style="fill:var(--accent)"/>
+<circle cx="150" cy="140" r="5" style="fill:var(--accent)"/>
+<path d="M120 96 L148 134" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar1)" style="stroke:var(--accent)"/>
+<text x="196" y="86" font-size="10.5" fill="currentColor" style="fill:var(--accent)">막을 통과</text>
+<rect x="132" y="152" width="70" height="15" rx="3" fill="none" stroke="currentColor" opacity=".5"/>
+<text x="167" y="163" font-size="9.5" text-anchor="middle" fill="currentColor" opacity=".8">세포 내 효소</text>
+<path d="M362 104 Q496 62 630 104" stroke="currentColor" stroke-width="6" fill="none" opacity=".28"/>
+<path d="M362 118 Q496 76 630 118" stroke="currentColor" stroke-width="6" fill="none" opacity=".28"/>
+<path d="M470 56 L470 74 M470 74 L458 88 M470 74 L482 88" stroke="currentColor" stroke-width="3.2" fill="none" style="stroke:var(--accent)"/>
+<rect x="452" y="88" width="36" height="8" rx="2" style="fill:var(--accent)" opacity=".35"/>
+<text x="500" y="66" font-size="10.5" fill="currentColor" style="fill:var(--accent)">표면 항원에만 결합</text>
+<line x1="470" y1="112" x2="470" y2="146" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 3" opacity=".5"/>
+<text x="480" y="146" font-size="10" fill="currentColor" opacity=".7">세포 내부 표적 접근 불가</text>
+<defs><marker id="ar1" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0, 7 3.5, 0 7" style="fill:var(--accent)"/></marker></defs>
+</svg><figcaption>분자량 차이가 곧 투여 경로와 표적 범위의 차이다. 저분자는 세포 안으로 들어가고, 항체는 못 들어간다 — "이 표적이 세포 안에 있나 밖에 있나"가 모달리티 선택의 첫 갈림길이다.</figcaption></figure>`;
+
+DIA['항체 (mAb)']=`<figure class="fig"><svg viewBox="0 0 620 230" role="img" aria-label="IgG 항체의 Y자 구조 — 두 개의 Fab 팔이 항원에 결합하고 Fc 꼬리가 면역세포를 동원한다">
+<path d="M150 40 L230 120 L310 40" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" opacity=".28"/>
+<line x1="230" y1="120" x2="230" y2="196" stroke="currentColor" stroke-width="14" stroke-linecap="round" opacity=".45"/>
+<path d="M150 40 L230 120 L310 40" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" style="stroke:var(--accent)"/>
+<circle cx="150" cy="40" r="9" style="fill:var(--accent)"/>
+<circle cx="310" cy="40" r="9" style="fill:var(--accent)"/>
+<text x="230" y="24" font-size="11.5" text-anchor="middle" fill="currentColor" style="fill:var(--accent)">항원 결합부위 (CDR)</text>
+<line x1="168" y1="40" x2="292" y2="40" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".4"/>
+<text x="86" y="86" font-size="12" fill="currentColor" text-anchor="end">Fab</text>
+<line x1="92" y1="82" x2="176" y2="66" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<text x="86" y="104" font-size="10" fill="currentColor" text-anchor="end" opacity=".7">항원을 붙잡는 팔</text>
+<text x="380" y="126" font-size="12" fill="currentColor">힌지(Hinge)</text>
+<line x1="374" y1="122" x2="242" y2="120" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<text x="380" y="180" font-size="12" fill="currentColor">Fc</text>
+<line x1="374" y1="176" x2="242" y2="170" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<text x="380" y="198" font-size="10" fill="currentColor" opacity=".7">면역세포 동원 · 반감기 결정</text>
+<text x="380" y="214" font-size="10" fill="currentColor" opacity=".7">ADCC / CDC 이펙터 기능</text>
+<line x1="196" y1="76" x2="264" y2="76" stroke="currentColor" stroke-width="1" opacity=".35"/>
+<text x="230" y="92" font-size="9.5" text-anchor="middle" fill="currentColor" opacity=".6">이황화결합</text>
+<text x="40" y="150" font-size="10.5" fill="currentColor" opacity=".8">중쇄 2 + 경쇄 2</text>
+<text x="40" y="166" font-size="10.5" fill="currentColor" opacity=".8">약 150 kDa</text>
+<text x="40" y="182" font-size="10.5" fill="currentColor" opacity=".8">반감기 2~3주</text>
+</svg><figcaption>항체는 <b>Fab(무엇을 잡을지)</b>와 <b>Fc(잡은 뒤 무엇을 할지)</b>로 기능이 나뉜다. 이중항체는 Fab를, ADC는 Fab에 매단 것을, Fc 엔지니어링은 반감기와 이펙터 기능을 건드린다 — 항체 기반 모달리티는 전부 이 그림의 어느 부분을 바꾸느냐의 문제다.</figcaption></figure>`;
+
+DIA['이중항체']=`<figure class="fig"><svg viewBox="0 0 660 250" role="img" aria-label="일반 항체와 T세포 인게이저 이중항체의 차이 — 이중항체는 T세포와 암세포를 물리적으로 붙여 면역 시냅스를 강제로 형성시킨다">
+<text x="14" y="18" font-size="11" fill="currentColor" opacity=".7">단일 항체 — 표적만 차단</text>
+<text x="346" y="18" font-size="11" fill="currentColor" opacity=".7">이중항체(T-cell engager) — 두 세포를 붙인다</text>
+<line x1="330" y1="28" x2="330" y2="236" stroke="currentColor" stroke-width="1" stroke-dasharray="3 4" opacity=".3"/>
+<circle cx="150" cy="150" r="52" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".45"/>
+<text x="150" y="154" font-size="11" text-anchor="middle" fill="currentColor" opacity=".8">암세포</text>
+<path d="M150 60 L150 84 M150 84 L136 98 M150 84 L164 98" stroke="currentColor" stroke-width="3" fill="none" style="stroke:var(--accent)"/>
+<text x="176" y="66" font-size="10.5" fill="currentColor" opacity=".8">한쪽 표적만 결합</text>
+<circle cx="440" cy="66" r="40" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".45"/>
+<text x="440" y="70" font-size="11" text-anchor="middle" fill="currentColor" opacity=".8">T세포</text>
+<circle cx="576" cy="188" r="46" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".45"/>
+<text x="576" y="192" font-size="11" text-anchor="middle" fill="currentColor" opacity=".8">암세포</text>
+<path d="M462 100 L500 132 M500 132 L538 160" stroke="currentColor" stroke-width="4" fill="none" style="stroke:var(--accent)"/>
+<circle cx="462" cy="100" r="7" style="fill:var(--accent)"/>
+<circle cx="538" cy="160" r="7" style="fill:var(--accent)"/>
+<text x="368" y="124" font-size="10.5" fill="currentColor" style="fill:var(--accent)">CD3 (T세포)</text>
+<text x="560" y="140" font-size="10.5" fill="currentColor" style="fill:var(--accent)">종양 항원</text>
+<path d="M470 132 Q500 118 530 132" stroke="currentColor" stroke-width="1.2" fill="none" opacity=".55" marker-end="url(#ar2)"/>
+<text x="500" y="112" font-size="10" text-anchor="middle" fill="currentColor" opacity=".75">면역 시냅스 강제 형성</text>
+<rect x="14" y="206" width="300" height="34" rx="6" fill="none" stroke="currentColor" opacity=".22"/>
+<text x="24" y="222" font-size="10" fill="currentColor" opacity=".8">Fc 있음 → 반감기 2~3주, ADCC/CDC 동반</text>
+<text x="24" y="235" font-size="10" fill="currentColor" opacity=".8">제조 단순, 표적 하나</text>
+<rect x="346" y="206" width="300" height="34" rx="6" fill="none" stroke="currentColor" opacity=".22"/>
+<text x="356" y="222" font-size="10" fill="currentColor" opacity=".8">BiTE형: Fc 없음 → 반감기 수시간, 지속주입 필요</text>
+<text x="356" y="235" font-size="10" fill="currentColor" opacity=".8">대칭형(KiH·CrossMab): Fc 유지, mispairing 해결이 관건</text>
+<defs><marker id="ar2" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0, 7 3.5, 0 7" fill="currentColor" opacity=".6"/></marker></defs>
+</svg><figcaption>이중항체의 값어치는 "두 표적에 붙는다"가 아니라 <b>두 세포를 물리적으로 붙여 면역 시냅스를 강제한다</b>는 데 있다. 그래서 CRS 위험이 단일 항체보다 크고, 용량 단계 상승(step-up dosing)이 프로토콜에 들어간다.</figcaption></figure>`;
+
+DIA['ADC']=`<figure class="fig"><svg viewBox="0 0 680 260" role="img" aria-label="ADC의 구조와 세포 내 작용 4단계 — 항체가 항원에 결합하고 세포 내로 흡수된 뒤 리소좀에서 링커가 절단되며 페이로드가 방출된다">
+<path d="M40 46 L76 82 L112 46" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+<line x1="76" y1="82" x2="76" y2="118" stroke="currentColor" stroke-width="7" stroke-linecap="round" opacity=".45"/>
+<line x1="52" y1="58" x2="34" y2="40" stroke="currentColor" stroke-width="1.6" style="stroke:var(--accent)"/>
+<circle cx="30" cy="36" r="5" style="fill:var(--accent)"/>
+<line x1="100" y1="58" x2="118" y2="40" stroke="currentColor" stroke-width="1.6" style="stroke:var(--accent)"/>
+<circle cx="122" cy="36" r="5" style="fill:var(--accent)"/>
+<line x1="66" y1="104" x2="46" y2="118" stroke="currentColor" stroke-width="1.6" style="stroke:var(--accent)"/>
+<circle cx="42" cy="121" r="5" style="fill:var(--accent)"/>
+<line x1="86" y1="104" x2="106" y2="118" stroke="currentColor" stroke-width="1.6" style="stroke:var(--accent)"/>
+<circle cx="110" cy="121" r="5" style="fill:var(--accent)"/>
+<text x="76" y="150" font-size="11" text-anchor="middle" fill="currentColor">항체 + 링커 + 페이로드</text>
+<text x="76" y="166" font-size="10" text-anchor="middle" fill="currentColor" opacity=".7">DAR ≈ 4 (항체 1개당 약물 수)</text>
+<text x="150" y="40" font-size="10.5" fill="currentColor" style="fill:var(--accent)">페이로드 (MMAE · DXd 등)</text>
+<text x="150" y="56" font-size="10.5" fill="currentColor" opacity=".75">링커 — 혈중 안정 / 세포 내 절단</text>
+<line x1="200" y1="118" x2="248" y2="118" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar3)" opacity=".6"/>
+<circle cx="440" cy="140" r="98" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".4"/>
+<text x="440" y="252" font-size="11" text-anchor="middle" fill="currentColor" opacity=".8">암세포</text>
+<circle cx="380" cy="70" r="6" style="fill:var(--accent)"/><text x="392" y="66" font-size="10.5" fill="currentColor">① 표면 항원 결합</text>
+<circle cx="500" cy="96" r="6" style="fill:var(--accent)"/><text x="512" y="92" font-size="10.5" fill="currentColor">② 세포 내 흡수</text>
+<circle cx="500" cy="164" r="6" style="fill:var(--accent)"/><text x="512" y="160" font-size="10.5" fill="currentColor">③ 리소좀에서 링커 절단</text>
+<circle cx="380" cy="196" r="6" style="fill:var(--accent)"/><text x="230" y="200" font-size="10.5" fill="currentColor" text-anchor="start">④ 페이로드 방출 → 세포사</text>
+<path d="M386 76 Q440 92 494 92" stroke="currentColor" stroke-width="1.2" fill="none" opacity=".5" marker-end="url(#ar3)"/>
+<path d="M502 104 L502 156" stroke="currentColor" stroke-width="1.2" opacity=".5" marker-end="url(#ar3)"/>
+<path d="M494 172 Q440 190 388 192" stroke="currentColor" stroke-width="1.2" fill="none" opacity=".5" marker-end="url(#ar3)"/>
+<rect x="16" y="196" width="196" height="52" rx="6" style="fill:var(--warn)" opacity=".10"/>
+<rect x="16" y="196" width="196" height="52" rx="6" fill="none" style="stroke:var(--warn)" opacity=".45"/>
+<text x="26" y="214" font-size="10" style="fill:var(--warn)">링커가 혈중에서 일찍 끊기면</text>
+<text x="26" y="228" font-size="10" style="fill:var(--warn)">→ 전신 독성(호중구감소·간독성)</text>
+<text x="26" y="242" font-size="10" style="fill:var(--warn)">세포 안에서 안 끊기면 → 무효</text>
+<defs><marker id="ar3" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0, 7 3.5, 0 7" fill="currentColor" opacity=".6"/></marker></defs>
+</svg><figcaption>ADC의 기술 장벽은 항체가 아니라 <b>링커</b>다. 혈중에서는 안 끊기고 표적세포 안에서만 끊겨야 하며, 이 균형이 무너지면 효능이 아니라 독성으로 나타난다 — 임상에서 ADC가 실패하는 대부분의 경로가 여기다.</figcaption></figure>`;
+
+DIA['면역항암제']=`<figure class="fig"><svg viewBox="0 0 660 240" role="img" aria-label="PD-1과 PD-L1 결합으로 T세포가 무력화되는 과정과 체크포인트 억제제가 그 결합을 차단하는 원리">
+<text x="14" y="18" font-size="11" fill="currentColor" opacity=".7">차단 전 — 암세포가 브레이크를 건다</text>
+<text x="346" y="18" font-size="11" fill="currentColor" opacity=".7">차단 후 — T세포가 다시 공격한다</text>
+<line x1="330" y1="28" x2="330" y2="228" stroke="currentColor" stroke-width="1" stroke-dasharray="3 4" opacity=".3"/>
+<rect x="20" y="40" width="120" height="170" rx="10" fill="none" stroke="currentColor" opacity=".4"/>
+<text x="80" y="60" font-size="11" text-anchor="middle" fill="currentColor" opacity=".85">T세포</text>
+<rect x="190" y="40" width="120" height="170" rx="10" fill="none" stroke="currentColor" opacity=".4"/>
+<text x="250" y="60" font-size="11" text-anchor="middle" fill="currentColor" opacity=".85">암세포</text>
+<rect x="132" y="96" width="16" height="26" rx="3" fill="currentColor" opacity=".55"/>
+<text x="112" y="92" font-size="9.5" text-anchor="end" fill="currentColor" opacity=".8">PD-1</text>
+<rect x="182" y="96" width="16" height="26" rx="3" fill="currentColor" opacity=".55"/>
+<text x="216" y="92" font-size="9.5" fill="currentColor" opacity=".8">PD-L1</text>
+<line x1="148" y1="109" x2="182" y2="109" stroke="currentColor" stroke-width="3" opacity=".7"/>
+<text x="165" y="146" font-size="10" text-anchor="middle" fill="currentColor" opacity=".75">결합 = 억제 신호</text>
+<text x="80" y="190" font-size="10.5" text-anchor="middle" style="fill:var(--warn)">T세포 무력화</text>
+<rect x="356" y="40" width="120" height="170" rx="10" fill="none" stroke="currentColor" opacity=".4"/>
+<text x="416" y="60" font-size="11" text-anchor="middle" fill="currentColor" opacity=".85">T세포</text>
+<rect x="526" y="40" width="120" height="170" rx="10" fill="none" stroke="currentColor" opacity=".4"/>
+<text x="586" y="60" font-size="11" text-anchor="middle" fill="currentColor" opacity=".85">암세포</text>
+<rect x="468" y="96" width="16" height="26" rx="3" fill="currentColor" opacity=".55"/>
+<rect x="518" y="96" width="16" height="26" rx="3" fill="currentColor" opacity=".55"/>
+<path d="M486 82 L502 96 L486 110 L470 96 Z" style="fill:var(--accent)" opacity=".9"/>
+<text x="502" y="76" font-size="10" text-anchor="middle" style="fill:var(--accent)">항 PD-1 / PD-L1 항체</text>
+<line x1="484" y1="126" x2="518" y2="126" stroke="currentColor" stroke-width="2" stroke-dasharray="3 3" opacity=".4"/>
+<text x="501" y="146" font-size="10" text-anchor="middle" fill="currentColor" opacity=".7">결합 차단</text>
+<text x="416" y="190" font-size="10.5" text-anchor="middle" style="fill:var(--accent)">T세포 재활성 → 종양 공격</text>
+</svg><figcaption>체크포인트 억제제는 암을 직접 죽이지 않는다 — <b>면역계의 브레이크를 푸는 약</b>이다. 그래서 반응률은 낮아도 반응하면 오래가고(장기 생존 tail), 부작용은 면역 과활성(irAE)으로 나타난다. 반응 예측에 PD-L1 발현율·TMB·MSI 같은 바이오마커가 붙는 이유도 여기 있다.</figcaption></figure>`;
+
+DIA['CAR-T · TCR-T · NK']=`<figure class="fig"><svg viewBox="0 0 680 300" role="img" aria-label="CAR 수용체의 구성과 자가유래 CAR-T 제조 흐름 — 채집, 유전자 도입, 증식, 림프구 제거 후 재주입">
+<text x="14" y="18" font-size="11" fill="currentColor" opacity=".7">CAR 수용체 구성</text>
+<rect x="14" y="30" width="120" height="34" rx="5" style="fill:var(--accent)" opacity=".18"/>
+<rect x="14" y="30" width="120" height="34" rx="5" fill="none" style="stroke:var(--accent)"/>
+<text x="74" y="51" font-size="10.5" text-anchor="middle" fill="currentColor">scFv — 항원 인식</text>
+<rect x="142" y="30" width="74" height="34" rx="5" fill="none" stroke="currentColor" opacity=".45"/>
+<text x="179" y="51" font-size="10.5" text-anchor="middle" fill="currentColor">힌지·TM</text>
+<rect x="224" y="30" width="150" height="34" rx="5" fill="none" stroke="currentColor" opacity=".45"/>
+<text x="299" y="46" font-size="10.5" text-anchor="middle" fill="currentColor">공동자극 도메인</text>
+<text x="299" y="59" font-size="9.5" text-anchor="middle" fill="currentColor" opacity=".7">4-1BB(지속성) / CD28(속효성)</text>
+<rect x="382" y="30" width="94" height="34" rx="5" fill="none" stroke="currentColor" opacity=".45"/>
+<text x="429" y="51" font-size="10.5" text-anchor="middle" fill="currentColor">CD3ζ 신호</text>
+<text x="492" y="42" font-size="10" fill="currentColor" opacity=".75">세포 외</text>
+<text x="492" y="58" font-size="10" fill="currentColor" opacity=".75">→ 세포 내</text>
+<line x1="14" y1="84" x2="666" y2="84" stroke="currentColor" stroke-width="1" opacity=".2"/>
+<text x="14" y="110" font-size="11" fill="currentColor" opacity=".7">자가유래 제조 흐름 — vein-to-vein 통상 3~5주</text>
+<g font-size="10.5" fill="currentColor">
+<rect x="14" y="124" width="106" height="46" rx="6" fill="none" stroke="currentColor" opacity=".45"/><text x="67" y="145" text-anchor="middle">① 백혈구 성분채집</text><text x="67" y="160" text-anchor="middle" opacity=".7">환자 T세포 채취</text>
+<rect x="146" y="124" width="106" height="46" rx="6" fill="none" stroke="currentColor" opacity=".45"/><text x="199" y="145" text-anchor="middle">② 유전자 도입</text><text x="199" y="160" text-anchor="middle" opacity=".7">렌티·레트로 벡터</text>
+<rect x="278" y="124" width="106" height="46" rx="6" fill="none" stroke="currentColor" opacity=".45"/><text x="331" y="145" text-anchor="middle">③ 체외 증식</text><text x="331" y="160" text-anchor="middle" opacity=".7">품질검사·동결</text>
+<rect x="410" y="124" width="106" height="46" rx="6" fill="none" style="stroke:var(--warn)" opacity=".8"/><text x="463" y="145" text-anchor="middle">④ 림프구 제거</text><text x="463" y="160" text-anchor="middle" opacity=".7">환자 전처치 항암</text>
+<rect x="542" y="124" width="124" height="46" rx="6" style="fill:var(--accent)" opacity=".14"/><rect x="542" y="124" width="124" height="46" rx="6" fill="none" style="stroke:var(--accent)"/><text x="604" y="145" text-anchor="middle">⑤ 재주입</text><text x="604" y="160" text-anchor="middle" opacity=".7">1회 투여</text>
+</g>
+<line x1="120" y1="147" x2="144" y2="147" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar4)" opacity=".6"/>
+<line x1="252" y1="147" x2="276" y2="147" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar4)" opacity=".6"/>
+<line x1="384" y1="147" x2="408" y2="147" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar4)" opacity=".6"/>
+<line x1="516" y1="147" x2="540" y2="147" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar4)" opacity=".6"/>
+<rect x="14" y="192" width="320" height="94" rx="8" fill="none" stroke="currentColor" opacity=".25"/>
+<text x="26" y="212" font-size="11" fill="currentColor">제조가 곧 사업 리스크</text>
+<text x="26" y="231" font-size="10" fill="currentColor" opacity=".8">· 환자별 개별 생산 → 원가·캐파가 매출 상한</text>
+<text x="26" y="247" font-size="10" fill="currentColor" opacity=".8">· 제조 실패율(out-of-spec)이 실제 매출을 깎는다</text>
+<text x="26" y="263" font-size="10" fill="currentColor" opacity=".8">· vein-to-vein 기간 중 환자가 악화·사망 → ITT 훼손</text>
+<text x="26" y="279" font-size="10" fill="currentColor" opacity=".8">· 동종유래(allogeneic)·in vivo CAR-T가 이 병목의 해법</text>
+<rect x="346" y="192" width="320" height="94" rx="8" style="fill:var(--warn)" opacity=".08"/>
+<rect x="346" y="192" width="320" height="94" rx="8" fill="none" style="stroke:var(--warn)" opacity=".4"/>
+<text x="358" y="212" font-size="11" style="fill:var(--warn)">임상에서 반드시 보는 안전성 2가지</text>
+<text x="358" y="231" font-size="10" fill="currentColor" opacity=".85">· CRS — 사이토카인 방출 증후군 (Grade 3+ 비율)</text>
+<text x="358" y="247" font-size="10" fill="currentColor" opacity=".85">· ICANS — 신경독성 (Grade 3+ 비율, 발현 시점)</text>
+<text x="358" y="263" font-size="10" fill="currentColor" opacity=".85">· 2차 T세포 악성종양 (FDA 2024 라벨 경고)</text>
+<text x="358" y="279" font-size="10" fill="currentColor" opacity=".85">ORR만 보고 판단하면 절반만 본 것</text>
+<defs><marker id="ar4" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0, 7 3.5, 0 7" fill="currentColor" opacity=".6"/></marker></defs>
+</svg><figcaption>CAR-T는 약이라기보다 <b>공정</b>에 가깝다. 도메인 설계(4-1BB vs CD28)가 지속성과 독성 프로파일을 가르고, 제조 성공률과 vein-to-vein 기간이 상업성을 가른다.</figcaption></figure>`;
+
+DIA['유전자치료제']=`<figure class="fig"><svg viewBox="0 0 680 250" role="img" aria-label="유전자치료의 두 경로 비교 — 체내 직접 투여하는 in vivo와 체외에서 세포를 조작해 되돌려주는 ex vivo">
+<text x="14" y="18" font-size="11" fill="currentColor" opacity=".7">in vivo — 벡터를 몸에 직접 주입</text>
+<rect x="14" y="30" width="96" height="42" rx="6" fill="none" stroke="currentColor" opacity=".45"/><text x="62" y="49" font-size="10.5" text-anchor="middle" fill="currentColor">치료 유전자</text><text x="62" y="63" font-size="9.5" text-anchor="middle" fill="currentColor" opacity=".7">+ AAV 벡터</text>
+<rect x="150" y="30" width="96" height="42" rx="6" fill="none" stroke="currentColor" opacity=".45"/><text x="198" y="49" font-size="10.5" text-anchor="middle" fill="currentColor">정맥·국소 투여</text><text x="198" y="63" font-size="9.5" text-anchor="middle" fill="currentColor" opacity=".7">1회</text>
+<rect x="286" y="30" width="130" height="42" rx="6" style="fill:var(--accent)" opacity=".14"/><rect x="286" y="30" width="130" height="42" rx="6" fill="none" style="stroke:var(--accent)"/><text x="351" y="49" font-size="10.5" text-anchor="middle" fill="currentColor">표적 조직에서 발현</text><text x="351" y="63" font-size="9.5" text-anchor="middle" fill="currentColor" opacity=".7">간·망막·근육·CNS</text>
+<line x1="110" y1="51" x2="148" y2="51" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar5)" opacity=".6"/>
+<line x1="246" y1="51" x2="284" y2="51" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar5)" opacity=".6"/>
+<text x="440" y="44" font-size="10" fill="currentColor" opacity=".8">핵심 변수 — 중화항체(NAb) 보유 환자 배제,</text>
+<text x="440" y="58" font-size="10" fill="currentColor" opacity=".8">고용량 AAV의 간독성·보체 활성화</text>
+<text x="440" y="72" font-size="10" fill="currentColor" opacity=".8">Luxturna(망막)·Zolgensma(SMA)</text>
+<line x1="14" y1="94" x2="666" y2="94" stroke="currentColor" stroke-width="1" opacity=".2"/>
+<text x="14" y="118" font-size="11" fill="currentColor" opacity=".7">ex vivo — 세포를 꺼내 고친 뒤 되돌려준다</text>
+<g font-size="10.5" fill="currentColor">
+<rect x="14" y="130" width="96" height="42" rx="6" fill="none" stroke="currentColor" opacity=".45"/><text x="62" y="149" text-anchor="middle">환자 세포 채취</text><text x="62" y="163" text-anchor="middle" opacity=".7">조혈모세포·T세포</text>
+<rect x="150" y="130" width="96" height="42" rx="6" fill="none" stroke="currentColor" opacity=".45"/><text x="198" y="149" text-anchor="middle">체외 유전자 도입</text><text x="198" y="163" text-anchor="middle" opacity=".7">렌티 · 유전자가위</text>
+<rect x="286" y="130" width="96" height="42" rx="6" fill="none" style="stroke:var(--warn)" opacity=".8"/><text x="334" y="149" text-anchor="middle">골수 제거 전처치</text><text x="334" y="163" text-anchor="middle" opacity=".7">부작용의 상당부분</text>
+<rect x="422" y="130" width="96" height="42" rx="6" style="fill:var(--accent)" opacity=".14"/><rect x="422" y="130" width="96" height="42" rx="6" fill="none" style="stroke:var(--accent)"/><text x="470" y="149" text-anchor="middle">재주입 · 생착</text><text x="470" y="163" text-anchor="middle" opacity=".7">Casgevy · Zynteglo</text>
+</g>
+<line x1="110" y1="151" x2="148" y2="151" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar5)" opacity=".6"/>
+<line x1="246" y1="151" x2="284" y2="151" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar5)" opacity=".6"/>
+<line x1="382" y1="151" x2="420" y2="151" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar5)" opacity=".6"/>
+<rect x="14" y="192" width="652" height="48" rx="8" fill="none" stroke="currentColor" opacity=".25"/>
+<text x="26" y="211" font-size="10.5" fill="currentColor">벡터 선택이 곧 리스크 프로파일 — <tspan opacity=".8">AAV: 장기 발현·낮은 면역원성이나 적재량 4.7kb 제한·재투여 불가 / 렌티: 비분열세포 감염·대용량이나 삽입 변이 위험 / 비바이러스(LNP): 재투여 가능하나 발현 짧음</tspan></text>
+<text x="26" y="230" font-size="10.5" fill="currentColor">1회 투여 고가 치료제 → <tspan opacity=".8">지속기간 데이터(durability)가 곧 가격 근거. 3년·5년 추적에서 발현이 감소하면 가치 전제가 무너진다</tspan></text>
+<defs><marker id="ar5" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0, 7 3.5, 0 7" fill="currentColor" opacity=".6"/></marker></defs>
+</svg><figcaption>유전자치료제는 "언제까지 듣는가"가 밸류의 전부다. 1회 투여로 수억 원을 받는 구조라, 발현 지속기간이 짧아지면 약가 근거와 rNPV가 동시에 무너진다.</figcaption></figure>`;
+
+DIA['RNA 치료제']=`<figure class="fig"><svg viewBox="0 0 680 240" role="img" aria-label="중심원리 축에서 본 세 가지 RNA 치료제 — 안티센스와 siRNA는 mRNA를 없애고 mRNA 치료제는 단백질을 만들게 한다">
+<rect x="30" y="40" width="90" height="34" rx="5" fill="none" stroke="currentColor" opacity=".45"/><text x="75" y="61" font-size="11" text-anchor="middle" fill="currentColor">DNA</text>
+<rect x="170" y="40" width="90" height="34" rx="5" fill="none" stroke="currentColor" opacity=".45"/><text x="215" y="61" font-size="11" text-anchor="middle" fill="currentColor">mRNA</text>
+<rect x="310" y="40" width="110" height="34" rx="5" fill="none" stroke="currentColor" opacity=".45"/><text x="365" y="61" font-size="11" text-anchor="middle" fill="currentColor">단백질</text>
+<line x1="120" y1="57" x2="168" y2="57" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar6)" opacity=".6"/><text x="144" y="34" font-size="9.5" text-anchor="middle" fill="currentColor" opacity=".7">전사</text>
+<line x1="260" y1="57" x2="308" y2="57" stroke="currentColor" stroke-width="1.4" marker-end="url(#ar6)" opacity=".6"/><text x="284" y="34" font-size="9.5" text-anchor="middle" fill="currentColor" opacity=".7">번역</text>
+<line x1="215" y1="80" x2="215" y2="112" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" opacity=".5"/>
+<g font-size="10.5" fill="currentColor">
+<rect x="14" y="116" width="200" height="106" rx="7" fill="none" stroke="currentColor" opacity=".3"/>
+<text x="26" y="136" style="fill:var(--accent)">안티센스 (ASO)</text>
+<text x="26" y="154" opacity=".85">단일가닥이 mRNA에 결합</text>
+<text x="26" y="170" opacity=".85">→ RNase H가 분해</text>
+<text x="26" y="190" opacity=".7">전신 분포 · 국소 투여 가능</text>
+<text x="26" y="206" opacity=".7">CNS 척수강내 투여 사례 다수</text>
+<rect x="232" y="116" width="200" height="106" rx="7" fill="none" stroke="currentColor" opacity=".3"/>
+<text x="244" y="136" style="fill:var(--accent)">siRNA</text>
+<text x="244" y="154" opacity=".85">이중가닥이 RISC에 실려</text>
+<text x="244" y="170" opacity=".85">→ mRNA를 절단</text>
+<text x="244" y="190" opacity=".7">GalNAc 접합 → 간 표적 확립</text>
+<text x="244" y="206" opacity=".7">간 외 조직 전달이 최대 병목</text>
+<rect x="450" y="116" width="216" height="106" rx="7" fill="none" stroke="currentColor" opacity=".3"/>
+<text x="462" y="136" style="fill:var(--accent)">mRNA</text>
+<text x="462" y="154" opacity=".85">LNP에 실려 세포 안으로</text>
+<text x="462" y="170" opacity=".85">→ 리보솜이 단백질을 생산</text>
+<text x="462" y="190" opacity=".7">유일하게 "만들게" 하는 방향</text>
+<text x="462" y="206" opacity=".7">백신 · 암백신 · 단백질 보충</text>
+</g>
+<path d="M215 112 L120 112 L120 116" stroke="currentColor" stroke-width="1.2" fill="none" opacity=".5" marker-end="url(#ar6)"/>
+<path d="M215 112 L332 112 L332 116" stroke="currentColor" stroke-width="1.2" fill="none" opacity=".5" marker-end="url(#ar6)"/>
+<path d="M365 80 L365 100 L558 100 L558 116" stroke="currentColor" stroke-width="1.2" fill="none" opacity=".5" marker-end="url(#ar6)"/>
+<text x="470" y="60" font-size="10" fill="currentColor" opacity=".75">← 여기를 만들게 하는 것이 mRNA</text>
+<defs><marker id="ar6" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0, 7 3.5, 0 7" fill="currentColor" opacity=".6"/></marker></defs>
+</svg><figcaption>세 가지 모두 "핵산으로 만든 약"이지만 방향이 다르다 — ASO·siRNA는 <b>없애고</b>, mRNA는 <b>만들게</b> 한다. 그리고 셋 다 승부처는 화학이 아니라 <b>전달(delivery)</b>이다. 간 이외의 조직에 보낼 수 있느냐가 플랫폼의 가치를 가른다.</figcaption></figure>`;
+
+DIA['바이오시밀러']=`<figure class="fig"><svg viewBox="0 0 680 200" role="img" aria-label="오리지널 신약과 바이오시밀러의 개발 경로 비교 — 시밀러는 임상 2상을 건너뛰고 비교동등성 입증으로 대체한다">
+<text x="14" y="18" font-size="11" fill="currentColor" opacity=".7">오리지널 신약 — 10~15년</text>
+<g font-size="10">
+<rect x="14" y="30" width="92" height="34" rx="5" fill="none" stroke="currentColor" opacity=".45"/><text x="60" y="51" text-anchor="middle" fill="currentColor">후보물질·전임상</text>
+<rect x="112" y="30" width="72" height="34" rx="5" fill="none" stroke="currentColor" opacity=".45"/><text x="148" y="51" text-anchor="middle" fill="currentColor">1상</text>
+<rect x="190" y="30" width="120" height="34" rx="5" fill="none" style="stroke:var(--warn)" opacity=".85"/><text x="250" y="51" text-anchor="middle" fill="currentColor">2상 — 통과율 30.5%</text>
+<rect x="316" y="30" width="150" height="34" rx="5" fill="none" stroke="currentColor" opacity=".45"/><text x="391" y="51" text-anchor="middle" fill="currentColor">3상 (1,000~5,000명)</text>
+<rect x="472" y="30" width="80" height="34" rx="5" fill="none" stroke="currentColor" opacity=".45"/><text x="512" y="51" text-anchor="middle" fill="currentColor">허가</text>
+</g>
+<text x="566" y="52" font-size="10.5" fill="currentColor" opacity=".8">개발비 7~10억$</text>
+<text x="14" y="98" font-size="11" fill="currentColor" opacity=".7">바이오시밀러 — 5~7년</text>
+<g font-size="10">
+<rect x="14" y="110" width="92" height="34" rx="5" fill="none" stroke="currentColor" opacity=".45"/><text x="60" y="131" text-anchor="middle" fill="currentColor">세포주·공정 개발</text>
+<rect x="112" y="110" width="198" height="34" rx="5" style="fill:var(--accent)" opacity=".16"/><rect x="112" y="110" width="198" height="34" rx="5" fill="none" style="stroke:var(--accent)"/><text x="211" y="131" text-anchor="middle" fill="currentColor">분석적 비교동등성 (구조·기능)</text>
+<rect x="316" y="110" width="72" height="34" rx="5" fill="none" stroke="currentColor" opacity=".45"/><text x="352" y="131" text-anchor="middle" fill="currentColor">1상 PK</text>
+<rect x="394" y="110" width="158" height="34" rx="5" fill="none" stroke="currentColor" opacity=".45"/><text x="473" y="131" text-anchor="middle" fill="currentColor">3상 동등성 (축소 가능)</text>
+</g>
+<text x="566" y="132" font-size="10.5" fill="currentColor" opacity=".8">개발비 0.4~2억$</text>
+<line x1="250" y1="70" x2="250" y2="104" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3" opacity=".5" marker-end="url(#ar7)"/>
+<text x="258" y="90" font-size="10" style="fill:var(--accent)">2상이 없다 — 효능은 이미 입증된 표적이므로</text>
+<rect x="14" y="162" width="652" height="30" rx="6" fill="none" stroke="currentColor" opacity=".25"/>
+<text x="26" y="181" font-size="10.5" fill="currentColor">그래서 시밀러의 승부처는 임상이 아니라 <tspan style="fill:var(--accent)">① 오리지널 특허 만료 시점(미국·EU 별도)</tspan> <tspan opacity=".8">② 선점 순위 ③ 생산 CAPA와 원가 ④ 직판 채널</tspan></text>
+<defs><marker id="ar7" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><polygon points="0 0, 7 3.5, 0 7" fill="currentColor" opacity=".6"/></marker></defs>
+</svg><figcaption>시밀러는 "효과가 있는가"를 다시 묻지 않는다 — <b>오리지널과 같은가</b>만 묻는다. 임상 리스크가 사라진 자리를 특허·원가·유통 리스크가 채운다.</figcaption></figure>`;
+
 const mlist=document.getElementById('mlist');
 function renderMod(f){
   mlist.innerHTML=MOD.filter(m=>f==='all'||m.g.includes(f)).map(m=>`
@@ -1268,6 +1838,7 @@ function renderMod(f){
       <div><dt>한계</dt><dd>${m.con}</dd></div>
     </div>
     <div><dt style="color:var(--accent)">투자 체크포인트</dt><dd>${m.chk}</dd></div>
+    ${DIA[m.n]||''}
     <div class="srcline" style="margin-top:4px"><b>근거</b> ${m.src}</div>
   </div></details>`).join('');
 }
@@ -1624,6 +2195,3 @@ document.getElementById('gchips').addEventListener('click',e=>{const b=e.target.
 document.getElementById('gsearch').addEventListener('input',e=>{gq=e.target.value; renderG();});
 renderG();
 </script>
-
-</body>
-</html>
