@@ -97,7 +97,10 @@ a:hover{border-bottom-color:var(--accent)}
 .legend{display:flex; gap:14px; flex-wrap:wrap; align-items:center}
 .legend .li{display:flex; align-items:center; gap:6px; font-family:"IBM Plex Mono",monospace; font-size:10.5px; color:var(--ink-3)}
 .legend .sw{width:9px; height:9px; border-radius:2px; flex:none}
-.stamp{margin-left:auto; font-family:"IBM Plex Mono",monospace; font-size:10.5px; color:var(--ink-4)}
+.stamps{margin-left:auto; display:flex; align-items:center; gap:0 12px; flex-wrap:wrap; justify-content:flex-end}
+.stamp{font-family:"IBM Plex Mono",monospace; font-size:10.5px; color:var(--ink-4); white-space:nowrap}
+.stamp + .stamp{padding-left:12px; border-left:1px solid var(--line)}
+.stamp b{color:var(--ink-3); font-weight:500}
 
 .pane{display:none; padding:34px 40px 0; max-width:1220px}
 .pane.on{display:block; animation:fade .22s ease}
@@ -301,7 +304,10 @@ td strong{font-weight:600}
       <span class="li"><span class="sw" style="background:var(--dim)"></span>구자료 (2016~23)</span>
       <span class="li"><span class="sw" style="background:var(--alert)"></span>미확인</span>
     </div>
-    <span class="stamp">DATA CUT 2026-08-28</span>
+    <div class="stamps">
+      <span class="stamp">DATA CUT 2026-08-28</span>
+      <span class="stamp">UPDATED <b id="updstamp">2026-08-28 18:37 KST</b></span>
+    </div>
   </div>
 
 <!-- ==================== 01 산업 지도 ==================== -->
